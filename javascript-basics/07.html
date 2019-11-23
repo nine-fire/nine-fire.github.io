@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://ninefire.gitee.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"default"},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="运算符又称为操作符，通过运算符可以对一个或多个值进行运算，并获取运算结果。比如：typeof 就是一个运算符，可以获取一个字面量的类型，它会将字面量的类型以字符串的形式返回。算术运算符 + 加法运算  - 减法运算  * 乘法运算  &#x2F; 除法运算  % 取模运算  对非 Number 类型的值进行运算时，会将其先转换为 Number 类型再进行运算。  任何值与 NaN 进行运算结果都为 NaN。">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="运算符">
+<meta property="og:url" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;javascript-basics&#x2F;07.html">
+<meta property="og:site_name" content="玖燃">
+<meta property="og:description" content="运算符又称为操作符，通过运算符可以对一个或多个值进行运算，并获取运算结果。比如：typeof 就是一个运算符，可以获取一个字面量的类型，它会将字面量的类型以字符串的形式返回。算术运算符 + 加法运算  - 减法运算  * 乘法运算  &#x2F; 除法运算  % 取模运算  对非 Number 类型的值进行运算时，会将其先转换为 Number 类型再进行运算。  任何值与 NaN 进行运算结果都为 NaN。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-23T09:05:32.215Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://ninefire.gitee.io/javascript-basics/07.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>运算符 | 玖燃</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">玖燃</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">永远不要失去对生活的激情</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://ninefire.gitee.io/javascript-basics/07.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="玖燃">
+      <meta itemprop="description" content="专注于分享知识、资源">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="玖燃">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          运算符
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-06-08 00:00:07" itemprop="dateCreated datePublished" datetime="2018-06-08T00:00:07+08:00">2018-06-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-23 17:05:32" itemprop="dateModified" datetime="2019-11-23T17:05:32+08:00">2019-11-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaScript%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript基础</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>运算符又称为操作符，通过运算符可以对一个或多个值进行运算，并获取运算结果。<br>比如：<code>typeof</code> 就是一个运算符，可以获取一个字面量的类型，它会将字面量的类型以字符串的形式返回。</p><h2 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h2><ul>
+<li><p><code>+</code> 加法运算</p>
+</li>
+<li><p><code>-</code> 减法运算</p>
+</li>
+<li><p><code>*</code> 乘法运算</p>
+</li>
+<li><p><code>/</code> 除法运算</p>
+</li>
+<li><p><code>%</code> 取模运算</p>
+</li>
+<li><p>对非 Number 类型的值进行运算时，会将其先转换为 Number 类型再进行运算。</p>
+</li>
+<li><p>任何值与 <code>NaN</code> 进行运算结果都为 <code>NaN</code>。</p>
+</li>
+<li><p>如果对两个字符串进行加法操作，会将两个字符串进行拼接。</p>
+</li>
+<li><p>任何值与字符串作加法运算，都会将其先转换为 String 再进行拼串。</p>
+<ul>
+<li>可以利用这一特点，将任意类型的数据类型转换为 String，只需要为任意的数据<code>+</code>一个<code>&quot;&quot;</code>空串，即可将其转换为 String，这是一种隐式的类型转换，由浏览器自动完成，实际上也是调用了 <code>String()</code> 函数。</li>
+</ul>
+</li>
+<li><p>任何值与字符串作<code>-</code>、<code>*</code>、<code>/</code>运算，都会将其先转换为 Number 再进行运算。</p>
+<ul>
+<li>可以利用这一特点作隐式的类型转换，通过为一个值<code>- 0</code>、<code>* 1</code>、<code>/ 1</code>来将其转换为 Number。</li>
+</ul>
+</li>
+</ul><a id="more"></a>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">result = <span class="number">1</span> + <span class="number">2</span> + <span class="string">"3"</span>; <span class="comment">// result 为 33</span></span><br><span class="line"></span><br><span class="line">result = <span class="string">"1"</span> + <span class="number">2</span> + <span class="number">3</span>; <span class="comment">// result 为 123</span></span><br><span class="line"></span><br><span class="line">result = <span class="number">2</span> * <span class="literal">null</span>; <span class="comment">// result 为 0</span></span><br><span class="line"></span><br><span class="line">result = <span class="number">9</span> % <span class="number">3</span>; <span class="comment">// 9 除以 3 余 0，结果为 0</span></span><br><span class="line"></span><br><span class="line">result = <span class="number">9</span> % <span class="number">4</span>; <span class="comment">// 9 除以 4 余 1，结果为 1</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="一元运算符"><a href="#一元运算符" class="headerlink" title="一元运算符"></a>一元运算符</h2><ul>
+<li><p><code>+</code> 正号<br>正号不会对数值产生任何影响。</p>
+</li>
+<li><p><code>-</code> 负号<br>负号可以对数值进行负号的取反。</p>
+</li>
+<li><p>对于非 Number 的值，它会将其先转换为 Number，再进行运算。<br>可以对其他的数据类型使用<code>+</code>正号运算，来将其转换为 Number，原理和 <code>Number()</code> 相同。</p>
+</li>
+</ul>
+<hr>
+<h2 id="自增和自减"><a href="#自增和自减" class="headerlink" title="自增和自减"></a>自增和自减</h2><ul>
+<li><p><code>++</code> 自增<br>通过自增可以使变量在自身的基础上增加1，并且原变量的值会立即改变。<br><code>a++;</code>相当于<code>a = a + 1;</code></p>
+<ul>
+<li>表达式<code>a++</code>的值是自增前的值</li>
+<li>表达式<code>++a</code>的值是自增后的值</li>
+</ul>
+</li>
+<li><p><code>--</code> 自减<br>通过自减可以使变量在自身的基础上减去1，并且原变量的值会立即改变。<br><code>a--;</code>相当于<code>a = a - 1;</code></p>
+<ul>
+<li>表达式<code>a--</code>的值是自减前的值</li>
+<li>表达式<code>--a</code>的值是自减后的值</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">a = a++;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"a的值是"</span> + a);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a的值是1</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意区分变量与表达式。</p>
+</blockquote>
+<hr>
+<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><p>JS 中提供了三种逻辑运算符，用来作逻辑判断。</p>
+<p><strong>Boolean 的逻辑运算：</strong></p>
+<ul>
+<li><p><code>!</code>  非运算<br>非运算就是对一个布尔值进行取反操作，<code>true</code> 变 <code>false</code>，<code>false</code> 变 <code>true</code>。</p>
+<ul>
+<li>如果对一个值进行两次非运算，它不会改变。</li>
+<li>如果对一个非布尔值进行非运算，则会将其转换为布尔值再运算。<ul>
+<li>可以利用该特点，为任意数据类型作两次非运算，来将其转换为布尔值。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>&amp;&amp;</code> 与运算<br>可以对符号两侧的值进行与运算并返回结果。</p>
+<ul>
+<li>运算规则<ul>
+<li>只要有一个 <code>false</code> 则返回 <code>false</code></li>
+<li>两个值都为 <code>true</code> 时才返回 <code>true</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>JS 中的与运算是“短路的与”，当第一个值为 <code>false</code> 时，便不会再考虑第二个值。</p>
+</blockquote>
+<ul>
+<li><code>||</code> 或运算<br>可以对符号两侧的值进行或运算并返回结果。<ul>
+<li>运算规则<ul>
+<li>只要有一个 <code>true</code> 则返回 <code>true</code></li>
+<li>两个值都为 <code>false</code> 时才返回 <code>false</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>JS中的或运算是“短路的或”，当第一个值为 <code>true</code> 时，便不会再考虑第二个值。</p>
+</blockquote>
+<p><strong>非 Boolean 的逻辑运算：</strong></p>
+<p>对于非布尔值进行与或运算时，会先将其转换为布尔值，然后再进行运算，并且返回原值。</p>
+<ul>
+<li><p>与运算</p>
+<ul>
+<li>如果第一个值为 <code>true</code>，则返回第二个值。<br>例：<code>var result = 5 &amp;&amp; 6;</code> 返回 <code>6</code></li>
+<li>如果第一个值为 <code>false</code>，则返回第一个值。<br>例：<code>var result = NaN &amp;&amp; 9;</code> 返回 <code>NaN</code></li>
+</ul>
+</li>
+<li><p>或运算</p>
+<ul>
+<li>如果第一个值为 <code>true</code>，则返回第一个值。<br>例：<code>var result = 2 || NaN;</code> 返回 <code>2</code></li>
+<li>如果第一个值为 <code>false</code>，则返回第二个值。<br>例：<code>var result = &quot;&quot; || &quot;hello&quot;</code> 返回 <code>&quot;hello&quot;</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h2><ul>
+<li><p><code>=</code><br><code>str = &quot;I love you.&quot;</code><br>可以将符号右侧的值赋值给符号左侧的变量。</p>
+</li>
+<li><p><code>+=</code><br><code>a += 5;</code> 等价于 <code>a = a + 5;</code></p>
+</li>
+<li><p><code>-=</code><br><code>a -= 5;</code> 等价于 <code>a = a - 5;</code></p>
+</li>
+<li><p><code>*=</code><br><code>a *= 5;</code> 等价于 <code>a = a * 5;</code></p>
+</li>
+<li><p><code>/=</code><br><code>a /= 5;</code> 等价于 <code>a = a / 5;</code></p>
+</li>
+<li><p><code>%=</code><br><code>a -%= 5;</code> 等价于 <code>a = a % 5;</code></p>
+</li>
+</ul>
+<hr>
+<h2 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h2><p>通过关系运算符可以比较两个值之间的大小关系，如果关系成立则返回 <code>true</code>，如果关系不成立则返回 <code>false</code>。</p>
+<h3 id="自动转换类型"><a href="#自动转换类型" class="headerlink" title="自动转换类型"></a>自动转换类型</h3><p><strong>Number的关系运算：</strong></p>
+<ul>
+<li><p><code>&gt;</code> 大于<br>判断符号左侧的值是否大于右侧的值。<br>关系成立则返回 true，反之则返回 false。</p>
+</li>
+<li><p><code>&gt;=</code> 大于或等于<br>判断符号左侧的值是否大于或等于右侧的值。<br>关系成立则返回 true，反之则返回 false。</p>
+</li>
+<li><p><code>&lt;</code> 小于<br>判断符号左侧的值是否小于右侧的值。<br>关系成立则返回 true，反之则返回 false。</p>
+</li>
+<li><p><code>&lt;=</code> 小于或等于<br>判断符号左侧的值是否小于或等于右侧的值。<br>关系成立则返回 true，反之则返回 false。</p>
+</li>
+<li><p><code>==</code> 等于<br>判断符号左侧的值是否等于右侧的值。<br>关系成立则返回 <code>true</code>，反之则返回 <code>false</code>。</p>
+</li>
+<li><p><code>!=</code> 不等于<br>判断符号左侧的值是否不等于右侧的值。<br>关系成立则返回 <code>true</code>，反之则返回 <code>false</code>。</p>
+</li>
+</ul>
+<p><strong>非 Number 的关系运算：</strong></p>
+<ul>
+<li><p>对于非数值类型的值进行关系运算时，会将其先转换为 Number 再进行计算。</p>
+</li>
+<li><p>如果符号两侧的值都是字符串时，不会将其转换为数字进行比较，而会从左至右按位分别比较字符的 Unicode 编码。<br>因此可以用来对英文进行排序，但是比较中文时无任何意义。<br>注意：在比较两个字符串型的数字时，一定要先手动转换类型。</p>
+</li>
+<li><p>任何值与 <code>NaN</code> 进行关系运算，都返回 <code>false</code>。</p>
+</li>
+<li><p><code>undefined</code> 衍生自 <code>null</code>，因此这两个值作相等判断时返回 <code>true</code>。<br><code>console.log(undefined == null);</code> 结果为 <code>true</code></p>
+</li>
+</ul>
+<h3 id="不自动转换类型"><a href="#不自动转换类型" class="headerlink" title="不自动转换类型"></a>不自动转换类型</h3><ul>
+<li><code>===</code> 全等<br>判断符号两侧的值是否全等，不会自动做类型转换。<br>关系成立则返回 <code>true</code>，反之则返回 <code>false</code>。</li>
+</ul>
+<ul>
+<li><code>!==</code> 不全等<br>判断符号两侧的值是否不全等，不会自动做类型转换。<br>关系成立则返回 <code>true</code>，反之则返回 <code>false</code>。</li>
+</ul>
+<p><strong>注意：</strong></p>
+<ul>
+<li><code>NaN</code> 不与任何值相等，包括它本身。</li>
+</ul>
+<ul>
+<li><code>console.log(undefined === null);</code> 结果为 <code>false</code></li>
+</ul>
+<ul>
+<li>可以使用 <code>isNaN()</code> 函数来判断一个值是否为 <code>NaN</code>，若该值是 <code>NaN</code> 则返回 <code>true</code>，反之则返回 <code>false</code>。</li>
+</ul>
+<hr>
+<h2 id="条件运算符"><a href="#条件运算符" class="headerlink" title="条件运算符"></a>条件运算符</h2><p>也叫三元运算符或者三目运算符。</p>
+<ul>
+<li><p>语法：<br><code>条件表达式 ? 语句 1 : 语句 2;</code></p>
+</li>
+<li><p>执行流程<br>首先对<code>条件表达式</code>进行求值，如果该值为 <code>true</code>，则执行<code>语句 1</code>，并返回结果；如果该值为 <code>false</code>，则执行<code>语句 2</code>，并返回结果。</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>, b = <span class="number">20</span>, c = <span class="number">30</span>;</span><br><span class="line"><span class="comment">/** 获取 a、b、c 中的最大值 **/</span></span><br><span class="line"><span class="keyword">var</span> max = a &gt; b ? a : b; <span class="comment">// 将 a 和 b 中的最大值赋值给 max</span></span><br><span class="line">max = max &gt; c ? max : c; <span class="comment">// 将 max 和 c 中的最大值赋值给 max</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">max = a &gt; b ? a &gt; c ? a : b &gt; c ? b : c;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="逗号运算符"><a href="#逗号运算符" class="headerlink" title="逗号运算符"></a>逗号运算符</h2><p>使用 <code>,</code> 可以分割多个语句，一般可以在声明多个变量时使用，使用 <code>,</code> 运算符同时声明多个变量。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a, b, c;</span><br><span class="line"><span class="keyword">var</span> x = <span class="number">10</span>, y = <span class="number">20</span>, z = <span class="number">30</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="运算符的优先级"><a href="#运算符的优先级" class="headerlink" title="运算符的优先级"></a>运算符的优先级</h2><p>与数学中一样，JavaScript 的运算符也有优先级。</p>
+<p>运算符的优先级：</p>
+<ul>
+<li><code>.</code> <code>[]</code> <code>new</code></li>
+<li><code>()</code></li>
+<li><code>++</code> <code>--</code></li>
+<li><code>!</code> <code>~</code> <code>+（单目）</code> <code>-（单目）</code> <code>typeof</code> <code>void</code> <code>delete</code></li>
+<li><code>%</code> <code>*</code> <code>/</code></li>
+<li><code>+（双目）</code> <code>-（双目）</code></li>
+<li><code>&lt;&lt;</code> <code>&gt;&gt;</code> <code>&gt;&gt;&gt;</code></li>
+<li><code>&lt;</code> <code>&lt;=</code> <code>&gt;</code> <code>&gt;=</code></li>
+<li><code>==</code> <code>!==</code> <code>===</code></li>
+<li><code>&amp;</code></li>
+<li><code>^</code></li>
+<li><code>|</code></li>
+<li><code>&amp;&amp;</code></li>
+<li><code>||</code></li>
+<li><code>?:</code></li>
+<li><code>=</code> <code>+=</code> <code>-=</code> <code>*=</code> <code>/=</code> <code>%=</code> <code>&lt;&lt;=</code> <code>&gt;&gt;=</code> <code>&gt;&gt;&gt;=</code> <code>&amp;=</code> <code>^=</code> <code>|=</code></li>
+<li><code>,</code></li>
+</ul>
+<blockquote>
+<p>上表列出的优先级从上至下由高到低，同一行优先级相同。</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/javascript-basics/06.html" rel="prev" title="强制类型转换">
+      <i class="fa fa-chevron-left"></i> 强制类型转换
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/javascript-basics/08.html" rel="next" title="流程控制语句">
+      流程控制语句 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#算术运算符"><span class="nav-number">1.</span> <span class="nav-text">算术运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一元运算符"><span class="nav-number">2.</span> <span class="nav-text">一元运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自增和自减"><span class="nav-number">3.</span> <span class="nav-text">自增和自减</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">4.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#赋值运算符"><span class="nav-number">5.</span> <span class="nav-text">赋值运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系运算符"><span class="nav-number">6.</span> <span class="nav-text">关系运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自动转换类型"><span class="nav-number">6.1.</span> <span class="nav-text">自动转换类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不自动转换类型"><span class="nav-number">6.2.</span> <span class="nav-text">不自动转换类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件运算符"><span class="nav-number">7.</span> <span class="nav-text">条件运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逗号运算符"><span class="nav-number">8.</span> <span class="nav-text">逗号运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符的优先级"><span class="nav-number">9.</span> <span class="nav-text">运算符的优先级</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">玖燃</p>
+  <div class="site-description" itemprop="description">专注于分享知识、资源</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/nine-fire" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;nine-fire" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/mailto:xiaowei_air@163.com" title="E-Mail → mailto:xiaowei_air@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">玖燃</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

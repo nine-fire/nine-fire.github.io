@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>按钮练习</title>
+    <style type="text/css">
+        body {
+            background: #bfa;
+        }
+
+        .btn {
+            /* 设置超链接为块元素 */
+            display: block;
+            /* 设置超链接大小 */
+            width: 93px;
+            height: 29px;
+            /* 使超链接居中显示以方便观察 */
+            margin: 300px auto;
+            /* 给超链接设置背景图片 */
+            background-image: url(/images/htmlcssbasics/1058/btn.png)
+        }
+
+        .btn:hover {
+            background-position: -93px;
+        }
+
+        .btn:active {
+            background-position: -186px;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#null" class="btn"></a>
+</body>
+
+</html>

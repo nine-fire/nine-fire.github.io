@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://ninefire.gitee.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"default"},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="数组（Array） 数组也是一个对象（废话）。 数组和普通对象功能类似，也是用来存储一些值的。 不同的是普通对象是使用字符串作为属性名来操作属性的，而数组是使用数字作为索引来操作元素的。 索引：从0开始的整数就是索引。 数组的存储性能比普通对象更好，在开发中经常使用数组来存储一些数据。 普通对象的存储">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组简介">
+<meta property="og:url" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;javascript-basics&#x2F;15.html">
+<meta property="og:site_name" content="玖燃">
+<meta property="og:description" content="数组（Array） 数组也是一个对象（废话）。 数组和普通对象功能类似，也是用来存储一些值的。 不同的是普通对象是使用字符串作为属性名来操作属性的，而数组是使用数字作为索引来操作元素的。 索引：从0开始的整数就是索引。 数组的存储性能比普通对象更好，在开发中经常使用数组来存储一些数据。 普通对象的存储">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-20T14:09:04.393Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://ninefire.gitee.io/javascript-basics/15.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>数组简介 | 玖燃</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">玖燃</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">永远不要失去对生活的激情</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://ninefire.gitee.io/javascript-basics/15.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="玖燃">
+      <meta itemprop="description" content="专注于分享知识、资源">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="玖燃">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数组简介
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-06-08 00:00:15" itemprop="dateCreated datePublished" datetime="2018-06-08T00:00:15+08:00">2018-06-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2018-08-20 22:09:04" itemprop="dateModified" datetime="2018-08-20T22:09:04+08:00">2018-08-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaScript%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript基础</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>数组（Array）</strong></p><ul>
+<li>数组也是一个对象（废话）。</li>
+<li>数组和普通对象功能类似，也是用来存储一些值的。</li>
+<li>不同的是普通对象是使用字符串作为属性名来操作属性的，而数组是使用数字作为索引来操作元素的。</li>
+<li>索引：从<code>0</code>开始的整数就是索引。</li>
+<li>数组的存储性能比普通对象更好，在开发中经常使用数组来存储一些数据。</li>
+</ul><p><em>普通对象的存储</em></p><a id="more"></a>
+
+
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>属性值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>“age”</td>
+<td>18</td>
+</tr>
+<tr>
+<td>“name”</td>
+<td>“李建刚”</td>
+</tr>
+</tbody></table>
+<p><em>数组对象的存储</em></p>
+<table>
+<thead>
+<tr>
+<th>索引（index）</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>5</td>
+<td>57</td>
+</tr>
+<tr>
+<td>4</td>
+<td>24</td>
+</tr>
+<tr>
+<td>3</td>
+<td>90</td>
+</tr>
+<tr>
+<td>2</td>
+<td>22</td>
+</tr>
+<tr>
+<td>1</td>
+<td>33</td>
+</tr>
+<tr>
+<td>0</td>
+<td>10</td>
+</tr>
+</tbody></table>
+<h2 id="数组的基本操作"><a href="#数组的基本操作" class="headerlink" title="数组的基本操作"></a>数组的基本操作</h2><ul>
+<li>使用<code>new Array()</code>创建数组</li>
+</ul>
+<ul>
+<li>向数组中添加元素<br>语法：<code>数组[索引] = 值;</code></li>
+</ul>
+<ul>
+<li>读取数组中的元素<br>语法<code>数组[索引]</code></li>
+</ul>
+<ul>
+<li>如果读取不存在的索引，会返回<code>undefined</code>。</li>
+</ul>
+<ul>
+<li>使用<code>length</code>属性获取数组的长度（数组中多少元素）<br>语法：<code>数组.length</code><br>length = 最大的索引 + 1</li>
+</ul>
+<ul>
+<li>如果修改的length大于原长度，则多出部分会空出来；<br>如果修改的length小于原长度，则多出的元素会被删除。</li>
+</ul>
+<ul>
+<li>向数组的最后一个位置添加元素<br>语法：<code>数组[数组.length] = 值;</code></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建数组对象</span></span><br><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 检查数组的类型</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> arr); <span class="comment">// object</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 向数组中添加元素 语法：数组[索引] = 值;</span></span><br><span class="line">arr[<span class="number">0</span>] = <span class="number">10</span>; <span class="comment">// 向数组索引为0的位置添加一个值20</span></span><br><span class="line">arr[<span class="number">1</span>] = <span class="number">33</span>;</span><br><span class="line">arr[<span class="number">2</span>] = <span class="number">22</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 读取数组中的元素 语法：数组[索引]</span></span><br><span class="line"><span class="built_in">console</span>.log(arr[<span class="number">0</span>]); <span class="comment">// 10</span></span><br><span class="line"><span class="built_in">console</span>.log(arr[<span class="number">1</span>]); <span class="comment">// 33</span></span><br><span class="line"><span class="built_in">console</span>.log(arr[<span class="number">2</span>]); <span class="comment">// 22</span></span><br><span class="line"><span class="built_in">console</span>.log(arr[<span class="number">3</span>]); <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取数组的长度</span></span><br><span class="line"><span class="built_in">console</span>.log(arr.length); <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 修改数组的长度，末尾的元素会被删除</span></span><br><span class="line">length = <span class="number">2</span>; <span class="comment">// 22被删除</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 向数组的末尾添加值</span></span><br><span class="line">arr[arr.length] = <span class="number">70</span>;</span><br><span class="line">arr[arr.length] = <span class="number">80</span>;</span><br><span class="line">arr[arr.length] = <span class="number">90</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>创建数组</strong></p>
+<p>语法：<code>数组 = [];</code></p>
+<ul>
+<li>使用字面量创建数组时，可以在创建时就指定数组中的元素。<br>元素之间使用逗号隔开。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用字面量创建数组</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">10</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr.length); <span class="comment">// 6</span></span><br><span class="line"><span class="built_in">console</span>.log(arr[<span class="number">3</span>]); <span class="comment">// 4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用构造函数创建数组，可以将元素作为函数的参数传递，</span></span><br><span class="line"><span class="comment">// 元素之间使用逗号隔开</span></span><br><span class="line"><span class="keyword">var</span> arr2 = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个数组只有一个元素10</span></span><br><span class="line"><span class="keyword">var</span> arr3 = [<span class="number">10</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个长度为10的数组</span></span><br><span class="line"><span class="keyword">var</span> arr4 = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">10</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>数组中的元素可以是任意的数据类型</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 数组中的元素可以是任何数据类型</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="string">"hello"</span>, <span class="number">2</span>, <span class="literal">true</span>, <span class="literal">null</span>, <span class="literal">undefined</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 也可以是对象</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">name</span>:<span class="string">"李建刚"</span>&#125;;</span><br><span class="line">arr[arr.length] = obj;</span><br><span class="line">arr = [&#123;<span class="attr">name</span>:<span class="string">"name1"</span>&#125;, &#123;<span class="attr">name</span>:<span class="string">"name2"</span>&#125;, &#123;<span class="attr">name</span>:<span class="string">"name3"</span>&#125;];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 也可以是函数</span></span><br><span class="line">arr = [<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="number">1</span>);&#125;, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="number">2</span>);&#125;]</span><br><span class="line"></span><br><span class="line"><span class="comment">// 也可以是数组，如下这种也称为二维数组</span></span><br><span class="line">arr = [[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>], [<span class="number">6</span>, <span class="number">7</span>]];</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/javascript-basics/14.html" rel="prev" title="原型对象">
+      <i class="fa fa-chevron-left"></i> 原型对象
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/javascript-basics/16.html" rel="next" title="数组">
+      数组 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数组的基本操作"><span class="nav-number">1.</span> <span class="nav-text">数组的基本操作</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">玖燃</p>
+  <div class="site-description" itemprop="description">专注于分享知识、资源</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/nine-fire" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;nine-fire" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/mailto:xiaowei_air@163.com" title="E-Mail → mailto:xiaowei_air@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">玖燃</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

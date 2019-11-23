@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://ninefire.gitee.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"default"},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="强制类型转换指的是将一个数据类型强制转换为其他的数据类型。类型转换主要指，将其他数据类型转换为 String Number Boolean 转换为 String方式一： 调用被转换数据类型的 toString() 方法该方法不会影响原变量的值，它会将转换的结果返回。注意：null 和 undefined 这两个值没有 toString() 方法。">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="强制类型转换">
+<meta property="og:url" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;javascript-basics&#x2F;06.html">
+<meta property="og:site_name" content="玖燃">
+<meta property="og:description" content="强制类型转换指的是将一个数据类型强制转换为其他的数据类型。类型转换主要指，将其他数据类型转换为 String Number Boolean 转换为 String方式一： 调用被转换数据类型的 toString() 方法该方法不会影响原变量的值，它会将转换的结果返回。注意：null 和 undefined 这两个值没有 toString() 方法。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-23T08:59:33.077Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://ninefire.gitee.io/javascript-basics/06.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>强制类型转换 | 玖燃</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">玖燃</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">永远不要失去对生活的激情</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://ninefire.gitee.io/javascript-basics/06.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="玖燃">
+      <meta itemprop="description" content="专注于分享知识、资源">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="玖燃">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          强制类型转换
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-06-08 00:00:06" itemprop="dateCreated datePublished" datetime="2018-06-08T00:00:06+08:00">2018-06-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-23 16:59:33" itemprop="dateModified" datetime="2019-11-23T16:59:33+08:00">2019-11-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaScript%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript基础</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>强制类型转换</strong><br>指的是将一个数据类型强制转换为其他的数据类型。<br>类型转换主要指，将其他数据类型转换为</p><ul>
+<li>String</li>
+<li>Number</li>
+<li>Boolean</li>
+</ul><h2 id="转换为-String"><a href="#转换为-String" class="headerlink" title="转换为 String"></a>转换为 String</h2><p><strong>方式一：</strong></p><ul>
+<li>调用被转换数据类型的 <code>toString()</code> 方法<br>该方法不会影响原变量的值，它会将转换的结果返回。<br>注意：<code>null</code> 和 <code>undefined</code> 这两个值没有 <code>toString()</code> 方法。</li>
+</ul><a id="more"></a>
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">123</span>;</span><br><span class="line"><span class="comment">// 调用 a 的 toString() 方法，并将返回结果赋值给变量 b</span></span><br><span class="line"><span class="keyword">var</span> b = a.toString(string);</span><br></pre></td></tr></table></figure>
+
+<p><strong>方式二：</strong></p>
+<ul>
+<li>调用 <code>String()</code> 函数，并将被转换数据作为参数传递给函数<br>对于 Number 和 Boolean 实际上依然是调用的 <code>toString()</code> 方法，但对于 <code>null</code> 和 <code>undefined</code> 就有所不同，它会将 <code>null</code> 直接转换为 <code>&quot;null&quot;</code>，将 <code>undefined</code> 直接转换为 <code>&quot;undefined&quot;</code>。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">123</span>;</span><br><span class="line"><span class="comment">// 将 a 作为参数并调用 String() 函数</span></span><br><span class="line">a = <span class="built_in">String</span>(a); <span class="comment">// 将转换结果赋值给 a</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>调用 <code>xxx</code> 的 <code>yyy()</code> 方法，就是 <code>xxx.yyy();</code><br>调用 <code>zzz()</code> 函数，就是 <code>zzz();</code></p>
+</blockquote>
+<hr>
+<h2 id="转换为Number"><a href="#转换为Number" class="headerlink" title="转换为Number"></a>转换为Number</h2><p><strong>方式一：</strong></p>
+<ul>
+<li>调用 <code>Number()</code> 函数，并将被转换数据作为参数传递给函数<ul>
+<li>String –&gt; Number<ul>
+<li>如果是纯数字的字符串，则直接将其转换为数字</li>
+<li>如果字符串中有非数字的内容，则转换为 <code>NaN</code></li>
+<li>如果字符串是一个空串或者只有空格的串，则转换为 <code>0</code></li>
+</ul>
+</li>
+<li>Boolean –&gt; Number<ul>
+<li><code>true</code> 转换为 <code>1</code></li>
+<li><code>false</code> 转换为 <code>0</code></li>
+</ul>
+</li>
+<li>Null –&gt; Number<ul>
+<li>结果为 <code>0</code></li>
+</ul>
+</li>
+<li>Undefined –&gt; Number<ul>
+<li>结果为 <code>NaN</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">"123"</span>;</span><br><span class="line"><span class="comment">// 将 a 作为参数并调用 Number() 函数</span></span><br><span class="line">a = <span class="built_in">Number</span>(a); <span class="comment">// 将转换结果赋值给 a</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>方式二：</strong><br>这种方式专门用来对付字符串。</p>
+<ul>
+<li>调用 <code>parseInt()</code> 函数<br>把字符串转换为整数。<br>该函数可以将一个字符串中有效的整数内容取出，然后转换为 Number。</li>
+</ul>
+<ul>
+<li>调用 <code>parseFloat()</code> 函数<br>把字符串转换为浮点数。<br>该函数可以将一个字符串中有效的浮点数内容取出，然后转换为 Number。</li>
+</ul>
+<p>如果对非 String 使用 <code>parseInt()</code> 或 <code>parseFloat()</code> 函数，它会将其先转换为 String 再进行操作。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">"200px"</span>;</span><br><span class="line"><span class="comment">// 将 a 作为参数并调用 parseInt() 函数</span></span><br><span class="line">a = <span class="built_in">parseInt</span>(a); <span class="comment">// 将转换结果赋值给 a</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = <span class="string">"3.1415926 cm"</span>;</span><br><span class="line">b = <span class="built_in">parseInt</span>(b);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c = <span class="string">"3.1415926 cm"</span></span><br><span class="line">c = <span class="built_in">parseFloat</span>(c);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> d = <span class="string">"123.456.789.abc"</span></span><br><span class="line">d = <span class="built_in">parseFloat</span>(d);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> e = <span class="literal">true</span>;</span><br><span class="line">e = <span class="built_in">parseInt</span>(e);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">结果:</span><br><span class="line">a = 200</span><br><span class="line">b = 3</span><br><span class="line">c = 3.1415926</span><br><span class="line">d = 123.456</span><br><span class="line">e = NaN</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="转换为-Boolean"><a href="#转换为-Boolean" class="headerlink" title="转换为 Boolean"></a>转换为 Boolean</h2><ul>
+<li>调用 <code>Boolean()</code> 函数<ul>
+<li>Number –&gt; Boolean<br>除了 <code>0</code> 和 <code>NaN</code> 是 <code>false</code>，其余的都是 <code>true</code></li>
+<li>String –&gt; Boolean<br>除了空串是 <code>false</code>，其余的都是 <code>true</code></li>
+<li>Null 和 Undefined 都会转换为 <code>false</code></li>
+<li>Object会转换为 <code>true</code></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">123</span>;</span><br><span class="line">a = <span class="built_in">Boolean</span>(a);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = <span class="number">-456</span>;</span><br><span class="line">b = <span class="built_in">Boolean</span>(b);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c = <span class="number">0</span>;</span><br><span class="line">c = <span class="built_in">Boolean</span>(c);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> d = <span class="literal">null</span>;</span><br><span class="line">d = <span class="built_in">Boolean</span>(d);</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h2><p><strong>JS 中其他进制的表示</strong></p>
+<ul>
+<li>以 <code>0x</code> 开头表示十六进制数<br>例：<code>0xff</code>、<code>0x10</code>、<code>0xcafe</code></li>
+</ul>
+<ul>
+<li>以 <code>0</code> 开头表示八进制数<br>例：<code>070</code>、<code>022</code>、<code>065535</code></li>
+</ul>
+<ul>
+<li>以 <code>0b</code> 开头表示二进制数<br>例：<code>0b11</code>、<code>0b1001</code>、<code>0b10100101101</code><br>注意：不是所有浏览器都支持。</li>
+</ul>
+<p>注意以下情况：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">"070"</span></span><br><span class="line">a = <span class="built_in">parseInt</span>(a);</span><br></pre></td></tr></table></figure>
+
+<p>像 <code>070</code> 这种字符串，有些浏览器会当作八进制解析，有些会当作十进制解析，那么可以在 <code>parseInt()</code> 中传递第二个参数，来指定数字的进制，以解决浏览器不统一的问题。<br>例：<code>a = parseInt(a, 10);</code></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/javascript-basics/05.html" rel="prev" title="JavaScript 数据类型">
+      <i class="fa fa-chevron-left"></i> JavaScript 数据类型
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/javascript-basics/07.html" rel="next" title="运算符">
+      运算符 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#转换为-String"><span class="nav-number">1.</span> <span class="nav-text">转换为 String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转换为Number"><span class="nav-number">2.</span> <span class="nav-text">转换为Number</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转换为-Boolean"><span class="nav-number">3.</span> <span class="nav-text">转换为 Boolean</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拓展"><span class="nav-number">4.</span> <span class="nav-text">拓展</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">玖燃</p>
+  <div class="site-description" itemprop="description">专注于分享知识、资源</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/nine-fire" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;nine-fire" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/mailto:xiaowei_air@163.com" title="E-Mail → mailto:xiaowei_air@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">玖燃</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>圣杯布局</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-width: 900px;
+        }
+
+        .clearfix::before,
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .header,
+        .footer {
+            height: 50px;
+            background: gray;
+            text-align: center;
+        }
+
+        .content {
+            padding: 0 300px;
+        }
+
+        .content div {
+            height: 600px;
+        }
+
+        .left {
+            width: 300px;
+            background: orange;
+            float: left;
+            margin-left: -100%;
+            position: relative;
+            left: -300px;
+        }
+
+        .middle {
+            width: 100%;
+            background: #bfa;
+            float: left;
+        }
+
+        .right {
+            width: 300px;
+            background: orange;
+            float: left;
+            margin-left: -300px;
+            position: relative;
+            left: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">header</div>
+    <div class="content clearfix">
+        <div class="middle">middle</div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+    </div>
+    <div class="footer">footer</div>
+</body>
+
+</html>

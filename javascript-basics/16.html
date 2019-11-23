@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://ninefire.gitee.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"default"},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="数组的常用方法 使用push()方法可以向数组的末尾添加一个或多个元素，并返回数组新的长度。可以将需要添加的元素作为参数传递，这些元素将会自动添加到数组的末尾。 12345678910&#x2F;&#x2F; 创建一个数组var arr = [&quot;孙悟空&quot;, &quot;猪八戒&quot;, &quot;沙僧&quot;];&#x2F;&#x2F; 可以将需要添加的元素作为参数传递&#x2F;&#x2F; 多个元素以逗号隔开arr.push(&quot;唐僧&quot;, &quot;白骨精&quot;, &quot;蜘蛛精&quot;);&#x2F;&#x2F; 该方法会将">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组">
+<meta property="og:url" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;javascript-basics&#x2F;16.html">
+<meta property="og:site_name" content="玖燃">
+<meta property="og:description" content="数组的常用方法 使用push()方法可以向数组的末尾添加一个或多个元素，并返回数组新的长度。可以将需要添加的元素作为参数传递，这些元素将会自动添加到数组的末尾。 12345678910&#x2F;&#x2F; 创建一个数组var arr = [&quot;孙悟空&quot;, &quot;猪八戒&quot;, &quot;沙僧&quot;];&#x2F;&#x2F; 可以将需要添加的元素作为参数传递&#x2F;&#x2F; 多个元素以逗号隔开arr.push(&quot;唐僧&quot;, &quot;白骨精&quot;, &quot;蜘蛛精&quot;);&#x2F;&#x2F; 该方法会将">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-22T05:27:42.614Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://ninefire.gitee.io/javascript-basics/16.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>数组 | 玖燃</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">玖燃</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">永远不要失去对生活的激情</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://ninefire.gitee.io/javascript-basics/16.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="玖燃">
+      <meta itemprop="description" content="专注于分享知识、资源">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="玖燃">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数组
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-06-08 00:00:16" itemprop="dateCreated datePublished" datetime="2018-06-08T00:00:16+08:00">2018-06-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2018-08-22 13:27:42" itemprop="dateModified" datetime="2018-08-22T13:27:42+08:00">2018-08-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaScript%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript基础</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="数组的常用方法"><a href="#数组的常用方法" class="headerlink" title="数组的常用方法"></a>数组的常用方法</h2><ul>
+<li>使用<code>push()</code>方法可以向数组的末尾添加一个或多个元素，并返回数组新的长度。<br>可以将需要添加的元素作为参数传递，这些元素将会自动添加到数组的末尾。</li>
+</ul><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个数组</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="string">"孙悟空"</span>, <span class="string">"猪八戒"</span>, <span class="string">"沙僧"</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 可以将需要添加的元素作为参数传递</span></span><br><span class="line"><span class="comment">// 多个元素以逗号隔开</span></span><br><span class="line">arr.push(<span class="string">"唐僧"</span>, <span class="string">"白骨精"</span>, <span class="string">"蜘蛛精"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 该方法会将数组新的长度返回</span></span><br><span class="line"><span class="keyword">var</span> result = arr.push(<span class="string">"唐僧"</span>, <span class="string">"白骨精"</span>, <span class="string">"蜘蛛精"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// 6</span></span><br></pre></td></tr></table></figure><a id="more"></a>
+
+
+<ul>
+<li>使用<code>pop()</code>方法可以删除数组的最后一个元素，并返回删除的元素。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">result = arr.pop();</span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// 蜘蛛精</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用<code>unshift()</code>方法可以向数组的开头插入一个或多个元素，并返回数组新的长度。<br>向开头插入元素以后，其他元素的索引会依次调整。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result = arr.unshift(<span class="string">"牛魔王"</span>, <span class="string">"二郎神"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// 8</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用<code>shift()</code>方法可以删除数组的第一个元素，并返回删除的元素。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result = arr.shift();</span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// 牛魔王</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用<code>slice()</code>方法可以提取数组中的指定元素<br>参数：（左闭右开区间）相当于<code>[begin,end)</code><ol>
+<li>截取开始位置的索引，包含开始索引</li>
+<li>截取结束位置的索引，不包含结束索引<br>第2个参数省略则截取从开始位置到数组最后</li>
+</ol>
+<ul>
+<li>如果传递一个负值，则从后往前计算，例如<code>-2</code>为倒数第2个元素</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result = arr.slice(<span class="number">2</span>, <span class="number">4</span>); <span class="comment">// 截取数组中从第3个到第5个元素</span></span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// 沙僧,唐僧</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result = arr.slice(<span class="number">3</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// 唐僧,白骨精,蜘蛛精</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result = arr.slice(<span class="number">1</span>,<span class="number">-2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// 猪八戒,沙僧,唐僧</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用<code>splice()</code>方法可以删除数组中的指定元素<br>会将指定元素从原数组中删除，并返回删除的元素。<br>参数：<ol>
+<li>开始位置的索引</li>
+<li>删除的数量</li>
+<li>第三个及以后的参数会作为元素插入到开始位置索引之前</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> result = arr.splice(<span class="number">3</span>,<span class="number">2</span>,<span class="string">"二郎神"</span>,<span class="string">"武曲星君"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// 唐僧,白骨精</span></span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// 孙悟空,猪八戒,沙僧,二郎神,武曲星君,蜘蛛精</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用<code>concat()</code>方法可以连接两个或多个数组，并返回新数组<br>不会修改原数组，新数组以返回值返回。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> newarr = arr1.concat(arr2);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> newarr = arr2.concat(arr3,arr4,<span class="string">"元素"</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用<code>join()</code>方法可以将数组转换为字符串<br>不会修改原数组，字符串以返回值返回。<br>可以指定一个字符串作为参数，该字符串将成为元素之间的连接符，默认是逗号作为连接符。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr_str = arr.join();</span><br><span class="line"><span class="built_in">console</span>.log(arr_str); <span class="comment">// 孙悟空,猪八戒,沙僧,二郎神,武曲星君,蜘蛛精</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> arr_str); <span class="comment">// string</span></span><br><span class="line"></span><br><span class="line">arr_str = arr.join(<span class="string">"-"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arr_str); <span class="comment">// 孙悟空-猪八戒-沙僧-二郎神-武曲星君-蜘蛛精</span></span><br><span class="line"></span><br><span class="line">arr_str = arr.join(<span class="string">""</span>);</span><br><span class="line"><span class="built_in">console</span>.log(arr_str); <span class="comment">// 孙悟空猪八戒沙僧二郎神武曲星君蜘蛛精</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>使用<code>reverse()</code>方法可以反转数组<br>直接修改原数组，颠倒整个数组。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>];</span><br><span class="line"></span><br><span class="line">arr.reverse();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="number">6</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用<code>sort()</code>方法可以对数组元素进行排序</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 对字符串排序，默认按照Unicode编码排序</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="string">"b"</span>, <span class="string">"d"</span>, <span class="string">"e"</span>, <span class="string">"a"</span>, <span class="string">"c"</span>];</span><br><span class="line">arr.sort();</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// a,b,c,d,e</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 对数字排序，也会按照Unicode编码排序</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">5</span>, <span class="number">11</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">1</span>];</span><br><span class="line">arr.sort();</span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// 11,1,2,3,4,5</span></span><br></pre></td></tr></table></figure>
+
+<p>自定义排序规则，给<code>sort()</code>添加一个回调函数来指定排序规则。<br>回调函数需要指定两个形式参数，两个形参分别代表了数组中的两个元素，第二个参数永远代表第一个参数之后的元素。<br>浏览器会根据回调函数的返回值来决定这两个元素的顺序：<br>若返回值大于0，则两个元素交换位置；<br>若返回值小于0，则元素位置不变；<br>若返回值等于0，则认为两元素相等。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">5</span>, <span class="number">11</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">arr.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>)</span>&#123;</span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">  if(a &gt; b)&#123;</span></span><br><span class="line"><span class="comment">    return -1;</span></span><br><span class="line"><span class="comment">  &#125;else if(a &lt; b)&#123;</span></span><br><span class="line"><span class="comment">    return 1;</span></span><br><span class="line"><span class="comment">  &#125;else&#123;</span></span><br><span class="line"><span class="comment">    return 0;</span></span><br><span class="line"><span class="comment">  &#125;</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment">// 更加简洁的方法</span></span><br><span class="line">  <span class="keyword">return</span> a - b; <span class="comment">// 升序</span></span><br><span class="line"><span class="comment">//return b - a;    降序</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// 1,2,3,4,5,11</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="数组的遍历"><a href="#数组的遍历" class="headerlink" title="数组的遍历"></a>数组的遍历</h2><h3 id="使用循环遍历数组中的每一个元素"><a href="#使用循环遍历数组中的每一个元素" class="headerlink" title="使用循环遍历数组中的每一个元素"></a>使用循环遍历数组中的每一个元素</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span> ; i &lt; arr.length ; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(arr[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用forEach-方法遍历数组"><a href="#使用forEach-方法遍历数组" class="headerlink" title="使用forEach()方法遍历数组"></a>使用<code>forEach()</code>方法遍历数组</h3><p>  这个方法仅支持IE8以上的浏览器。</p>
+<ul>
+<li>由我们创建但不由我们调用的函数，称为回调函数<br>例如下面这个匿名函数。</li>
+</ul>
+<ul>
+<li>数组中有多少个元素函数就会执行多少次，每次执行时，浏览器会将遍历到的元素以实参的形式传递进来，我们可以定义形参来读取这些内容。</li>
+</ul>
+<ul>
+<li>浏览器会在回调函数中传递三个参数：<ol>
+<li>当前正在遍历的元素</li>
+<li>当前正在遍历的元素的索引</li>
+<li>正在遍历的数组</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">value, index, obj</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(value);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/javascript-basics/15.html" rel="prev" title="数组简介">
+      <i class="fa fa-chevron-left"></i> 数组简介
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/javascript-basics/17.html" rel="next" title="另外两个对象">
+      另外两个对象 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数组的常用方法"><span class="nav-number">1.</span> <span class="nav-text">数组的常用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组的遍历"><span class="nav-number">2.</span> <span class="nav-text">数组的遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用循环遍历数组中的每一个元素"><span class="nav-number">2.1.</span> <span class="nav-text">使用循环遍历数组中的每一个元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用forEach-方法遍历数组"><span class="nav-number">2.2.</span> <span class="nav-text">使用forEach()方法遍历数组</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">玖燃</p>
+  <div class="site-description" itemprop="description">专注于分享知识、资源</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/nine-fire" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;nine-fire" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/mailto:xiaowei_air@163.com" title="E-Mail → mailto:xiaowei_air@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">玖燃</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

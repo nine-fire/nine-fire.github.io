@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://ninefire.gitee.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"default"},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="本文献给想从事本专业而又迷茫的朋友，希望对你有一丝帮助。以下均为个人见解，如有不恰当之处请自行忽略。IT 行业垂直分类可以分为硬件类、软件类、互联网类、增值服务类等 4 大类。我们就业时也必定会进入此类企业之一。IT 专业可以分为硬件和软件，物联网工程与软件工程不同，它将硬件和软件联系得更加紧密。大多数人也许都在思考，自己应该专研哪门课程，应该学习什么编程语言，什么样的技术适合自己，怎么学习将来才">
+<meta name="keywords" content="编程,专业">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈 IT 专业">
+<meta property="og:url" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;chat&#x2F;it.html">
+<meta property="og:site_name" content="玖燃">
+<meta property="og:description" content="本文献给想从事本专业而又迷茫的朋友，希望对你有一丝帮助。以下均为个人见解，如有不恰当之处请自行忽略。IT 行业垂直分类可以分为硬件类、软件类、互联网类、增值服务类等 4 大类。我们就业时也必定会进入此类企业之一。IT 专业可以分为硬件和软件，物联网工程与软件工程不同，它将硬件和软件联系得更加紧密。大多数人也许都在思考，自己应该专研哪门课程，应该学习什么编程语言，什么样的技术适合自己，怎么学习将来才">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-23T09:21:25.711Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://ninefire.gitee.io/chat/it.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>浅谈 IT 专业 | 玖燃</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">玖燃</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">永远不要失去对生活的激情</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://ninefire.gitee.io/chat/it.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="玖燃">
+      <meta itemprop="description" content="专注于分享知识、资源">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="玖燃">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          浅谈 IT 专业
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-09-07 00:00:02" itemprop="dateCreated datePublished" datetime="2018-09-07T00:00:02+08:00">2018-09-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-23 17:21:25" itemprop="dateModified" datetime="2019-11-23T17:21:25+08:00">2019-11-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%9A%8F%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">随记</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>本文献给想从事本专业而又迷茫的朋友，希望对你有一丝帮助。</p><p>以下均为个人见解，如有不恰当之处请自行忽略。</p><p>IT 行业垂直分类可以分为硬件类、软件类、互联网类、增值服务类等 4 大类。我们就业时也必定会进入此类企业之一。IT 专业可以分为硬件和软件，物联网工程与软件工程不同，它将硬件和软件联系得更加紧密。大多数人也许都在思考，自己应该专研哪门课程，应该学习什么编程语言，什么样的技术适合自己，怎么学习将来才能找到满意的工作。但是我想告诉你的是，哪怕你专研最喜欢的课程，学习最流行的编程语言，也不一定可以找到满意的工作。现实是很残酷的，三百六十行，行行都水深，你必须先从宏观上去了解这个行业，才能给自己良好的定位，才能给自己正确的方向。</p><a id="more"></a>
+
+
+<p>你可能会想，自己选择了一个不合适的专业，大学生活和我想要的不一样。如同武汉某老总所说，“你只需要考虑你要不要做技术。”，她嘴里别的话可以不信，但这句可以是真的。我认为本科的课程只是教学生基础知识和学习方法，换言之，你大学每堂课都认真听，考试成绩全优，顺利毕业也不会百分百找到好工作，课时真的很少，老师想把知道的一切都告诉你，但是时间能允许你接受多少，你自己又能吸收多少，显然老师和学生都做不到。老师教给了我们思考问题的方法，解决问题的套路，我们必须去使用，一遍遍重复地使用，最终我们会和老师一样优秀。</p>
+<p>我们可以讨厌一门学科，但不能排斥一门学科，任何知识在有限的人生当中都是有意义的。</p>
+<p>从本质上讲，物联网工程与软件工程没有区别，乃至所有本科计算机专业，毕业之后我们全部在同一起跑线，在企业看来我们都是 IT 专业的学生，他只在乎你会做什么，你有什么工作经验。别因为本科专业限制了我们的梦想，只要我们在学，而别人在玩，我们就在前面，我们就有竞争力。</p>
+<p>世界确实不算好，但我们一定要以欣赏的眼光去看待。<br>交际确实不容易，但我们一定要以宽容的心态的待人。</p>
+<p>学历决定我们的底线，能力决定我们的高度。</p>
+<p>下面进入正题，谈一谈硬件和软件。</p>
+<hr>
+<h2 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h2><p>抱歉的是我对硬件不是很感冒，所以这里只是粗略地介绍。</p>
+<p>硬件对应于以下课程</p>
+<ul>
+<li>模拟电路</li>
+<li>数字电路</li>
+<li>RFID 射频识别技术</li>
+<li>单片机</li>
+<li>嵌入式</li>
+<li>ZigBee 技术</li>
+</ul>
+<p>特点</p>
+<ul>
+<li>有趣</li>
+<li>成果明显</li>
+<li>有成就感</li>
+<li>难学</li>
+<li>难入门</li>
+<li>工资高</li>
+<li>发展稳定</li>
+</ul>
+<p>学好了嵌入式，你的家就是未来。</p>
+<hr>
+<h2 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h2><p>软件又大致分为前端和后端。</p>
+<p>软件的学习对应于以下课程</p>
+<ul>
+<li>C 程序设计</li>
+<li>数据结构</li>
+<li>计算机网络</li>
+<li>操作系统</li>
+<li>计算机组成原理</li>
+<li>算法设计与分析</li>
+<li>Java</li>
+<li>UML</li>
+<li>网页制作</li>
+</ul>
+<p>用代码，编写多彩人生。</p>
+<hr>
+<h3 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h3><p>主要负责用户界面和交互的设计与制作。</p>
+<p>前端三大法宝</p>
+<ul>
+<li>HTML（界面结构）</li>
+<li>CSS（界面表现）</li>
+<li>JavaScript（界面行为）</li>
+</ul>
+<p>前端适合喜欢美的事物、喜欢创造画面、有想象力、有耐心、有强迫症的同学（有一个像素的偏差都不行），那么从事前端我们要学习什么呢？多，而且一天比一天更多。</p>
+<p>除了上面的三大法宝作为基础外，我们还需要各种日新月异的框架来帮助我们快速构建前端项目。</p>
+<p><strong>JavaScript框架</strong></p>
+<ul>
+<li>JQuery<ul>
+<li>一个快速、简洁的 JavaScript 框架</li>
+<li>“write Less，Do More”</li>
+<li>提供简便的 JavaScript 设计模式</li>
+<li>优化 HTML 文档操作、事件处理、动画设计和 Ajax 交互</li>
+<li>前不久开始面临淘汰的趋势，但目前仍然大量使用，我们抓住了尾巴</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>AngularJ.js<ul>
+<li>很流行的前端框架</li>
+<li>使用 Angular.js 创建第一个 UI，成本很低</li>
+<li>对于团队来说，AngularJ.js 有许多很棒的工具可用</li>
+<li>很适合创建一个快速、混合型复杂的解决方案</li>
+<li>比起 React，更合适于创建小型企业级应用</li>
+<li>由 Google 负责维护基础包</li>
+<li><a href="http://www.runoob.com/angularjs/angularjs-tutorial.html" target="_blank" rel="noopener">http://www.runoob.com/angularjs/angularjs-tutorial.html</a> (中文网)</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>React.js<ul>
+<li>很容易扩展</li>
+<li>状态可预测（更小的规模）</li>
+<li>很适合大型的前端项目</li>
+<li>相对较小的 API</li>
+<li>持续重复渲染的组件为日益增加的复杂性提供了有效的支撑</li>
+<li>由 Facebook 开发和维护</li>
+<li><a href="http://reactjs.cn/react/docs/why-react.html" target="_blank" rel="noopener">http://reactjs.cn/react/docs/why-react.html</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Vue.js<ul>
+<li>具有非常简单的 API</li>
+<li>可选择性添加的模块</li>
+<li>易于被开发者接纳</li>
+<li>易于与其它库和工程集成</li>
+<li>可以通过两种数据绑定方式更新模型和视图</li>
+<li>适合于大型的应用</li>
+<li>由我们的中国同胞尤雨溪开发</li>
+<li>在国内很火爆</li>
+<li><a href="http://cn.vuejs.org/" target="_blank" rel="noopener">http://cn.vuejs.org/</a></li>
+</ul>
+</li>
+</ul>
+<p><strong>UI框架</strong></p>
+<ul>
+<li>Bootstrap</li>
+<li>AUI</li>
+<li>Amaze UI</li>
+<li>Frozen UI</li>
+<li>WeUIi</li>
+<li>Semantic UI</li>
+</ul>
+<p>以上每一个框架都相当于一门学科，你不需要全部都会，但必须会使用最流行的和企业最需要的。</p>
+<hr>
+<h3 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h3><p>主要负责后台数据的处理和管理。</p>
+<ul>
+<li>Java<ul>
+<li>性能好</li>
+<li>适合大中项目</li>
+<li>跨平台</li>
+<li>安全性高</li>
+<li>稳定可靠</li>
+<li>运行效率高</li>
+<li>不容易犯错</li>
+<li>能有效的提高复用度</li>
+<li>提升性能和吞吐能力</li>
+<li>能规避安全问题</li>
+<li>开发复杂</li>
+<li>开发和发布的效率相对较低</li>
+<li>维护成本高</li>
+<li>开发人员费用高</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Python<ul>
+<li>简单易学</li>
+<li>开发快</li>
+<li>语言简洁</li>
+<li>易于维护</li>
+<li>开源</li>
+<li>可移植</li>
+<li>可扩展</li>
+<li>速度慢</li>
+<li>格式强制</li>
+<li>容易犯错</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>PHP<ul>
+<li>灵活</li>
+<li>上手快</li>
+<li>易修改</li>
+<li>发布快捷</li>
+<li>环境好部署</li>
+<li>容易犯错</li>
+<li>行效率不高</li>
+<li>缺乏全局缓存</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Ruby<ul>
+<li>快速开发</li>
+<li>使用者多</li>
+<li>开发控件非常丰富</li>
+<li>性能差</li>
+<li>第三方包少</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>ASP.NET<ul>
+<li>跨语言</li>
+<li>中小型项目上性能好</li>
+<li>开发快</li>
+<li>适合 Windows 平台</li>
+<li>维护成本低</li>
+<li>代码逻辑混乱</li>
+<li>难于管理</li>
+<li>代码的可重用性差</li>
+</ul>
+</li>
+</ul>
+<p>这些语言大多也有框架，工作时极少使用原生语言，使用框架开发项目可以减小开发周期并易于维护。</p>
+<hr>
+<h2 id="主流编程语言"><a href="#主流编程语言" class="headerlink" title="主流编程语言"></a>主流编程语言</h2><p>编程语言就是我们与计算机沟通的工具，没有好坏之分，只有合适与不合适，你可以讨厌一门语言，但是不能排斥它，它对你使用喜欢的语言也有帮助。我认为目前最优雅最讨人喜欢的语言是 Python（虽然我们都不懂），但目前的主要任务是学好我们的第一门完全面向对象的 Java 语言，学会了它可以举一反三地去学习其他面向对象语言，其核心思想都是大同小异的，差异只存在于语言的某些独有特性，届时我们只需要关注那些特性，即可在数月内熟悉一门新的编程语言。</p>
+<ul>
+<li>Java<ul>
+<li>大数据</li>
+<li>电子商务系统开发</li>
+<li>Web 应用系统开发</li>
+<li>企业级应用开发</li>
+<li>分布式系统开发</li>
+<li>多媒体系统开发</li>
+<li>交互式系统开发</li>
+<li>桌面应用系统开发</li>
+<li>嵌入式系统开发</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>C<ul>
+<li>嵌入式设备开发</li>
+<li>对性能要求严格的领域</li>
+<li>系统软件和图形处理</li>
+<li>游戏软件开发</li>
+<li>数字计算</li>
+<li>应用软件</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>C++<ul>
+<li>游戏</li>
+<li>嵌入式系统</li>
+<li>虚拟现实</li>
+<li>数字图像处理</li>
+<li>设备驱动程序</li>
+<li>操作系统</li>
+<li>网络软件</li>
+<li>服务器端开发</li>
+<li>科学计算</li>
+<li>分布式应用</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Python<ul>
+<li>人工智能</li>
+<li>网络爬虫</li>
+<li>科学计算中</li>
+<li>大数据、云计算</li>
+<li>系统运维</li>
+<li>WEB 开发</li>
+<li>系统编程</li>
+<li>金融方面</li>
+<li>图形界面</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>C#<ul>
+<li>Unity 3D</li>
+<li>网络服务</li>
+<li>桌面应用</li>
+<li>除了底层无所不能</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Visual Basic.NET<ul>
+<li>桌面应用</li>
+<li>Web</li>
+<li>Windows Phone</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>PHP<ul>
+<li>Web</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>JavaScript<ul>
+<li>Web前端</li>
+<li>Web后端</li>
+<li>Web APP</li>
+<li>插件开发</li>
+<li>桌面开发</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>SQL<ul>
+<li>数据库</li>
+</ul>
+</li>
+</ul>
+<p>还有相当多没听说过的语言，在国内貌似不是很火，不再一一列举，到此结束。</p>
+<p>我知道你还是很糊涂，包括我在内，也不知道自己究竟该怎么做，但是不要担心，并不是衣服不好看，而是你太胖；并不是编程语言不合适，而是你没学。等你瘦了穿啥都好看，等你学了用啥都合适。道理都懂，贵在行动。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"># 编程</a>
+              <a href="/tags/%E4%B8%93%E4%B8%9A/" rel="tag"># 专业</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/javascript-basics/19.html" rel="prev" title="正则表达式">
+      <i class="fa fa-chevron-left"></i> 正则表达式
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/java-basics/01.html" rel="next" title="6道基础编程题">
+      6道基础编程题 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#硬件"><span class="nav-number">1.</span> <span class="nav-text">硬件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件"><span class="nav-number">2.</span> <span class="nav-text">软件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#前端"><span class="nav-number">2.1.</span> <span class="nav-text">前端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后端"><span class="nav-number">2.2.</span> <span class="nav-text">后端</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主流编程语言"><span class="nav-number">3.</span> <span class="nav-text">主流编程语言</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">玖燃</p>
+  <div class="site-description" itemprop="description">专注于分享知识、资源</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/nine-fire" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;nine-fire" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/mailto:xiaowei_air@163.com" title="E-Mail → mailto:xiaowei_air@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">玖燃</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

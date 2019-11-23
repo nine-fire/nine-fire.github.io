@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>伪等高布局</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header,.footer{
+            width: 940px;
+            height: 50px;
+            margin: 0 auto;
+            background: gray;
+            text-align: center;
+        }
+
+        .clearfix::after,
+        .clearfix::before {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .warp {
+            width: 940px;
+            margin: 0 auto;
+            border: 2px dashed red;
+            overflow: hidden;
+        }
+
+        .warp .left {
+            width: 300px;
+            float: left;
+            background: orange;
+        }
+
+        .warp .right {
+            width: 640px;
+            float: left;
+            background: #bfa;
+        }
+
+        .warp .left,.warp .right{
+            padding-bottom: 99999px;
+            margin-bottom: -99999px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">header</div>
+    <div class="warp clearfix">
+        <div class="left">
+            left <br>
+            left <br>
+            left <br>
+            left <br>
+            left <br>
+            left <br>
+        </div>
+        <div class="right">
+            right <br>
+            right <br>
+            right <br>
+            right <br>
+            right <br>
+            right <br>
+            right <br>
+            right <br>
+            right <br>
+            right <br>
+            right <br>
+            right <br>
+            right <br>
+            right <br>
+            right <br>
+            right <br>
+            right <br>
+            right <br>
+            right <br>
+            right <br>
+            right <br>
+            right <br>
+            right <br>
+        </div>
+    </div>
+    <div class="footer">footer</div>
+</body>
+
+</html>

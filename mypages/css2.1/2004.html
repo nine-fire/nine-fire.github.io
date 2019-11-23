@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>粘连布局</title>
+	</head>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		
+		html,
+		body {
+			height: 100%;
+		}
+		
+		.warp {
+			min-height: 100%;
+			background: #bfa;
+		}
+		
+		.warp .main {
+			padding-bottom: 50px;
+			text-align: center;
+		}
+		
+		.footer {
+			margin-top: -50px;
+			height: 50px;
+			background: gray;
+			line-height: 50px;
+			text-align: center;
+		}
+	</style>
+
+	<body>
+		<div class="warp">
+			<div class="main">
+				main <br /> main <br /> main <br />
+				main <br /> main <br /> main <br />
+				main <br /> main <br /> main <br />
+				main <br /> main <br /> main <br />
+				main <br /> main <br /> main <br />
+				你可以按F12打开调试工具，增加此处内容<br />
+			</div>
+		</div>
+		<div class="footer">
+			footer
+		</div>
+	</body>
+
+</html>

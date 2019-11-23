@@ -1,0 +1,91 @@
+/* 通用样式 */
+
+.auto {
+	width: 940px;
+	margin: 0 auto;
+}
+
+.clearfix::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+body {
+	background: #f1f1f1;
+}
+
+a {
+	color: green;
+}
+
+
+/* 顶部样式 */
+
+.header {
+	height: 50px;
+}
+
+.header .logo {
+	font: bold 30px/50px "微软雅黑";
+	padding-left: 50px;
+}
+
+.header .logo .fruit {
+	color: orange;
+}
+
+.header .logo .vegetable {
+	color: yellowgreen;
+}
+
+
+/* 导航条样式 */
+
+.nav {}
+
+
+/* 内容样式 */
+
+.content .info {
+	width: 165px;
+	height: 100%;
+	float: left;
+}
+
+.info a {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	color: #000;
+	text-align: center;
+}
+
+.info a:hover,
+.info a:link {
+	text-decoration: none;
+}
+
+.info .list-group-item:hover>a{
+	font-size: 18px;
+	line-height: 1;
+}
+
+.content .items {
+	margin-left: 20px;
+	width: 755px;
+	height: 100%;
+	float: left;
+}
+
+.items .commodity-details {
+	text-align: center;
+}
+
+.items .pagebtn {
+	text-align: center;
+}
+
+.footer {
+	text-align: center;
+}

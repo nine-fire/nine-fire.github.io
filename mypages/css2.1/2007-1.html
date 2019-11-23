@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>已知高宽居中</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.wrap {
+				position: relative;
+				width: 800px;
+				height: 600px;
+				margin: auto;
+				background: #bfa;
+			}
+			.wrap .inner {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-top: -100px;
+				margin-left: -100px;
+				width: 200px;
+				height: 200px;
+				background: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">1
+			<div class="inner">inner</div>
+		</div>
+	</body>
+</html>

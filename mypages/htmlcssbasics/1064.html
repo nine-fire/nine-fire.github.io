@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>clearfix</title>
+    <style type="text/css">
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background: #bfa;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            /* 给box2设置上外边距100px */
+            margin-top: 100px;
+            background: orange;
+        }
+
+        /*
+        解决垂直外边距重叠问题
+        .box1::before {
+            content: "";
+            display: table;
+        }
+        */
+
+        .box3 {
+            width: 100%;
+            border: 10px solid red;
+        }
+
+        .box4 {
+            width: 100px;
+            height: 100px;
+            /* 设置box4浮动 */
+            float: left;
+            background: yellowgreen;
+        }
+
+        /*
+        解决父元素高度塌陷问题
+        .box3::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        */
+
+        /* 将两个问题合并解决 */
+        .clearfix::before,
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box3 clearfix">
+        <div class="box4"></div>
+    </div>
+    <div class="box1 clearfix">
+        <div class="box2"></div>
+    </div>
+</body>
+
+</html>

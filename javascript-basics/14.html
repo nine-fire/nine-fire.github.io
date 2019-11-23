@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://ninefire.gitee.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"default"},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="构造函数的修改创建一个Person构造函数 在Person构造函数中，为每一个对象都添加了一个sayName方法，并且sayName方法是在构造函数内部创建的，也就是说，构造函数每执行一次，就会创建一个新的sayName方法，创建10000个Person实例就会创建10000个sayName方法，即所有实例的sayName方法都是唯一的。这是完全没必要的，可以使所有的对象共享同一个方法。">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="原型对象">
+<meta property="og:url" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;javascript-basics&#x2F;14.html">
+<meta property="og:site_name" content="玖燃">
+<meta property="og:description" content="构造函数的修改创建一个Person构造函数 在Person构造函数中，为每一个对象都添加了一个sayName方法，并且sayName方法是在构造函数内部创建的，也就是说，构造函数每执行一次，就会创建一个新的sayName方法，创建10000个Person实例就会创建10000个sayName方法，即所有实例的sayName方法都是唯一的。这是完全没必要的，可以使所有的对象共享同一个方法。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-20T14:10:59.690Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://ninefire.gitee.io/javascript-basics/14.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>原型对象 | 玖燃</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">玖燃</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">永远不要失去对生活的激情</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://ninefire.gitee.io/javascript-basics/14.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="玖燃">
+      <meta itemprop="description" content="专注于分享知识、资源">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="玖燃">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          原型对象
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-06-08 00:00:14" itemprop="dateCreated datePublished" datetime="2018-06-08T00:00:14+08:00">2018-06-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2018-08-20 22:10:59" itemprop="dateModified" datetime="2018-08-20T22:10:59+08:00">2018-08-20</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaScript%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript基础</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="构造函数的修改"><a href="#构造函数的修改" class="headerlink" title="构造函数的修改"></a>构造函数的修改</h2><p>创建一个Person构造函数</p><ul>
+<li>在Person构造函数中，为每一个对象都添加了一个sayName方法，并且sayName方法是在构造函数内部创建的，也就是说，构造函数每执行一次，就会创建一个新的sayName方法，创建10000个Person实例就会创建10000个sayName方法，即所有实例的sayName方法都是唯一的。这是完全没必要的，可以使所有的对象共享同一个方法。</li>
+</ul><a id="more"></a>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, gender</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.gender = gender;</span><br><span class="line">    <span class="comment">// 向对象中添加一个方法</span></span><br><span class="line">    <span class="keyword">this</span>.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="string">'Hello，大家好，我是'</span> + name + <span class="string">'，今年'</span> + age + <span class="string">'岁了。'</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> per1 = <span class="keyword">new</span> Person(<span class="string">'李建刚'</span>,<span class="number">23</span>,<span class="string">'女'</span>);</span><br><span class="line"><span class="keyword">var</span> per2 = <span class="keyword">new</span> Person(<span class="string">'赵打铁'</span>,<span class="number">22</span>,<span class="string">'男'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(per1.sayName == per2.sayName); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将sayName方法在全局作用域中定义</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在全局作用域中定义sayName</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayName</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">'Hello，大家好，我是'</span> + name + <span class="string">'，今年'</span> + age + <span class="string">'岁了。'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, gender</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.gender = gender;</span><br><span class="line">    <span class="keyword">this</span>.sayName = sayName;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> per1 = <span class="keyword">new</span> Person(<span class="string">'李建刚'</span>,<span class="number">23</span>,<span class="string">'女'</span>);</span><br><span class="line"><span class="keyword">var</span> per2 = <span class="keyword">new</span> Person(<span class="string">'赵打铁'</span>,<span class="number">22</span>,<span class="string">'男'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(per1.sayName == per2.sayName); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>但是，将函数定义在全局作用域，污染了全局作用域的命名空间，而且定义在全局作用域中也很不安全。</li>
+</ul>
+<hr>
+<h2 id="原型对象"><a href="#原型对象" class="headerlink" title="原型对象"></a>原型对象</h2><p><strong>原型（prototype）</strong></p>
+<ul>
+<li>我们创建的每一个函数，解析器都会向函数中添加一个属性<code>prototype</code>。<br>这个属性对应着一个对象，这个对象就是所谓的原型对象。  </li>
+<li>如果函数作为普通函数调用，<code>prototype</code>没有任何作用，当函数以构造函数的形式调用时，它所创建的对象中都会有一个隐含的属性<code>__proto__</code>指向该类（构造函数）的原型对象。</li>
+<li>原型对象就相当于一个公共的区域，所有同一个类的实例都可以访问到这个原型对象，我们可以将对象中共有的内容，统一设置到原型对象中。</li>
+<li>当我们访问对象的某个属性或方法时，会先在对象自身中寻找，如果有则直接使用，如果没有则在原型对象中寻找，如果有则直接使用。</li>
+<li>创建构造函数时，可以将对象们共有的属性和方法，统一添加到构造函数的原型对象中，这种方式不用分别为每一个对象添加，也不会影响到全局作用域，就可以使每个对象都具有这些属性和方法了。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, gender</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.gender = gender;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加sayName方法到Person类的原型对象中</span></span><br><span class="line">Person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="string">'Hello，大家好，我是'</span> + name + <span class="string">'，今年'</span> + age + <span class="string">'岁了。'</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> per1 = <span class="keyword">new</span> Person(<span class="string">'李建刚'</span>,<span class="number">23</span>,<span class="string">'女'</span>);</span><br><span class="line"><span class="keyword">var</span> per2 = <span class="keyword">new</span> Person(<span class="string">'赵打铁'</span>,<span class="number">22</span>,<span class="string">'男'</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用<code>in</code>检查对象中是否含有某个属性时，如果对象中没有而原型对象中却存在，也会返回<code>true</code>。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'sayHello'</span> <span class="keyword">in</span> per1); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'sayHello'</span> <span class="keyword">in</span> per2); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>可以使用对象的hasOwnProperty()方法来检查该对象自身中是否含有某属性，使用该方法只有当对象自身中含有该属性时，才会返回true。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(per1.hasOwnProperty(<span class="string">"sayHello"</span>)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(per2.hasOwnProperty(<span class="string">"sayHello"</span>)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><ul>
+<li>原型对象也是对象，所以它本身也有原型，当我们使用一个对象的属性或方法时，如果对象自身中存在则直接使用，否则将去原型对象中寻找，如果有则使用，否则将去原型对象的原型中寻找，以此类推直至Object对象的原型对象为止，Object对象的原型中的原型对象是<code>null</code>空，所以在Object的原型中依然没有找到则返回<code>undefined</code>。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(per1.hasOwnProperty(<span class="string">"hasOwnProperty"</span>)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(per1.__proto__.hasOwnProperty(<span class="string">"hasOwnProperty"</span>)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(per1.__proto__.__proto__.hasOwnPerty)); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(per1.__proto__.__proto__.__proto__); <span class="comment">// null</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString( )"></a>toString( )</h2><ul>
+<li>当直接在页面中打印一个对象时，实际上是输出的该对象的<code>toString()</code>方法的返回值，如果希望在输出对象时不为<code>[object Object]</code>，可以为对象添加一个<code>toString()</code>方法来覆盖默认的方法。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个Person类</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, gender</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.gender = gender;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建两个Person类的实例</span></span><br><span class="line"><span class="keyword">var</span> per1 = <span class="keyword">new</span> Person(<span class="string">'李建刚'</span>,<span class="number">23</span>,<span class="string">'女'</span>);</span><br><span class="line"><span class="keyword">var</span> per2 = <span class="keyword">new</span> Person(<span class="string">'赵打铁'</span>,<span class="number">22</span>,<span class="string">'男'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 直接打印两个实例</span></span><br><span class="line"><span class="built_in">console</span>.log(per1); <span class="comment">// [object Object]</span></span><br><span class="line"><span class="built_in">console</span>.log(per2); <span class="comment">// [object Object]</span></span><br></pre></td></tr></table></figure>
+<p><strong>我们作如下更改：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, gender</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.age = age;</span><br><span class="line">    <span class="keyword">this</span>.gender = gender;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 修改Person类原型中的toString()方法</span></span><br><span class="line">Person.prototype.toString = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Person[name="</span> + <span class="keyword">this</span>.name + <span class="string">", age="</span> + <span class="keyword">this</span>.age + <span class="string">", gender="</span> + <span class="keyword">this</span>.gender + <span class="string">"]"</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建两个Person类的实例</span></span><br><span class="line"><span class="keyword">var</span> per1 = <span class="keyword">new</span> Person(<span class="string">'李建刚'</span>,<span class="number">23</span>,<span class="string">'女'</span>);</span><br><span class="line"><span class="keyword">var</span> per2 = <span class="keyword">new</span> Person(<span class="string">'赵打铁'</span>,<span class="number">22</span>,<span class="string">'男'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 直接打印两个实例</span></span><br><span class="line"><span class="built_in">console</span>.log(per1); <span class="comment">// [object Object]</span></span><br><span class="line"><span class="built_in">console</span>.log(per2); <span class="comment">// [object Object]</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="垃圾回收（GC）"><a href="#垃圾回收（GC）" class="headerlink" title="垃圾回收（GC）"></a>垃圾回收（GC）</h2><p><strong>Garbage Collection</strong></p>
+<ul>
+<li>程序运行过程中会产生垃圾，这些垃圾积攒过多以后，会导致程序运行的速度减慢，所以需要一个垃圾回收机制来处理程序运行过程中产生的垃圾。</li>
+<li>当一个对象没有任何的变量或者属性对它进行引用，此时将永远无法操作该对象，这个对象就是一个垃圾，这种对象过多时会占用大量的内存空间，导致程序运行变慢，所以这种垃圾必须进行清理。</li>
+<li>在JS中拥有自动垃圾回收机制，会自动将这些垃圾对象从内存中销毁，我们不需要也不能进行人工的垃圾回收操作。</li>
+<li>我们需要做的只是将不再使用的对象设置为<code>null</code>即可。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/javascript-basics/13.html" rel="prev" title="构造函数">
+      <i class="fa fa-chevron-left"></i> 构造函数
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/javascript-basics/15.html" rel="next" title="数组简介">
+      数组简介 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造函数的修改"><span class="nav-number">1.</span> <span class="nav-text">构造函数的修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型对象"><span class="nav-number">2.</span> <span class="nav-text">原型对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原型链"><span class="nav-number">3.</span> <span class="nav-text">原型链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#toString-NaN"><span class="nav-number">4.</span> <span class="nav-text">toString( )</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#垃圾回收（GC）"><span class="nav-number">5.</span> <span class="nav-text">垃圾回收（GC）</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">玖燃</p>
+  <div class="site-description" itemprop="description">专注于分享知识、资源</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/nine-fire" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;nine-fire" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/mailto:xiaowei_air@163.com" title="E-Mail → mailto:xiaowei_air@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">玖燃</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

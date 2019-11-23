@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://ninefire.gitee.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"default"},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="起源 JavaScript 诞生于 1995 年，它的出现主要是用于处理网页中的前端验证。  所谓的前端验证，就是指检查用户输入的内容是否符合一定的规则。  比如：用户名的长度、密码的长度、邮箱地址的格式等。  简史 JavaScript 是由网景公司发明，起初命名为 LiveScript，后来由于 Sun 公司的介入更名为了 JavaScript。  1996 年微软公司在其最新的 IE3 浏览">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="与 JavaScript 初次邂逅">
+<meta property="og:url" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;javascript-basics&#x2F;01.html">
+<meta property="og:site_name" content="玖燃">
+<meta property="og:description" content="起源 JavaScript 诞生于 1995 年，它的出现主要是用于处理网页中的前端验证。  所谓的前端验证，就是指检查用户输入的内容是否符合一定的规则。  比如：用户名的长度、密码的长度、邮箱地址的格式等。  简史 JavaScript 是由网景公司发明，起初命名为 LiveScript，后来由于 Sun 公司的介入更名为了 JavaScript。  1996 年微软公司在其最新的 IE3 浏览">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-23T08:47:47.112Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://ninefire.gitee.io/javascript-basics/01.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>与 JavaScript 初次邂逅 | 玖燃</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">玖燃</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">永远不要失去对生活的激情</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://ninefire.gitee.io/javascript-basics/01.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="玖燃">
+      <meta itemprop="description" content="专注于分享知识、资源">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="玖燃">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          与 JavaScript 初次邂逅
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-06-08 00:00:01" itemprop="dateCreated datePublished" datetime="2018-06-08T00:00:01+08:00">2018-06-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-23 16:47:47" itemprop="dateModified" datetime="2019-11-23T16:47:47+08:00">2019-11-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaScript%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript基础</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h2><ul>
+<li><p>JavaScript 诞生于 1995 年，它的出现主要是用于处理网页中的前端验证。</p>
+</li>
+<li><p>所谓的前端验证，就是指检查用户输入的内容是否符合一定的规则。</p>
+</li>
+<li><p>比如：用户名的长度、密码的长度、邮箱地址的格式等。</p>
+</li>
+</ul><h2 id="简史"><a href="#简史" class="headerlink" title="简史"></a>简史</h2><ul>
+<li><p>JavaScript 是由网景公司发明，起初命名为 LiveScript，后来由于 Sun 公司的介入更名为了 JavaScript。</p>
+</li>
+<li><p>1996 年微软公司在其最新的 IE3 浏览器中引入了自己对 JavaScript 的实现 “JScript”。</p>
+</li>
+<li><p>于是在市面上存在两个版本的 JavaScript，一个网景公司的 JavaScript 和微软的 JScript。</p>
+</li>
+<li><p>为了确保不同的浏览器上运行的 JavaScript 标准一致，所以几个公司共同制定了 JS 的标准，命名为 ECMAScript。</p>
+</li>
+</ul><a id="more"></a>
+
+<h2 id="时间表"><a href="#时间表" class="headerlink" title="时间表"></a>时间表</h2><table>
+<thead>
+<tr>
+<th>年份</th>
+<th>事件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1995年</td>
+<td>网景公司开发了 JavaScript</td>
+</tr>
+<tr>
+<td>1996年</td>
+<td>微软发布了和 JavaScript 兼容的 JScript</td>
+</tr>
+<tr>
+<td>1997年</td>
+<td>ECMAScript 第 1 版（ECMA-262）</td>
+</tr>
+<tr>
+<td>1998年</td>
+<td>ECMAScript 第 2 版</td>
+</tr>
+<tr>
+<td>1998年</td>
+<td>DOM Level1 的制定</td>
+</tr>
+<tr>
+<td>1998年</td>
+<td>新型语言 DHTML 登场</td>
+</tr>
+<tr>
+<td>1999年</td>
+<td>ECMAScript 第 3 版</td>
+</tr>
+<tr>
+<td>2000年</td>
+<td>DOM Level2 的制定</td>
+</tr>
+<tr>
+<td>2002年</td>
+<td>ISO/IEC 16262:2002 的确立</td>
+</tr>
+<tr>
+<td>2004年</td>
+<td>DOM Level3 的制定</td>
+</tr>
+<tr>
+<td>2006年</td>
+<td>新型语言 Ajax 登场</td>
+</tr>
+<tr>
+<td>2009年</td>
+<td>ECMAScript 第 5 版</td>
+</tr>
+<tr>
+<td>2009年</td>
+<td>新型语言 HTML5 登场</td>
+</tr>
+<tr>
+<td>2015年</td>
+<td>ECMAScript 第 6 版</td>
+</tr>
+</tbody></table>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><ul>
+<li><p>ECMAScript 是一个标准，而这个标准需要由各个厂商去实现。</p>
+</li>
+<li><p>不同浏览器厂商对该标准会有不同的实现。</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>浏览器</th>
+<th>JavaScript 实现方式（引擎）</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Firefox</td>
+<td>SpiderMonkey</td>
+</tr>
+<tr>
+<td>Internet Explorer</td>
+<td>JScript / Chakra</td>
+</tr>
+<tr>
+<td>Safari</td>
+<td>JavaScriptCore</td>
+</tr>
+<tr>
+<td>Chrome</td>
+<td>V8</td>
+</tr>
+<tr>
+<td>Carakan</td>
+<td>Carakan</td>
+</tr>
+</tbody></table>
+<ul>
+<li><p>ECMAScript 是 JavaScript 标准，所以一般情况下这两个词语我们认为是同一事物。<br>但实际上，JavaScript 的含义却要更大些。</p>
+</li>
+<li><p>一个完整的 JavaScript 实现应该由以下三个部分构成：</p>
+<ul>
+<li>ECMAScript</li>
+<li>DOM（文档对象模型）</li>
+<li>BOM（浏览器对象模型）</li>
+</ul>
+</li>
+</ul>
+<h2 id="JS的特点"><a href="#JS的特点" class="headerlink" title="JS的特点"></a>JS的特点</h2><ul>
+<li><p>解释型语言</p>
+</li>
+<li><p>类似于 C 和 Java 的语法结构</p>
+</li>
+<li><p>动态语言</p>
+</li>
+<li><p>基于原型的面向对象</p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/css/08.html" rel="prev" title="图片的垂直水平居中">
+      <i class="fa fa-chevron-left"></i> 图片的垂直水平居中
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/javascript-basics/02.html" rel="next" title="牵手 JavaScript 走向幸福">
+      牵手 JavaScript 走向幸福 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#起源"><span class="nav-number">1.</span> <span class="nav-text">起源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简史"><span class="nav-number">2.</span> <span class="nav-text">简史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时间表"><span class="nav-number">3.</span> <span class="nav-text">时间表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">4.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS的特点"><span class="nav-number">5.</span> <span class="nav-text">JS的特点</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">玖燃</p>
+  <div class="site-description" itemprop="description">专注于分享知识、资源</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/nine-fire" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;nine-fire" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/mailto:xiaowei_air@163.com" title="E-Mail → mailto:xiaowei_air@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">玖燃</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

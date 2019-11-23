@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://ninefire.gitee.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"default"},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="流程控制语句 JS中的程序是从上至下一行一行执行的，通过流程控制语句可以控制程序执行的流程，使程序可以根据一定的条件来选择执行。 语句的分类： 条件判断语句 条件分支语句 循环语句 条件判断语句使用条件判断语句可以在执行某个语句之前进行判断，如果条件成立才会执行语句，条件不成立则不执行。  if语句语法一：">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="流程控制语句">
+<meta property="og:url" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;javascript-basics&#x2F;08.html">
+<meta property="og:site_name" content="玖燃">
+<meta property="og:description" content="流程控制语句 JS中的程序是从上至下一行一行执行的，通过流程控制语句可以控制程序执行的流程，使程序可以根据一定的条件来选择执行。 语句的分类： 条件判断语句 条件分支语句 循环语句 条件判断语句使用条件判断语句可以在执行某个语句之前进行判断，如果条件成立才会执行语句，条件不成立则不执行。  if语句语法一：">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-18T03:38:06.753Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://ninefire.gitee.io/javascript-basics/08.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>流程控制语句 | 玖燃</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">玖燃</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">永远不要失去对生活的激情</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://ninefire.gitee.io/javascript-basics/08.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="玖燃">
+      <meta itemprop="description" content="专注于分享知识、资源">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="玖燃">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          流程控制语句
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-06-08 00:00:08" itemprop="dateCreated datePublished" datetime="2018-06-08T00:00:08+08:00">2018-06-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2018-08-18 11:38:06" itemprop="dateModified" datetime="2018-08-18T11:38:06+08:00">2018-08-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/JavaScript%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript基础</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>流程控制语句</strong></p><ul>
+<li>JS中的程序是从上至下一行一行执行的，通过流程控制语句可以控制程序执行的流程，使程序可以根据一定的条件来选择执行。</li>
+</ul><p>语句的分类：</p><ol>
+<li>条件判断语句</li>
+<li>条件分支语句</li>
+<li>循环语句</li>
+</ol><h2 id="条件判断语句"><a href="#条件判断语句" class="headerlink" title="条件判断语句"></a>条件判断语句</h2><p>使用条件判断语句可以在执行某个语句之前进行判断，如果条件成立才会执行语句，条件不成立则不执行。  </p><h3 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h3><p><strong>语法一：</strong></p><a id="more"></a>
+
+
+
+
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(条件表达式) 语句;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(条件表达式) &#123;</span><br><span class="line">    语句<span class="number">1</span>;</span><br><span class="line">    语句<span class="number">2</span>;</span><br><span class="line">    语句<span class="number">3</span>;</span><br><span class="line">    ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>if</code>语句在执行时，会先对条件表达式进行求值判断，如果条件表达式的值为<code>true</code>，则执行<code>if</code>后的语句，如果条件表达式的值为<code>false</code>，则不执行<code>if</code>后的语句。</li>
+<li><code>if</code>语句只能控制紧随其后的那条语句，如果需要控制多条语句，可以将这些语句统一放到代码块中<code>{ }</code>。</li>
+</ul>
+<p><strong>语法二：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(条件表达式) &#123;</span><br><span class="line">    语句<span class="number">1</span>;</span><br><span class="line">    语句<span class="number">2</span>;</span><br><span class="line">    ....</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    语句<span class="number">1</span>;</span><br><span class="line">    语句<span class="number">2</span>;</span><br><span class="line">    ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>if...else</code>语句在执行时，会先对条件表达式进行求值判断，如果条件表达式的值为<code>true</code>，则执行<code>if</code>后的语句，如果条件表达式的值为<code>false</code>，则执行<code>else</code>后的语句。</li>
+</ul>
+<p><strong>语法三：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(条件表达式) &#123;</span><br><span class="line">    语句<span class="number">1</span>;</span><br><span class="line">    语句<span class="number">2</span>;</span><br><span class="line">    ....</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span> &#123;</span><br><span class="line">    语句<span class="number">1</span>;</span><br><span class="line">    语句<span class="number">2</span>;</span><br><span class="line">    ....</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span> &#123;</span><br><span class="line">    语句<span class="number">1</span>;</span><br><span class="line">    语句<span class="number">2</span>;</span><br><span class="line">    ....</span><br><span class="line">&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">    语句<span class="number">1</span>;</span><br><span class="line">    语句<span class="number">2</span>;</span><br><span class="line">    ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>if...else if...else</code>语句在执行时，会从上到下对条件表达式依次进行求值判断，如果值为<code>true</code>，则执行当前语句，如果值为<code>false</code>，则继续向下判断,如果所有条件都不满足，则执行<code>else</code>后的语句。</li>
+<li>该语句中，只会有一个代码块被执行，一旦有代码块执行了，则直接结束语句。</li>
+</ul>
+<hr>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p><strong>语句和代码块</strong></p>
+<ul>
+<li>语句是一个程序的基本单位，JS的程序就是由一条条语句构成的，每一条语句使用 <code>;</code> 结尾。</li>
+</ul>
+<ul>
+<li>JS中的语句默认是由上至下顺序执行的，但是也可以通过一些流程控制语句来控制语句的执行顺序。</li>
+</ul>
+<ul>
+<li>可以使用一对<code>{ }</code>为多条语句进行分组，一组语句称为一个代码块，一个代码块需整体执行，或不执行。</li>
+</ul>
+<ul>
+<li>JS中的代码块，只具有分组的作用，没有其他的用途。</li>
+</ul>
+<hr>
+<h2 id="条件分支语句"><a href="#条件分支语句" class="headerlink" title="条件分支语句"></a>条件分支语句</h2><h3 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h3><p><strong>语法：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span>(条件表达式)&#123;</span><br><span class="line">    <span class="keyword">case</span> 表达式:</span><br><span class="line">        语句...</span><br><span class="line">    <span class="keyword">case</span> 表达式:</span><br><span class="line">        语句...</span><br><span class="line">    <span class="keyword">case</span> 表达式:</span><br><span class="line">        语句...</span><br><span class="line">    <span class="keyword">case</span> 表达式:</span><br><span class="line">        语句...</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        语句...</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>switch...case...</code>语句在执行时，会依次将<code>case</code>后的表达式的值和<code>switch</code>后的条件表达式的值进行<strong>全等</strong>比较。如果比较结果为<code>true</code>，则从当前<code>case</code>处开始执行代码；如果比较结果为<code>false</code>，则继续向下比较；如果所有比较结果都为<code>false</code>，则执行<code>default</code>后的代码。</li>
+</ul>
+<ul>
+<li>使用<code>break</code>可以退出switch语句。</li>
+</ul>
+<hr>
+<h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><p>使用循环语句可以反复地执行一段代码多次。</p>
+<h3 id="while语句"><a href="#while语句" class="headerlink" title="while语句"></a>while语句</h3><p><strong>语法：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(条件表达式) &#123;</span><br><span class="line">    语句;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> n = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="built_in">document</span>.write(<span class="string">"n++"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>while</code>语句在执行时，先对条件表达式进行求值判断，如果值为<code>true</code>，则执行循环体，循环体执行完毕之后，继续对条件表达式进行求值判断，如果值为<code>true</code>，则继续执行循环体，以此类推，直到条件表达式的值为<code>false</code>时则终止循环。</li>
+</ul>
+<ul>
+<li>条件表达式的值恒为true的循环，称为死循环，慎用死循环。</li>
+</ul>
+<ul>
+<li>创建循环的一般步骤：<ol>
+<li>初始化一个变量作为初始化表达式</li>
+<li>在循环中设置一个条件表达式</li>
+<li>定义一个更新表达式，以每次循环时更新变量</li>
+</ol>
+</li>
+</ul>
+<h3 id="do-while语句"><a href="#do-while语句" class="headerlink" title="do while语句"></a>do while语句</h3><p><strong>语法：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    语句;</span><br><span class="line">    ....</span><br><span class="line">&#125;<span class="keyword">while</span>(条件表达式);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>do...while...</code>语句在执行时，会先执行循环体，循环体执行完毕之后，再对<code>while</code>后的条件表达式进行求值判断，如果结果为<code>true</code>，则继续执行循环体，以此类推，直到条件表达式的值为<code>false</code>时则终止循环。</li>
+</ul>
+<h3 id="for语句"><a href="#for语句" class="headerlink" title="for语句"></a>for语句</h3><p><strong>语法：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(初始化表达式; 条件表达式; 更新表达式) &#123;</span><br><span class="line">    语句;</span><br><span class="line">    ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>for</code>语句在执行时的流程<ol>
+<li>执行初始化表达式，初始化变量（仅执行一次）</li>
+<li>执行条件表达式，判断是否执行循环<br>如果为true，则执行循环体<br>如果为false，则终止循环不再继续</li>
+<li>执行更新表达式，更新表达式执行完毕继续从步骤2开始重复</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li>for循环中的桑部分都可以省略，也可以写在外部。如果for循环中不写任何表达式，只写两个分号<code>for(;;)</code>，此时循环是一个死循环，慎用。</li>
+</ul>
+<hr>
+<h2 id="break和continue"><a href="#break和continue" class="headerlink" title="break和continue"></a>break和continue</h2><ul>
+<li><code>break</code>关键字可以用来退出<code>switch</code>或循环语句。<ul>
+<li>不能在<code>if</code>语句中单独使用<code>break</code>和<code>continue</code>。</li>
+<li><code>break</code>关键字会立即终止离它最近的循环语句。</li>
+<li>可以为循环语句创建一个label来标识该循环。<br>语法：<code>label: 循环语句</code><br>使用<code>break</code>语句时，可以在<code>break</code>后写一个<code>label</code>，此时<code>break</code>将结束指定的循环，而不是最近的。<br><code>break: label名称</code></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><code>continue</code>关键字可以用来跳过本次循环<ul>
+<li><code>continue</code>默认只会对离它最近的循环起作用。<ul>
+<li>可以为循环语句创建一个label来标识该循环。<br>语法：<code>label: 循环语句</code><br>使用<code>continue</code>语句时，可以在<code>continue</code>后写一个<code>label</code>，此时<code>continue</code>将跳过指定的循环，而不是最近的。<br><code>continue: label名称</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/javascript-basics/07.html" rel="prev" title="运算符">
+      <i class="fa fa-chevron-left"></i> 运算符
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/javascript-basics/09.html" rel="next" title="终于有对象了">
+      终于有对象了 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#条件判断语句"><span class="nav-number">1.</span> <span class="nav-text">条件判断语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#if语句"><span class="nav-number">1.1.</span> <span class="nav-text">if语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">2.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件分支语句"><span class="nav-number">3.</span> <span class="nav-text">条件分支语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#switch语句"><span class="nav-number">3.1.</span> <span class="nav-text">switch语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环语句"><span class="nav-number">4.</span> <span class="nav-text">循环语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#while语句"><span class="nav-number">4.1.</span> <span class="nav-text">while语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#do-while语句"><span class="nav-number">4.2.</span> <span class="nav-text">do while语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for语句"><span class="nav-number">4.3.</span> <span class="nav-text">for语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#break和continue"><span class="nav-number">5.</span> <span class="nav-text">break和continue</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">玖燃</p>
+  <div class="site-description" itemprop="description">专注于分享知识、资源</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/nine-fire" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;nine-fire" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/mailto:xiaowei_air@163.com" title="E-Mail → mailto:xiaowei_air@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">玖燃</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

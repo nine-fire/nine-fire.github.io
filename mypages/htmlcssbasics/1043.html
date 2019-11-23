@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>简单布局</title>
+	<style type="text/css">
+		/*通用样式*/
+
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.w {
+			width: 1000px;
+			margin: 0 auto;
+		}
+
+		.ftl {
+			float: left;
+		}
+
+		/*头部样式*/
+
+		.header {
+			height: 120px;
+			background: orange;
+		}
+
+		/*内容样式*/
+
+		.content {
+			width: 1000px;
+			height: 500px;
+			margin: 10px auto;
+			background: yellowgreen;
+		}
+
+		.content .left {
+			width: 200px;
+			height: 100%;
+			background: pink;
+		}
+
+		.content .center {
+			width: 580px;
+			height: 100%;
+			margin: 0 10px;
+			background: skyblue;
+		}
+
+		.content .right {
+			width: 200px;
+			height: 100%;
+			background: #aaa;
+		}
+
+		/*底部样式*/
+
+		.footer {
+			height: 100px;
+			background: #bfa;
+		}
+	</style>
+</head>
+
+<body>
+	<!-- 头部div -->
+	<div class="header w"></div>
+
+	<!-- 内容div -->
+	<div class="content">
+		<!-- 左边div -->
+		<div class="left ftl"></div>
+		<!-- 中间div -->
+		<div class="center ftl"></div>
+		<!-- 右边div -->
+		<div class="right ftl"></div>
+	</div>
+
+	<!-- 底部div -->
+	<div class="footer w"></div>
+</body>
+
+</html>

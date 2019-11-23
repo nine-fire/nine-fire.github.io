@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>导航条</title>
+    <style type="text/css">
+        /*清除默认样式*/
+
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        ul {
+            /*设置导航条宽度*/
+            width: 1000px;
+            /*设置背景颜色*/
+            background: skyblue;
+            /*设置导航条居中*/
+            margin: 50px auto 0;
+            /*清除无序列表的项目符号*/
+            list-style: none;
+            /*解决高度塌陷问题*/
+            overflow: hidden;
+        }
+
+        ul li {
+            /*设置每个菜单的宽度*/
+            width: 25%;
+            /*使菜单水平显示*/
+            float: left;
+        }
+
+        ul li a {
+            /*将a转换为块元素*/
+            display: block;
+            /*给a设置大小*/
+            width: 100%;
+            padding: 5px 0;
+            /*文字居中*/
+            text-align: center;
+            /*清除超链接下划线*/
+            text-decoration: none;
+            /*统一字体样式*/
+            color: white;
+            font-size: 16px;
+            font-weight: blod;
+            font-family: airal 微软雅黑;
+        }
+
+        /*设置鼠标移入超链接的效果*/
+
+        ul li a:hover {
+            background: #b00;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <a href="#">首页</a>
+        </li>
+        <li>
+            <a href="#">新闻</a>
+        </li>
+        <li>
+            <a href="#">联系</a>
+        </li>
+        <li>
+            <a href="#">关于</a>
+        </li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8" />
+	<title>BFC实现两列布局</title>
+	<style type="text/css">
+		.warp {
+			width: 600px;
+			height: 600px;
+			margin: 0 auto;
+			border: 1px solid black;
+		}
+		
+		.warp .left {
+			float: left;
+			width: 200px;
+			height: 600px;
+			background: orange;
+		}
+		
+		.warp .right {
+			/*开启right的BFC,使right不与float box2004.html重叠*/
+			overflow: hidden;
+			height: 600px;
+			background: #bfa;
+			padding-left: 2em;
+		}
+	</style>
+</head>
+<body>
+	<div class="warp">
+		<div class="left">left</div>
+		<div class="right">
+			right right right right right right<br />
+			right right right right right right<br />
+			right right right right right right<br />
+			right right right right right right<br />
+			right right right right right right<br />
+			right right right right right right<br />
+			如果开启了right的BFC，两列是完全分离的<br />
+			可以直接通过padding-left调整right内容的位置<br />
+			若BFC未开启，right将延伸至left下层，<br />
+			并且将无法通过padding-left调整内容
+		</div>
+	</div>
+</body>
+</html>
