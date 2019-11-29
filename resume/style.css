@@ -96,7 +96,7 @@ li {
 html,
 body {
     background: #F1F1F1;
-    font-family: 'Times New Roman', '宋体', arial, sans-serif;
+    font-family: "Times New Roman", "宋体", "serif";
     font-size: 16px;
     color: #000000;
 }
@@ -129,10 +129,10 @@ body {
 
 /* 内容区域 */
 #content-view {
-    width: 170mm;
-    height: 257mm;
+    width: 180mm;
+    height: 267mm;
     margin: 0 auto;
-    padding: 20mm;
+    padding: 15mm;
     background-color: #FFF;
 }
 
@@ -183,7 +183,8 @@ body {
 .skills p,
 .introduction p,
 .projects p,
-.achievement p {
+.achievement p,
+.edu p {
     line-height: 1.5em;
 }
 
