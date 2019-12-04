@@ -46,16 +46,22 @@
   };
 </script>
 
-  <meta name="description" content="JDK与JREJDK（Java Development Kit Java 开发工具包） JDK 是提供给 Java 开发人员使用的，其中包含了 Java 的开发工具，也包括了 JRE。所以安装了 JDK，就不用再单独安装 JRE 了。 其中的开发工具： 编译工具（javac.exe） 打包工具（jar.exe） 反编译工具（javap.exe）· · · · · ·">
+  <meta name="description" content="概念 数组是多个相同类型数据的组合，实现对这些数据的统一管理  数组中的元素可以是任何数据类型，包括基本数据类型和引用数据类型  数组属于引用数据类型，数组型数据是对象（object），数组中的每个元素相当于该对象的成员变量  定义数组123456789101112131415161718&#x2F;* 声明数组 *&#x2F;&#x2F;&#x2F; 声明一个存放字符串的数组namesString[] names;&#x2F;&#x2F; 声明一个存放整">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java请你吃晚餐">
+<meta property="og:title" content="数组">
 <meta property="og:url" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;java-basics&#x2F;02.html">
 <meta property="og:site_name" content="玖燃">
-<meta property="og:description" content="JDK与JREJDK（Java Development Kit Java 开发工具包） JDK 是提供给 Java 开发人员使用的，其中包含了 Java 的开发工具，也包括了 JRE。所以安装了 JDK，就不用再单独安装 JRE 了。 其中的开发工具： 编译工具（javac.exe） 打包工具（jar.exe） 反编译工具（javap.exe）· · · · · ·">
+<meta property="og:description" content="概念 数组是多个相同类型数据的组合，实现对这些数据的统一管理  数组中的元素可以是任何数据类型，包括基本数据类型和引用数据类型  数组属于引用数据类型，数组型数据是对象（object），数组中的每个元素相当于该对象的成员变量  定义数组123456789101112131415161718&#x2F;* 声明数组 *&#x2F;&#x2F;&#x2F; 声明一个存放字符串的数组namesString[] names;&#x2F;&#x2F; 声明一个存放整">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-23T09:22:45.012Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;images&#x2F;javabasics&#x2F;array-1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;images&#x2F;javabasics&#x2F;array-2.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;images&#x2F;javabasics&#x2F;array-3.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;images&#x2F;javabasics&#x2F;array-4.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;images&#x2F;javabasics&#x2F;array-5.png">
+<meta property="og:updated_time" content="2019-11-23T08:31:38.187Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;images&#x2F;javabasics&#x2F;array-1.png">
 
 <link rel="canonical" href="http://ninefire.gitee.io/java-basics/02.html">
 
@@ -71,7 +77,7 @@
   };
 </script>
 
-  <title>Java请你吃晚餐 | 玖燃</title>
+  <title>数组 | 玖燃</title>
   
 
 
@@ -216,7 +222,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Java请你吃晚餐
+          数组
         </h1>
 
         <div class="post-meta">
@@ -226,14 +232,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2018-09-12 00:00:01" itemprop="dateCreated datePublished" datetime="2018-09-12T00:00:01+08:00">2018-09-12</time>
+              <time title="创建时间：2018-09-13 00:00:01" itemprop="dateCreated datePublished" datetime="2018-09-13T00:00:01+08:00">2018-09-13</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-23 17:22:45" itemprop="dateModified" datetime="2019-11-23T17:22:45+08:00">2019-11-23</time>
+                <time title="修改时间：2019-11-23 16:31:38" itemprop="dateModified" datetime="2019-11-23T16:31:38+08:00">2019-11-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -264,138 +270,111 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="JDK与JRE"><a href="#JDK与JRE" class="headerlink" title="JDK与JRE"></a>JDK与JRE</h2><p>JDK（Java Development Kit Java 开发工具包）</p><ul>
-<li>JDK 是提供给 Java 开发人员使用的，其中包含了 Java 的开发工具，也包括了 JRE。所以安装了 JDK，就不用再单独安装 JRE 了。</li>
-<li>其中的开发工具：<ul>
-<li>编译工具（javac.exe）</li>
-<li>打包工具（jar.exe）</li>
-<li>反编译工具（javap.exe）<br>· · · · · ·</li>
-</ul>
+        <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
+<li><p>数组是多个<strong>相同类型</strong>数据的组合，实现对这些数据的统一管理</p>
 </li>
-</ul><a id="more"></a>
+<li><p>数组中的元素可以是<strong>任何</strong>数据类型，包括<em>基本数据类型<em>和</em>引用数据类型</em></p>
+</li>
+<li><p>数组属于引用数据类型，数组型数据是对象（object），数组中的每个元素相当于该对象的成员变量</p>
+</li>
+</ul><hr><h2 id="定义数组"><a href="#定义数组" class="headerlink" title="定义数组"></a>定义数组</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 声明数组 */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 声明一个存放字符串的数组names</span></span><br><span class="line">String[] names;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 声明一个存放整型的数组scores</span></span><br><span class="line"><span class="keyword">int</span> scores[];</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 初始化数组 */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 1.静态初始化：初始化数组和给数组元素赋值同时进行</span></span><br><span class="line">names = <span class="keyword">new</span> String[]&#123;<span class="string">"赵涵"</span>,<span class="string">"赵娟"</span>,<span class="string">"赵雨婕"</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.动态初始化：初始化数组和给数组元素赋值分开进行</span></span><br><span class="line">scores = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line">scores[<span class="number">0</span>] = <span class="number">97</span>;</span><br><span class="line">scores[<span class="number">1</span>] = <span class="number">98</span>;</span><br><span class="line">scores[<span class="number">2</span>] = <span class="number">99</span>;</span><br></pre></td></tr></table></figure><a id="more"></a>
 
-<p>JRE（Java Runtime Environment Java 运行环境）</p>
-<ul>
-<li>包括 Java 虚拟机（JVM Java Virtual Machine）和 Java 程序所需的核心类库等，如果想要运行一个开发好的 Java 程序，计算机中只需要安装 JRE 即可。</li>
-</ul>
+
+
+<p>声明数组的错误写法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1</span></span><br><span class="line">String[] names = <span class="keyword">new</span> String[<span class="number">3</span>]&#123;<span class="string">"aa"</span>, <span class="string">"bb"</span>, <span class="string">"cc"</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line"><span class="keyword">int</span> i[<span class="number">10</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3</span></span><br><span class="line"><span class="keyword">int</span> i = <span class="keyword">new</span> <span class="keyword">int</span>[];</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p>简单而言，使用 JDK 的开发工具完成的 Java 程序，交给 JRE 去运行。</p>
+<p>无论是动态初始化还是静态初始化数组，必定在创建的时候就指明了数组的长度！</p>
 </blockquote>
 <hr>
-<h2 id="常识"><a href="#常识" class="headerlink" title="常识"></a>常识</h2><ul>
-<li><p>源文件以 <code>.java</code> 结尾</p>
-</li>
-<li><p>源文件中可以有多个 <code>class</code> 声明的类</p>
-</li>
-<li><p>类中可以有主方法（<code>main()</code> 方法）</p>
-</li>
-<li><p><code>main()</code> 方法是程序的入口，方法内是程序的执行部分</p>
-</li>
-<li><p>一个源文件中只能有一个声明为 <code>public</code> 的类，同时要求此类的类名与源文件的文件名一致</p>
-</li>
-<li><p>每条语句以分号结尾</p>
-</li>
-<li><p>执行程序：</p>
-<ul>
-<li>编译（javac.exe），生成 <code>.class</code> 字节码文件<br>字节码文件的数量与源文件中 <code>class</code> 声明类的数量一致。</li>
-<li>运行（java.exe）</li>
-</ul>
-</li>
-<li><p>多行注释不允许嵌套</p>
-</li>
-<li><p>文档注释<br>文档注释会被 javadoc.exe 解析。</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *<span class="doctag">@author</span>  指定 Java 程序的作者</span></span><br><span class="line"><span class="comment"> *<span class="doctag">@version</span> 指定源文件的版本</span></span><br><span class="line"><span class="comment"> *<span class="doctag">@param</span>   方法的参数说明信息</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h2 id="数组的长度"><a href="#数组的长度" class="headerlink" title="数组的长度"></a>数组的长度</h2><p>通过数组的 <code>length</code> 属性可以获取数组的长度。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(names.length); <span class="comment">// 3</span></span><br><span class="line">System.out.print(scores.length); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2 id="关键字与保留字"><a href="#关键字与保留字" class="headerlink" title="关键字与保留字"></a>关键字与保留字</h2><h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><ul>
-<li><p>被 Java 语言赋予了特殊含义，有专门用途的字符串</p>
-</li>
-<li><p>关键字中所有字母都为小写</p>
-<ul>
-<li>用于定义数据类型的关键字<br><code>class</code>、<code>interface</code>、<code>enum</code>、<code>byte</code>、<code>short</code>、<code>int</code>、<code>long</code>、<code>float</code>、<code>double</code>、<code>char</code>、<code>boolean</code>、<code>void</code></li>
-<li>用于定义数据类型<strong>值</strong>的关键字<br><code>true</code>、<code>false</code>、<code>null</code></li>
-<li>用于定义流程控制的关键字<br><code>if</code>、<code>else</code>、<code>switch</code>、<code>case</code>、<code>default</code>、<code>while</code>、<code>do</code>、<code>for</code>、<code>break</code>、<code>continue</code>、<code>return</code></li>
-<li>用于定义访问权限修饰符的关键字<br><code>private</code>、<code>protected</code>、<code>public</code></li>
-<li>用于定义类、函数、变量修饰符的关键字<br><code>abstract</code>、<code>final</code>、<code>static</code>、<code>synchronized</code></li>
-<li>用于定义建立实例及引用实例、判断实例的关键字<br><code>new</code>、<code>this</code>、<code>super</code>、<code>instanceof</code></li>
-<li>用于异常处理的关键字<br><code>try</code>、<code>catch</code>、<code>finally</code>、<code>throw</code></li>
-<li>用于包的关键字<br><code>package</code>、<code>import</code></li>
-<li>其他修饰符关键字<br><code>native</code>、<code>strictfp</code>、<code>transient</code>、<code>volatile</code>、<code>assert</code></li>
+<h2 id="数组的遍历"><a href="#数组的遍历" class="headerlink" title="数组的遍历"></a>数组的遍历</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; names.length; i++) &#123;</span><br><span class="line">	<span class="comment">// 打印数组 names 中的所有元素</span></span><br><span class="line">	System.out.println(names[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="数组元素的初始化默认值"><a href="#数组元素的初始化默认值" class="headerlink" title="数组元素的初始化默认值"></a>数组元素的初始化默认值</h2><h3 id="基本数据类型的数组"><a href="#基本数据类型的数组" class="headerlink" title="基本数据类型的数组"></a>基本数据类型的数组</h3><ul>
+<li>对于 <code>byte</code>、<code>short</code>、<code>int</code>、<code>long</code> 而言，创建数组以后，默认值为 <code>0</code></li>
+<li>对于 <code>float</code>、<code>double</code> 而言，创建数组以后，默认值为 <code>0.0</code>。</li>
+<li>对于 <code>char</code> 而言，创建数组以后，默认值为 <code>\0</code>，即空格。</li>
+<li>对于 <code>boolean</code> 而言，创建数组以后，默认值为 <code>false</code>。</li>
 </ul>
-</li>
-</ul>
-<h3 id="保留字"><a href="#保留字" class="headerlink" title="保留字"></a>保留字</h3><ul>
-<li>现有 Java 版本尚未使用，但以后版本可能会作为关键字使用。命名标识符时要避免使用保留字<br><code>byValue</code>、<code>cast</code>、<code>future</code>、<code>generic</code>、<code>inner</code>、<code>operator</code>、<code>outer</code>、<code>rest</code>、<code>var</code>、<code>goto</code>、<code>const</code></li>
+<h3 id="引用数据类型的数组"><a href="#引用数据类型的数组" class="headerlink" title="引用数据类型的数组"></a>引用数据类型的数组</h3><ul>
+<li>以 <code>String</code> 类为例，默认初始化值为 <code>null</code>。</li>
 </ul>
 <hr>
-<h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><ul>
-<li><p>Java 对各种变量、方法和类等要素命名使使用的字符序列称为标识符<br><em>凡是可以自己起名字的地方都叫标识符。</em></p>
-</li>
-<li><p>定义合法标识符规则（小学生守则）</p>
+<h2 id="一维数组的内存结构"><a href="#一维数组的内存结构" class="headerlink" title="一维数组的内存结构"></a>一维数组的内存结构</h2><p>内存基本结构，如图-1<br><img src="/images/javabasics/array-1.png" alt="图-1"></p>
+<p>基本数据类型的数组在内存中的结构，如图-2<br><img src="/images/javabasics/array-2.png" alt="图-2"></p>
+<p>引用数据类型的数组在内存中的结构，如图-3<br><img src="/images/javabasics/array-3.png" alt="图-3"></p>
+<p>一些创建数组方式，它们的内存结构都是相同的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] scores1 = <span class="keyword">new</span> scores1[]&#123;<span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> scores2[] = &#123;<span class="number">15</span>, <span class="number">16</span>, <span class="number">17</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span>[] scores3;</span><br><span class="line">scores3 = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">18</span>, <span class="number">19</span>, <span class="number">20</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="数组元素的引用"><a href="#数组元素的引用" class="headerlink" title="数组元素的引用"></a>数组元素的引用</h2><ul>
+<li>定义并用运算符 <code>new</code> 为之分配空间后，才可以引用数组中的每个元素</li>
+</ul>
 <ul>
-<li>由字母、数字、下划线或 <code>$</code> 组成</li>
-<li>不可以数字开头</li>
-<li>不可以直接使用关键字和保留字<br><em>但能包含关键字和保留字</em></li>
-<li>区分大小写，长度无限制</li>
-<li>不能包含空格</li>
+<li>数组元素的引用方式：<code>数组名[数组元素下标]</code></li>
 </ul>
-</li>
-<li><p>命名规范（小学生日常行为规范）</p>
 <ul>
-<li>包名<br>多个单词组成时，所有字母都小写：<code>xxxyyyzzz</code></li>
-<li>类名、接口名<br>多个单词组成时，所有单词的首字母大写：<code>XxxYyyZzz</code></li>
-<li>变量名、方法名<br>多个单词组成时，除第一个单词外其他单词首字母大写：<code>xxxYyyZzz</code></li>
-<li>常量名<br>所有字母都大写，多个单词使用下划线连接：<code>XXX_YYY_ZZZ</code></li>
+<li>数组元素下标可以是整型常量或整型表达式 如 <code>a[3]</code>、<code>b[i]</code>、<code>c[6*i]</code><ul>
+<li>数组元素下标从 <code>0</code> 开始，长度为 <code>n</code> 的数组合法下标取值范围是 <code>0</code> ==&gt; <code>n-1</code>，如 <code>int a[] = new int[3];</code> 可以引用的数组元素为 <code>a[0]</code>、<code>a[1]</code>、<code>a[2]</code></li>
 </ul>
 </li>
 </ul>
+<ul>
+<li>每个数组都有一个属性 <code>length</code> 指明它的长度，例如 <code>a.length</code> 指明数组 <code>a</code> 的长度（即元素的个数）<ul>
+<li>数组一旦初始化，其长度是<strong>不可变</strong>的</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="二维数组"><a href="#二维数组" class="headerlink" title="二维数组"></a>二维数组</h2><h3 id="声明并初始化"><a href="#声明并初始化" class="headerlink" title="声明并初始化"></a>声明并初始化</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1</span></span><br><span class="line">String[][] strs = <span class="keyword">new</span> String[<span class="number">4</span>][<span class="number">3</span>]; <span class="comment">// 类似于 4 行 3 列</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line">String[][] strs1 = <span class="keyword">new</span> String[<span class="number">4</span>][];</span><br><span class="line"><span class="comment">// 赋值</span></span><br><span class="line">strs1[<span class="number">0</span>] = <span class="keyword">new</span> String[<span class="number">3</span>];</span><br><span class="line">strs1[<span class="number">3</span>] = <span class="keyword">new</span> String[<span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3</span></span><br><span class="line"><span class="keyword">int</span>[][] arr = <span class="keyword">new</span> <span class="keyword">int</span>[][]&#123;&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;, &#123;<span class="number">4</span>, <span class="number">5</span>&#125;, &#123;<span class="number">6</span>&#125;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 引用二维数组</span></span><br><span class="line">arr[<span class="number">1</span>][<span class="number">0</span>] = <span class="number">12</span>; <span class="comment">// 需要两个下标来引用一个元素</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="二维数组的长度"><a href="#二维数组的长度" class="headerlink" title="二维数组的长度"></a>二维数组的长度</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">arr.length; <span class="comment">// 3</span></span><br><span class="line">arr[<span class="number">1</span>].length; <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="遍历二维数组"><a href="#遍历二维数组" class="headerlink" title="遍历二维数组"></a>遍历二维数组</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; arr[i].length; j++) &#123;</span><br><span class="line">        <span class="comment">// 打印数组的所有元素</span></span><br><span class="line">        System.out.println(arr[i][j]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="二维数组的内存结构"><a href="#二维数组的内存结构" class="headerlink" title="二维数组的内存结构"></a>二维数组的内存结构</h2><p><img src="../../images/javabasics/array-4.png" alt="图-1"><br><img src="../../images/javabasics/array-5.png" alt="图-2"></p>
+<hr>
+<h2 id="数组的常见异常"><a href="#数组的常见异常" class="headerlink" title="数组的常见异常"></a>数组的常见异常</h2><ul>
+<li>数组下标越界的异常：<code>java.lang.ArrayIndexOutOfBoundsException</code></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] i = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br><span class="line">i[<span class="number">0</span>] = <span class="number">90</span>;</span><br><span class="line">i[<span class="number">10</span>] = <span class="number">99</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> m = <span class="number">0</span>; m &lt;= i.length; m++) &#123;</span><br><span class="line">    System.out.println(i[m]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>空指针的异常：<code>NullPointerException</code></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 第一种</span></span><br><span class="line"><span class="keyword">boolean</span>[] b = <span class="keyword">new</span> <span class="keyword">boolean</span>[<span class="number">3</span>];</span><br><span class="line">b = <span class="keyword">null</span>;</span><br><span class="line">System.out.println(b[<span class="number">0</span>]);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第二种</span></span><br><span class="line">String[] str = <span class="keyword">new</span> String[<span class="number">4</span>];</span><br><span class="line">System.out.println(str[<span class="number">3</span>].toString());</span><br><span class="line"></span><br><span class="line"><span class="comment">// 第三种</span></span><br><span class="line"><span class="keyword">int</span>[][] j = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>][];</span><br><span class="line">j[<span class="number">2</span>][<span class="number">0</span>] = <span class="number">12</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="数组的常见算法"><a href="#数组的常见算法" class="headerlink" title="数组的常见算法"></a>数组的常见算法</h2><ul>
+<li>求数组元素的最大值、最小值、和、平均值等</li>
+</ul>
+<ul>
+<li>数组的复制和反转等</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方法一</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length / <span class="number">2</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">int</span> temp = arr[i];</span><br><span class="line">    arr[i] = arr[arr.length - <span class="number">1</span> - i];</span><br><span class="line">    arr[arr.length - <span class="number">1</span> - i] = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方法二</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">0</span>, y = arr.length - <span class="number">1</span>; x &lt; y; x++, y--) &#123;</span><br><span class="line">    <span class="keyword">int</span> temp = arr[x];</span><br><span class="line">    arr[x] = arr[y];</span><br><span class="line">    arr[y] = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>数组元素的排序<ul>
+<li>插入排序<br>直接插入排序、折半排序、Shell 排序</li>
+<li>交换排序<br>冒泡排序、快速排序（或分区交换排序）</li>
+<li>归并排序</li>
+<li>基数排序</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 冒泡排序</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; arr.length - <span class="number">1</span> - i; j++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[j] &gt; arr[j + <span class="number">1</span>]) &#123;</span><br><span class="line">            <span class="keyword">int</span> temp = arr[j];</span><br><span class="line">            arr[j] = arr[j + <span class="number">1</span>];</span><br><span class="line">            arr[j + <span class="number">1</span>] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p>命名规则必须遵守，而命名规范是推荐遵守，但只有你使用了命名规范才知道是真的好。</p>
+<p>开发中一般会直接调用 Arrays 工具类的 <code>Arrays.sort()</code> 方法。</p>
 </blockquote>
-<hr>
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ul>
-<li>变量的概念<ul>
-<li>内存中的一个存储区域</li>
-<li>该区域有自己的名称（变量名）和类型（数据类型）</li>
-<li>变量必须先声明后使用</li>
-<li>该区域的数据可以在同一类型范围内不断变化</li>
-</ul>
-</li>
-<li>注意<ul>
-<li>变量的作用域<br>一对 <code>{}</code> 之间有效</li>
-<li>初始化值</li>
-</ul>
-</li>
-<li>定义变量的格式<br><code>数据类型 变量名 = 初始化值;</code> <code>boolean flag = true;</code></li>
-<li>变量通过使用变量名来访问这块区域</li>
-</ul>
-<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><ul>
-<li>在方法体外，类体内声明的变量称为<strong>成员变量</strong></li>
-<li>在方法体内部声明的变量称为<strong>局部变量</strong></li>
-</ul>
-<embed type="image/svg+xml" src="/images/javabasics/all-variables.svg">
-
-<ul>
-<li>注意二者在初始化值方面的异同<ul>
-<li>同<br>都有生命周期。</li>
-<li>异<br>局部变量除形参外，需显示初始化。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><embed type="image/svg+xml" src="/images/javabasics/data-type.svg">
-
-<ul>
-<li>自动类型转换<br>当容量小的数据类型与容量大的数据类型做运算时，容量小的会自动转换为容量大的数据类型。<br><code>char</code>、<code>byte</code>、<code>short</code> ==&gt; <code>int</code> ==&gt; <code>long</code> ==&gt; <code>float</code> ==&gt; <code>double</code></li>
-</ul>
-<blockquote>
-<p>注意：当 <code>char</code>、<code>byte</code>、<code>short</code> 之间做运算时，默认的结果为 <code>int</code> 类型。</p>
-</blockquote>
-<ul>
-<li>强制类型转换<br>强制类型转换符<code>( )</code>，括号中填写需要强制转换的类型。</li>
-</ul>
 
     </div>
 
@@ -414,13 +393,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/java-basics/01.html" rel="prev" title="6道基础编程题">
-      <i class="fa fa-chevron-left"></i> 6道基础编程题
+    <a href="/java-basics/01.html" rel="prev" title="Java 请你吃晚餐">
+      <i class="fa fa-chevron-left"></i> Java 请你吃晚餐
     </a></div>
-      <div class="post-nav-item">
-    <a href="/java-basics/03.html" rel="next" title="数组">
-      数组 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -458,7 +434,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JDK与JRE"><span class="nav-number">1.</span> <span class="nav-text">JDK与JRE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常识"><span class="nav-number">2.</span> <span class="nav-text">常识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关键字与保留字"><span class="nav-number">3.</span> <span class="nav-text">关键字与保留字</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关键字"><span class="nav-number">3.1.</span> <span class="nav-text">关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#保留字"><span class="nav-number">3.2.</span> <span class="nav-text">保留字</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标识符"><span class="nav-number">4.</span> <span class="nav-text">标识符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">5.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">5.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#补充"><span class="nav-number">5.2.</span> <span class="nav-text">补充</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">6.</span> <span class="nav-text">数据类型</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义数组"><span class="nav-number">2.</span> <span class="nav-text">定义数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组的长度"><span class="nav-number">3.</span> <span class="nav-text">数组的长度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组的遍历"><span class="nav-number">4.</span> <span class="nav-text">数组的遍历</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组元素的初始化默认值"><span class="nav-number">5.</span> <span class="nav-text">数组元素的初始化默认值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本数据类型的数组"><span class="nav-number">5.1.</span> <span class="nav-text">基本数据类型的数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用数据类型的数组"><span class="nav-number">5.2.</span> <span class="nav-text">引用数据类型的数组</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一维数组的内存结构"><span class="nav-number">6.</span> <span class="nav-text">一维数组的内存结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组元素的引用"><span class="nav-number">7.</span> <span class="nav-text">数组元素的引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二维数组"><span class="nav-number">8.</span> <span class="nav-text">二维数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#声明并初始化"><span class="nav-number">8.1.</span> <span class="nav-text">声明并初始化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二维数组的长度"><span class="nav-number">9.</span> <span class="nav-text">二维数组的长度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遍历二维数组"><span class="nav-number">10.</span> <span class="nav-text">遍历二维数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二维数组的内存结构"><span class="nav-number">11.</span> <span class="nav-text">二维数组的内存结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组的常见异常"><span class="nav-number">12.</span> <span class="nav-text">数组的常见异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组的常见算法"><span class="nav-number">13.</span> <span class="nav-text">数组的常见算法</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -472,16 +448,16 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-count">69</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分类</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>

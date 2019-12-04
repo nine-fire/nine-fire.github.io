@@ -46,18 +46,22 @@
   };
 </script>
 
-  <meta name="description" content="前端开发流程前端开发一般包括三个步骤：             网页设计师根据需求设计网页          前端工程师将设计做成静态网页              后台工程师将静态网页修改为动态网页         这里的静态网页不是指网页的动画效果，而是指数据的动态变化。现在的技术日新月异，不同公司的开发流程也有所不同，但基本遵循以上流程。">
-<meta name="keywords" content="HTML,CSS">
+  <meta name="description" content="盒子模型基本概念 CSS 处理网页时，它认为每个元素都包含在一个不可见的盒子里。 如果把所有的元素都想象成盒子，那么我们对网页的布局就相当于在摆放盒子。我们只需要将相应的盒子摆放到网页中相应的位置即可完成网页的布局。 一个盒子我们会分成以下几个部分： content：内容区 padding：内边距 border：边框 margin：外边距">
+<meta name="keywords" content="CSS,盒子模型">
 <meta property="og:type" content="article">
-<meta property="og:title" content="与前端的初次邂逅">
+<meta property="og:title" content="盒子模型">
 <meta property="og:url" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;front-end-basics&#x2F;04.html">
 <meta property="og:site_name" content="玖燃">
-<meta property="og:description" content="前端开发流程前端开发一般包括三个步骤：             网页设计师根据需求设计网页          前端工程师将设计做成静态网页              后台工程师将静态网页修改为动态网页         这里的静态网页不是指网页的动画效果，而是指数据的动态变化。现在的技术日新月异，不同公司的开发流程也有所不同，但基本遵循以上流程。">
+<meta property="og:description" content="盒子模型基本概念 CSS 处理网页时，它认为每个元素都包含在一个不可见的盒子里。 如果把所有的元素都想象成盒子，那么我们对网页的布局就相当于在摆放盒子。我们只需要将相应的盒子摆放到网页中相应的位置即可完成网页的布局。 一个盒子我们会分成以下几个部分： content：内容区 padding：内边距 border：边框 margin：外边距">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;images&#x2F;htmlcssbasics&#x2F;1001&#x2F;1.jpg">
-<meta property="og:updated_time" content="2018-08-16T01:11:11.649Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;images&#x2F;htmlcssbasics&#x2F;1031&#x2F;1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;images&#x2F;htmlcssbasics&#x2F;1036&#x2F;1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;images&#x2F;htmlcssbasics&#x2F;1036&#x2F;1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;images&#x2F;htmlcssbasics&#x2F;1036&#x2F;3.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;images&#x2F;htmlcssbasics&#x2F;1036&#x2F;4.png">
+<meta property="og:updated_time" content="2019-12-04T08:45:37.537Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;images&#x2F;htmlcssbasics&#x2F;1001&#x2F;1.jpg">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;images&#x2F;htmlcssbasics&#x2F;1031&#x2F;1.png">
 
 <link rel="canonical" href="http://ninefire.gitee.io/front-end-basics/04.html">
 
@@ -73,7 +77,7 @@
   };
 </script>
 
-  <title>与前端的初次邂逅 | 玖燃</title>
+  <title>盒子模型 | 玖燃</title>
   
 
 
@@ -218,7 +222,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          与前端的初次邂逅
+          盒子模型
         </h1>
 
         <div class="post-meta">
@@ -228,14 +232,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2018-06-06 00:10:04" itemprop="dateCreated datePublished" datetime="2018-06-06T00:10:04+08:00">2018-06-06</time>
+              <time title="创建时间：2018-06-06 00:10:31" itemprop="dateCreated datePublished" datetime="2018-06-06T00:10:31+08:00">2018-06-06</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2018-08-16 09:11:11" itemprop="dateModified" datetime="2018-08-16T09:11:11+08:00">2018-08-16</time>
+                <time title="修改时间：2019-12-04 16:45:37" itemprop="dateModified" datetime="2019-12-04T16:45:37+08:00">2019-12-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -249,8 +253,8 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/HTML-CSS%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
-                    <span itemprop="name">HTML+CSS基础</span>
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/HTML-CSS-%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML + CSS 基础</span>
                   </a>
                 </span>
             </span>
@@ -266,46 +270,138 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="前端开发流程"><a href="#前端开发流程" class="headerlink" title="前端开发流程"></a>前端开发流程</h2><p>前端开发一般包括三个步骤：            </p><ol>
-<li>网页设计师根据需求设计网页        </li>
-</ol><ol start="2">
-<li>前端工程师将设计做成静态网页            </li>
-</ol><ol start="3">
-<li>后台工程师将静态网页修改为动态网页        </li>
-</ol><p>这里的静态网页不是指网页的动画效果，而是指数据的动态变化。</p><p><img src="/images/htmlcssbasics/1001/1.jpg" alt="开发流程"></p><p>现在的技术日新月异，不同公司的开发流程也有所不同，但基本遵循以上流程。        </p><a id="more"></a>
-
-
-
-
-
-
-<p>软件的架构&gt;&gt;<a href="http://naotu.baidu.com/file/27b23af4e471e82354c472f5d540d804?token=07b260a35f429b70" target="_blank" rel="noopener">请戳我</a>&lt;&lt;</p>
-<h2 id="W3C"><a href="#W3C" class="headerlink" title="W3C"></a>W3C</h2><ul>
-<li>万维网联盟（World Wid Web Consortium）。</li>
+        <h2 id="盒子模型基本概念"><a href="#盒子模型基本概念" class="headerlink" title="盒子模型基本概念"></a>盒子模型基本概念</h2><ul>
+<li>CSS 处理网页时，它认为<strong>每个元素</strong>都包含在一个不可见的盒子里。</li>
+</ul><p>如果把<strong>所有的元素</strong>都想象成盒子，那么我们对网页的布局就相当于在摆放盒子。<br>我们只需要将相应的盒子摆放到网页中相应的位置即可完成网页的布局。</p><ul>
+<li>一个盒子我们会分成以下几个部分：<ul>
+<li><code>content</code>：内容区</li>
+<li><code>padding</code>：内边距</li>
+<li><code>border</code>：边框</li>
+<li><code>margin</code>：外边距</li>
 </ul>
+</li>
+</ul><a id="more"></a>
+
+
+<p><img src="/images/htmlcssbasics/1031/1.png" alt="盒子模型"></p>
+<blockquote>
+<p>此部分只可意会不可言传。</p>
+</blockquote>
+<hr>
+<h2 id="盒子模型-边框"><a href="#盒子模型-边框" class="headerlink" title="盒子模型-边框"></a>盒子模型-边框</h2><h3 id="设置元素的大小"><a href="#设置元素的大小" class="headerlink" title="设置元素的大小"></a>设置元素的大小</h3><p>使用 <code>width</code> 来设置盒子<strong>内容区</strong>的宽度<br>使用 <code>height</code> 来设置盒子<strong>内容区</strong>的高度</p>
+<blockquote>
+<p><code>width</code> 和 <code>height</code> 只是设置的盒子内容区的大小，而不是盒子的整体（可见）大小，盒子的可见大小由内容区、内边距和边框共同决定。</p>
+</blockquote>
+<h3 id="设置元素的边框"><a href="#设置元素的边框" class="headerlink" title="设置元素的边框"></a>设置元素的边框</h3><p>为元素设置边框时必须指定以下三个样式：</p>
 <ul>
-<li>W3C专门为了定义网页相关的标准而成立。</li>
+<li><code>border-width</code> 用来设置边框的宽度</li>
 </ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 如果指定1个值，则将指定的值同时设置给4个边框 */</span></span><br><span class="line"><span class="selector-tag">border-width</span>: 10<span class="selector-tag">px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 如果指定2个值，则将指定的值分别设置给上下、左右边框 */</span></span><br><span class="line"><span class="selector-tag">border-width</span>: 10<span class="selector-tag">px</span> 20<span class="selector-tag">px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 如果指定3个值，则将指定的值分别设置给上、左右、下边框 */</span></span><br><span class="line"><span class="selector-tag">border-width</span>: 10<span class="selector-tag">px</span> 20<span class="selector-tag">px</span> 30<span class="selector-tag">px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 如果指定4个值，则将指定的值分别设置给上、右、下、左边框（顺时针）*/</span></span><br><span class="line"><span class="selector-tag">border-width</span>: 10<span class="selector-tag">px</span> 20<span class="selector-tag">px</span> 30<span class="selector-tag">px</span> 40<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>以上用于分别指定四条边框样式的方法同样适用于边框的其他属性。</p>
+</blockquote>
 <ul>
-<li>W3C定义了网页中的HTML、CSS、DOM、HTTP和XML等标准。</li>
+<li><code>border-style</code> 用来设置边框的样式<br>可选值：<ul>
+<li><code>none</code> 没有边框（默认值）</li>
+<li><code>solid</code> 实线</li>
+<li><code>dashed</code> 虚线</li>
+<li><code>dotted</code> 圆点虚线</li>
+<li><code>double</code> 双实线</li>
 </ul>
-<h2 id="WHATWG"><a href="#WHATWG" class="headerlink" title="WHATWG"></a>WHATWG</h2><p>网页超文本应用技术工作小组（Web Hypertext Application Technology Working Group）    </p>
-<p>是一个以推动网络HTML5标准为目的而成立的组织。在2004年，由Opera、Mozilla基金会和苹果这些浏览器厂商组成。        </p>
-<p>历史：<br>WHATWG成立的原因是W3C意图放弃HTML，而力图发展XML（可扩展标记记语言下的一个子集）技术。WHATWG邮件列表公布于2004-6-4 , 在Opera–Mozilla宣布加入后的2天便否决了由万维网联盟（W3C）成员在W3C工作室的Web标准。<br>2007-7-10 , Mozilla Foundation, Apple, Opera Software 建议 W3C 跟随 WHATWG 的 HTML5，将新的HTML（标准通用标记语言下的一个应用）命名为”HTML5”。2007-4-7, 新的HTML工作组采纳了他们的建议。        </p>
-<h2 id="HTML简介"><a href="#HTML简介" class="headerlink" title="HTML简介"></a>HTML简介</h2><ul>
-<li>HTML（Hypertext Markup Language）<br>超文本标记语言</li>
-</ul>
-<ul>
-<li>它负责网页的三个要素中的结构。</li>
-</ul>
-<ul>
-<li>HTML使用标签的形式来表示网页中的不同组成部分。</li>
-</ul>
-<ul>
-<li>所谓超文本指的是超链接，使用超链接可以让我们从一个页面跳转到另一个页面。</li>
+</li>
 </ul>
 <blockquote>
-<p>网页的三个要素&gt;&gt;<a href="http://naotu.baidu.com/file/de8e109854842b3a13b67c848f1fa964?token=1eea1aceca963cc8" target="_blank" rel="noopener">请戳我</a>&lt;&lt;</p>
+<p>该属性支持用前面提到的方法分别设置四条边框的样式。</p>
+</blockquote>
+<ul>
+<li><code>border-color</code> 用来设置边框的颜色</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-color</span>: <span class="selector-tag">red</span>; <span class="comment">/* 设置边框颜色为红色 */</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>该属性支持用前面提到的方法分别设置四条边框的颜色。</p>
+</blockquote>
+<hr>
+<h2 id="边框属性的简写"><a href="#边框属性的简写" class="headerlink" title="边框属性的简写"></a>边框属性的简写</h2><p>大多数浏览器中，边框的 <code>border-width</code> 和 <code>border-color</code> 都有默认值，而边框的 <code>border-style</code> 默认值都是 <code>none</code></p>
+<ul>
+<li>使用 <code>border</code> 来统一设置四条边框的所有属性（与文本样式的简写同样道理）<br>边框的简写样式，通过它可以同时设置四个边框的样式、宽度、颜色，而且没有任何书写顺序。</li>
+</ul>
+<p>例如以下写法都正确：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border</span>: 10<span class="selector-tag">px</span> <span class="selector-tag">solid</span> <span class="selector-tag">red</span>;</span><br><span class="line"><span class="selector-tag">border</span>: <span class="selector-tag">solid</span> 10<span class="selector-tag">px</span> <span class="selector-tag">red</span>;</span><br><span class="line"><span class="selector-tag">border</span>: <span class="selector-tag">red</span> <span class="selector-tag">solid</span> 10<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用 <code>border-xxx</code> 来分别设置四条边框的所有属性<br><code>xxx</code> 可以是 <code>top</code>、<code>right</code>、<code>bottom</code> 和 <code>left</code>。<br>简写的规则与 <code>border</code> 一样。</li>
+</ul>
+<hr>
+<h2 id="盒子模型-内边距"><a href="#盒子模型-内边距" class="headerlink" title="盒子模型-内边距"></a>盒子模型-内边距</h2><ul>
+<li>内边距（padding），指的是盒子的内容区与盒子边框之间的距离</li>
+<li>共有四个方向的内边距，可以通过 <code>padding-top</code>、<code>padding-right</code>、<code>padding-bottom</code>、<code>padding-left</code> 来分别设置四个方向的内边距。</li>
+<li>盒子的可见大小由内容区、内边距和边框的大小共同决定。</li>
+<li>盒子可见框的宽度 = <code>border-left-width</code> + <code>padding-left</code> + <code>width</code> + <code>padding-right</code> + <code>border-right-width</code></li>
+<li>盒子可见框的高度 = <code>border-top-width</code> + <code>padding-top</code> + <code>height</code> + <code>padding-bottom</code> + <code>border-bottom-width</code></li>
+</ul>
+<blockquote>
+<p>内边距会<strong>影响</strong>盒子的<strong>可见框</strong>大小。<br>  元素的背景会延伸到内边距。</p>
+</blockquote>
+<ul>
+<li>使用<code>padding</code>可以同时设置四个方向的内边距。<br>规则和<code>border</code>简写形式相同。</li>
+</ul>
+<p>例：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*设置四个方向的内边距均为5px*/</span></span><br><span class="line"><span class="selector-tag">padding</span>: 5<span class="selector-tag">px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*设置上、下内边距为5px，左、右内边距为10px*/</span></span><br><span class="line"><span class="selector-tag">padding</span>: 5<span class="selector-tag">px</span> 10<span class="selector-tag">px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*设置上内边距为5px，左右内边距为10px，下内边距为15px*/</span></span><br><span class="line"><span class="selector-tag">padding</span>: 5<span class="selector-tag">px</span> 10<span class="selector-tag">px</span> 15<span class="selector-tag">px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*设置上、右、下、左内边距分别为5px、10px、15px、20px*/</span></span><br><span class="line"><span class="selector-tag">padding</span>: 5<span class="selector-tag">px</span> 10<span class="selector-tag">px</span> 15<span class="selector-tag">px</span> 20<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="盒子模型-外边距"><a href="#盒子模型-外边距" class="headerlink" title="盒子模型-外边距"></a>盒子模型-外边距</h2><ul>
+<li>外边距（margin），指的是当前盒子与其他盒子之间的距离。</li>
+<li>共有四个方向的外边距，可以通过 <code>margin-top</code>、<code>margin-right</code>、<code>margin-bottom</code>、<code>margin-left</code> 来分别设置四个方向的外边距。</li>
+<li>由于页面中的元素都是靠左和靠上摆放的，因此需要注意，当设置左、上外边距时，会导致盒子自身的位置发生改变，而设置右、下外边距会改变其他盒子的位置。            <br></li>
+<li>若外边距设置的是负值，则元素会反方向移动。</li>
+</ul>
+<p>例：<code>margin-left: -150px;</code> 元素会向左位移 150 像素。</p>
+<ul>
+<li>外边距还可以设置为 <code>auto</code>，<code>auto</code> 一般只设置给水平方向的 <code>margin</code>。</li>
+<li>若只指定 <code>margin-left</code> 或 <code>margin-right</code> 的值为 <code>auto</code>，则会将外边距设置为最大值。</li>
+<li>若同时指定 <code>margin-left</code> 和 <code>margin-right</code> 的值为 <code>auto</code>，则会将两侧的外边距设置为相同值，就可以使元素自动在父元素中居中，因此我们经常将左右外边距设置为 <code>auto</code>，以使子元素在父元素中水平居中。</li>
+<li>若指定垂直方向的外边距为 <code>auto</code>，则外边距默认为 <code>0</code>。</li>
+</ul>
+<blockquote>
+<p>外边距不会影响可见框的大小，但会影响盒子的位置。</p>
+</blockquote>
+<ul>
+<li>使用 <code>margin</code> 可以同时设置四个方向的外边距。<br>规则和 <code>padding</code> 简写形式相同。</li>
+</ul>
+<p>例：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">margin</span>: 5<span class="selector-tag">px</span>; <span class="comment">/* 设置四个方向的外边距均为 5px */</span></span><br><span class="line"><span class="selector-tag">margin</span>: 5<span class="selector-tag">px</span> 10<span class="selector-tag">px</span>; <span class="comment">/* 设置上、下外边距为 5px，左、右外边距为 10px */</span></span><br><span class="line"><span class="selector-tag">margin</span>: 5<span class="selector-tag">px</span> 10<span class="selector-tag">px</span> 15<span class="selector-tag">px</span>; <span class="comment">/* 设置上外边距为 5px，左右外边距为 10px，下外边距为 15px */</span></span><br><span class="line"><span class="selector-tag">margin</span>: 5<span class="selector-tag">px</span> 10<span class="selector-tag">px</span> 15<span class="selector-tag">px</span> 20<span class="selector-tag">px</span>; <span class="comment">/* 设置上、右、下、左外边距分别为 5px、10px、15px、20px */</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="垂直外边距的重叠"><a href="#垂直外边距的重叠" class="headerlink" title="垂直外边距的重叠"></a>垂直外边距的重叠</h2><p>如有以下代码片段：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--结构--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**样式**/</span></span><br><span class="line"><span class="selector-tag">box1</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: red;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*为红色的盒子设置一个下外边距*/</span></span><br><span class="line">	<span class="attribute">margin-bottom</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">box2</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其效果如图-1所示</p>
+<p><img src="/images/htmlcssbasics/1036/1.png" alt="图-1"></p>
+<p>若将样式设置为</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">box1</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: red;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*为红色的盒子设置一个下外边距*/</span></span><br><span class="line">	<span class="attribute">margin-bottom</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">box2</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: green;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*为绿色的盒子设置一个上外边距*/</span></span><br><span class="line">	<span class="attribute">margin-bottom</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其效果如图-2所示，与图-1完全相同</p>
+<p><img src="/images/htmlcssbasics/1036/1.png" alt="图-2"></p>
+<p>若将结构改为</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 结构 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">a</span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>其效果如图-3所示</p>
+<p><img src="/images/htmlcssbasics/1036/3.png" alt="图-3"></p>
+<p>这个现象称为垂直外边距的重叠。</p>
+<p>在网页中，<strong>相邻</strong>的<strong>垂直</strong>方向的外边距会发生外边距的重叠，所谓的外边距重叠是指兄弟元素之间的相邻外边距会取最大值而不是取和。</p>
+<p>又有以下代码片段：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 结构 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box3"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box4"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**样式**/</span></span><br><span class="line"><span class="selector-class">.box3</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: yellow;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box4</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: yellowgreen;</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * 为子元素设置一个上外边距，即子元素的位置下移</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="attribute">margin-top</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其效果如图-4所示</p>
+<p><img src="/images/htmlcssbasics/1036/4.png" alt="图-4"></p>
+<p>如果父子元素的垂直外边距相邻了，则子元素的外边距会设置给父元素。</p>
+<blockquote>
+<p>我们解决垂直外边距的重叠带来的问题时，必须从“相邻”和“垂直”着手去思考解决方法。<br>  例如用另一个元素或 <code>border</code> 将两个外边距隔开，使其不再相邻，即可解决该问题。<br>  还可以改用其他样式来代替 <code>margin</code>，不使用垂直外边距。</p>
 </blockquote>
 
     </div>
@@ -316,8 +412,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/HTML/" rel="tag"># HTML</a>
               <a href="/tags/CSS/" rel="tag"># CSS</a>
+              <a href="/tags/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/" rel="tag"># 盒子模型</a>
           </div>
 
         
@@ -326,12 +422,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/chat/welcome.html" rel="prev" title="WELCOME">
-      <i class="fa fa-chevron-left"></i> WELCOME
+    <a href="/front-end-basics/03.html" rel="prev" title="继续远航与 HTML 和 CSS">
+      <i class="fa fa-chevron-left"></i> 继续远航与 HTML 和 CSS
     </a></div>
       <div class="post-nav-item">
-    <a href="/front-end-basics/05.html" rel="next" title="HTML规范（XHTML规范）">
-      HTML规范（XHTML规范） <i class="fa fa-chevron-right"></i>
+    <a href="/front-end-basics/37.html" rel="next" title="浏览器的默认样式">
+      浏览器的默认样式 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -370,7 +466,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前端开发流程"><span class="nav-number">1.</span> <span class="nav-text">前端开发流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#W3C"><span class="nav-number">2.</span> <span class="nav-text">W3C</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WHATWG"><span class="nav-number">3.</span> <span class="nav-text">WHATWG</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML简介"><span class="nav-number">4.</span> <span class="nav-text">HTML简介</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#盒子模型基本概念"><span class="nav-number">1.</span> <span class="nav-text">盒子模型基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#盒子模型-边框"><span class="nav-number">2.</span> <span class="nav-text">盒子模型-边框</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置元素的大小"><span class="nav-number">2.1.</span> <span class="nav-text">设置元素的大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置元素的边框"><span class="nav-number">2.2.</span> <span class="nav-text">设置元素的边框</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#边框属性的简写"><span class="nav-number">3.</span> <span class="nav-text">边框属性的简写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#盒子模型-内边距"><span class="nav-number">4.</span> <span class="nav-text">盒子模型-内边距</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#盒子模型-外边距"><span class="nav-number">5.</span> <span class="nav-text">盒子模型-外边距</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#垂直外边距的重叠"><span class="nav-number">6.</span> <span class="nav-text">垂直外边距的重叠</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -384,16 +480,16 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-count">69</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分类</span>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>

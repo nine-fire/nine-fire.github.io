@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://ninefire.gitee.io').hostname,
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":"default"},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="前端开发流程前端开发一般包括三个步骤： 网页设计师根据需求设计网页  前端工程师将设计做成静态网页  后台工程师将静态网页修改为动态网页  这里的静态网页不是指网页的动画效果，而是指数据的动态变化。现在的技术日新月异，不同公司的开发流程也有所不同，但基本遵循以上流程。软件的架构 &amp;gt;&amp;gt;请戳我&amp;lt;&amp;lt;">
+<meta name="keywords" content="CSS,HTML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="与 Web 前端的初次邂逅">
+<meta property="og:url" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;front-end-basics&#x2F;01.html">
+<meta property="og:site_name" content="玖燃">
+<meta property="og:description" content="前端开发流程前端开发一般包括三个步骤： 网页设计师根据需求设计网页  前端工程师将设计做成静态网页  后台工程师将静态网页修改为动态网页  这里的静态网页不是指网页的动画效果，而是指数据的动态变化。现在的技术日新月异，不同公司的开发流程也有所不同，但基本遵循以上流程。软件的架构 &amp;gt;&amp;gt;请戳我&amp;lt;&amp;lt;">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;images&#x2F;htmlcssbasics&#x2F;1001&#x2F;1.jpg">
+<meta property="og:updated_time" content="2019-12-04T05:55:34.066Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;images&#x2F;htmlcssbasics&#x2F;1001&#x2F;1.jpg">
+
+<link rel="canonical" href="http://ninefire.gitee.io/front-end-basics/01.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>与 Web 前端的初次邂逅 | 玖燃</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">玖燃</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">永远不要失去对生活的激情</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://ninefire.gitee.io/front-end-basics/01.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="玖燃">
+      <meta itemprop="description" content="专注于分享知识、资源">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="玖燃">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          与 Web 前端的初次邂逅
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-06-06 00:10:04" itemprop="dateCreated datePublished" datetime="2018-06-06T00:10:04+08:00">2018-06-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-04 13:55:34" itemprop="dateModified" datetime="2019-12-04T13:55:34+08:00">2019-12-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/HTML-CSS-%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">HTML + CSS 基础</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="前端开发流程"><a href="#前端开发流程" class="headerlink" title="前端开发流程"></a>前端开发流程</h2><p>前端开发一般包括三个步骤：</p><ol>
+<li><p>网页设计师根据需求设计网页</p>
+</li>
+<li><p>前端工程师将设计做成静态网页</p>
+</li>
+<li><p>后台工程师将静态网页修改为动态网页</p>
+</li>
+</ol><p>这里的静态网页不是指网页的动画效果，而是指数据的动态变化。</p><p><img src="/images/htmlcssbasics/1001/1.jpg" alt="开发流程"></p><p>现在的技术日新月异，不同公司的开发流程也有所不同，但基本遵循以上流程。</p><p>软件的架构 &gt;&gt;<a href="http://naotu.baidu.com/file/27b23af4e471e82354c472f5d540d804?token=07b260a35f429b70" target="_blank" rel="noopener">请戳我</a>&lt;&lt;</p><a id="more"></a>
+
+
+
+
+
+<hr>
+<h2 id="W3C"><a href="#W3C" class="headerlink" title="W3C"></a>W3C</h2><ul>
+<li><p>万维网联盟（World Wid Web Consortium）</p>
+</li>
+<li><p>W3C 专门为了定义网页相关的标准而成立</p>
+</li>
+<li><p>W3C 定义了网页中的 HTML、CSS、DOM、HTTP 和 XML 等标准</p>
+</li>
+</ul>
+<hr>
+<h2 id="WHATWG"><a href="#WHATWG" class="headerlink" title="WHATWG"></a>WHATWG</h2><p>网页超文本应用技术工作小组（Web Hypertext Application Technology Working Group）</p>
+<p>是一个以推动网络 HTML5 标准为目的而成立的组织。在 2004 年，由 Opera、Mozilla 基金会和苹果这些浏览器厂商组成。</p>
+<p>历史：<br>WHATWG 成立的原因是 W3C 意图放弃 HTML，而力图发展 XML（可扩展标记记语言下的一个子集）技术。WHATWG 邮件列表公布于 2004-6-4 , 在 Opera–Mozilla 宣布加入后的 2  天便否决了由万维网联盟（W3C）成员在 W3C 工作室的 Web 标准。</p>
+<p>2007-7-10 , Mozilla Foundation, Apple, Opera Software 建议 W3C 跟随 WHATWG 的 HTML5，将新的  HTML（标准通用标记语言下的一个应用）命名为“HTML5”。2007-4-7, 新的 HTML 工作组采纳了他们的建议。</p>
+<hr>
+<h2 id="HTML-简介"><a href="#HTML-简介" class="headerlink" title="HTML 简介"></a>HTML 简介</h2><ul>
+<li><p>HTML（Hypertext Markup Language）<br>超文本标记语言</p>
+</li>
+<li><p>它负责网页的三个要素中的结构。</p>
+</li>
+<li><p>HTML 使用标签的形式来表示网页中的不同组成部分。</p>
+</li>
+<li><p>所谓超文本指的是超链接，使用超链接可以让我们从一个页面跳转到另一个页面。</p>
+</li>
+</ul>
+<blockquote>
+<p>网页的三个要素 &gt;&gt;<a href="http://naotu.baidu.com/file/de8e109854842b3a13b67c848f1fa964?token=1eea1aceca963cc8" target="_blank" rel="noopener">请戳我</a>&lt;&lt;</p>
+</blockquote>
+<hr>
+<h2 id="HTML-规范（XHTML-规范）"><a href="#HTML-规范（XHTML-规范）" class="headerlink" title="HTML 规范（XHTML 规范）"></a>HTML 规范（XHTML 规范）</h2><ul>
+<li><p>HTML 中不区分大小写，但我们一般都使用小写。</p>
+</li>
+<li><p>HTML 中的注释不能嵌套。</p>
+</li>
+<li><p>HTML 标签必须结构完整，要么成对出现，要么是自结束标签。<br>浏览器会尽最大努力正确的解析页面，你所有的不符合语法规范的内容，浏览器都会为你自动修正，但某些特殊情况时会修正错误。</p>
+</li>
+<li><p>自结束标签后需要加<code>/</code>，如<code>&lt;br/&gt;</code>、<code>&lt;img/&gt;</code>（XHTML 规范）。<br>在 HTML5 中可以不加<code>/</code>，如<code>&lt;br&gt;</code>、<code>&lt;img&gt;</code>，两种写法都正确。</p>
+</li>
+<li><p>HTML 标签可以嵌套，但不能交叉嵌套。</p>
+</li>
+<li><p>HTML 标签中的属性必须有值，且值必须加引号（单引号和双引号均可）。</p>
+</li>
+</ul>
+<hr>
+<h2 id="HTML基础"><a href="#HTML基础" class="headerlink" title="HTML基础"></a>HTML基础</h2><h3 id="lt-meta-gt-标签"><a href="#lt-meta-gt-标签" class="headerlink" title="&lt;meta/&gt;标签"></a><code>&lt;meta/&gt;</code>标签</h3><ul>
+<li><code>&lt;meta/&gt;</code> 标签用来设置网页的一些元数据，比如网页的字符集、关键字、简介等<br><code>&lt;meta/&gt;</code> 是一个自结束标签。</li>
+</ul>
+<h3 id="标题标签"><a href="#标题标签" class="headerlink" title="标题标签"></a>标题标签</h3><ul>
+<li><p>在 HTML 中共有 6 级标题标签 <code>&lt;h1&gt;</code>、<code>&lt;h2&gt;</code>、<code>&lt;h3&gt;</code>、<code>&lt;h4&gt;</code>、<code>&lt;h5&gt;</code>、<code>&lt;h6&gt;</code></p>
+</li>
+<li><p>在显示效果上 <code>&lt;h1&gt;</code> 最大，<code>&lt;h6&gt;</code>最小，但是文字的大小我们并不关心，因为文字大小属于样式</p>
+</li>
+<li><p>使用 HTML 标签时，关心的是标签的语义，我们使用的标签都是语义化标签</p>
+</li>
+<li><p>6 级标题中，<code>&lt;h1&gt;</code>最重要，表示一个网页的主要内容，<code>&lt;h2&gt; ~ &lt;h6&gt;</code> 重要性依次递减</p>
+</li>
+</ul>
+<ul>
+<li><p>对于搜索引擎来说，<code>&lt;h1&gt;</code> 的重要性仅次于 <code>&lt;title&gt;</code>，搜索引擎检索完 <code>&lt;title&gt;</code> 之后，会立即查看 <code>&lt;h1&gt;</code> 中的内容<br><code>&lt;h1&gt;</code>标签非常重要，它会影响到页面在搜索引擎中的排名，页面只能写一个 <code>&lt;h1&gt;</code> 标签。</p>
+</li>
+<li><p>一般页面中标题标签只使用 <code>&lt;h1&gt;</code>、<code>&lt;h2&gt;</code>、<code>&lt;h3&gt;</code>，其他标签基本不使用</p>
+</li>
+</ul>
+<h3 id="lt-p-gt-标签"><a href="#lt-p-gt-标签" class="headerlink" title="&lt;p&gt; 标签"></a><code>&lt;p&gt;</code> 标签</h3><ul>
+<li><p>段落标签，段落标签用于表示内容中的一个自然段<br>使用 <code>&lt;p&gt;</code> 标签来表示一个段落。</p>
+</li>
+<li><p><code>&lt;p&gt;</code> 标签中的文字，默认会独占一行，并且段与段之间会有一个间距，但样式我们并不关心</p>
+</li>
+<li><p>在 HTML 中，字符之间写再多的空格，浏览器也会当成一个空格解析，换行也只会当成一个空格解析</p>
+</li>
+<li><p>在页面中可以使用 <code>&lt;br&gt;</code> 标签来表示一个换行，<code>&lt;br&gt;</code> 标签是一个自结束标签</p>
+</li>
+<li><p><code>&lt;hr&gt;</code> 标签也是一个自结束标签，可以在页面中生成一条水平线</p>
+</li>
+</ul>
+<h3 id="实体"><a href="#实体" class="headerlink" title="实体"></a>实体</h3><ul>
+<li>在 HTML 中，一些如 <code>&lt;</code>、<code>&gt;</code> 等特殊字符是不能直接使用的，需要使用一些特殊的符号来表示这些特殊字符，这些特殊符号被称为实体（转义字符），浏览器解析到实体时，会自动将实体转换为其对应的字符。</li>
+</ul>
+<p>实体的语法：<code>&amp;实体的名称;</code></p>
+<table>
+<thead>
+<tr>
+<th>语法</th>
+<th>实体含义</th>
+<th>实体</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&amp;lt;</code></td>
+<td><code>&lt;</code></td>
+<td>&lt;</td>
+</tr>
+<tr>
+<td><code>&amp;gt;</code></td>
+<td><code>&gt;</code></td>
+<td>&gt;</td>
+</tr>
+<tr>
+<td><code>&amp;nbsp;</code></td>
+<td>空格</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><code>&amp;copy;</code></td>
+<td>版权符号</td>
+<td>&copy;</td>
+</tr>
+</tbody></table>
+<h3 id="相对路径"><a href="#相对路径" class="headerlink" title="相对路径"></a>相对路径</h3><ul>
+<li><p><code>src</code> 属性配置的是图片的路径，目前我们所要使用的路径全部是相对路径<br>相对路径：相对路径指相对于当前资源所在目录的位置</p>
+</li>
+<li><p>可以使用 <code>../</code> 来返回一级目录，返回几级目录就使用几个 <code>../</code></p>
+</li>
+</ul>
+<h3 id="图片的格式"><a href="#图片的格式" class="headerlink" title="图片的格式"></a>图片的格式</h3><ul>
+<li>JPEG（JPG）<br>JPEG 图片支持的颜色比较多，图片可以压缩，但是不支持透明。<br>一般使用 JPEG 保存照片等颜色丰富的图片。</li>
+</ul>
+<ul>
+<li>GIF<br>GIF 支持的颜色少，支持简单的透明（图片透明边界为水平和垂直），且支持动态图。<br>图片颜色单一或者是动态图时可以使用 GIF。</li>
+</ul>
+<ul>
+<li>PNG<br>PNG 支持的颜色多，并且支持复杂的透明。<br>可以用来显示颜色复杂的透明的图片。</li>
+</ul>
+<ul>
+<li>图片的使用原则<ol>
+<li>效果不一致，使用效果好的。</li>
+<li>效果一致，使用占容小的。</li>
+</ol>
+</li>
+</ul>
+<h3 id="lt-meta-gt-标签扩展"><a href="#lt-meta-gt-标签扩展" class="headerlink" title="&lt;meta&gt; 标签扩展"></a><code>&lt;meta&gt;</code> 标签扩展</h3><ul>
+<li><p>使用 <code>&lt;meta&gt;</code> 标签设置网页的字符集</p>
+<p><code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code></p>
+</li>
+<li><p>使用 <code>&lt;meta&gt;</code> 标签设置网页的关键字</p>
+<p><code>&lt;meta name=&quot;keywords&quot; content=&quot;HTML5, css, JavaScript&quot;&gt;</code></p>
+</li>
+<li><p>使用 <code>&lt;meta&gt;</code> 标签指定网页的描述</p>
+<p><code>&lt;meta name=&quot;description&quot; content=&quot;发布物联网工程2班的相关信息&quot;&gt;</code></p>
+</li>
+<li><p>使用 <code>&lt;meta&gt;</code> 标签设置请求的重定向</p>
+<p><code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;5;url=http://www.baidu.com&quot;&gt;</code><br><code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;时间;url=目标路径&quot;&gt;</code></p>
+</li>
+</ul>
+<blockquote>
+<p>搜索引擎在检索页面时，会同时检索页面中的关键词和描述，但是这两个值不会影响页面在搜索引擎中的排名。</p>
+</blockquote>
+<h3 id="lt-img-gt-图片标签"><a href="#lt-img-gt-图片标签" class="headerlink" title="&lt;img&gt; 图片标签"></a><code>&lt;img&gt;</code> 图片标签</h3><p>使用 <code>&lt;img&gt;</code> 标签来向网页中引入一个<strong>外部</strong>图片<br><code>&lt;img&gt;</code> 标签也是一个自结束标签。</p>
+<p>属性：</p>
+<ul>
+<li><code>src</code>：设置一个外部图片的路径。</li>
+<li><code>alt</code>：可以用来设置图片的描述，在图片不能显示时，会显示该描述。</li>
+<li><code>width</code>：可以用来修改图片的宽度，一般使用 <code>px</code> 作为单位。</li>
+<li><code>height</code>：可以用来修改图片的高度，一般使用 <code>px</code> 作为单位。</li>
+</ul>
+<p>例：<code>&lt;img src=&quot;images/1.jpg&quot; alt=&quot;这是一个大美女&quot; width=&quot;200px&quot;/&gt;</code></p>
+<blockquote>
+<p>搜索引擎可以通过 <code>alt</code> 属性来识别不同的图片，如果不写 <code>alt</code> 属性，则搜索引擎不会对 <code>img</code> 中的图片进行收录。<br>  宽度和高度两个属性若只设置一个，另一个也会同时等比例自动调整。<br>  如果两个值同时指定则按照你指定的值来设置。<br>  一般开发中除了自适应的页面，不建议同时设置 <code>width</code> 和 <code>height</code></p>
+</blockquote>
+<h3 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h3><p>使用超链接可以让我们从一个页面跳转到另一个页面。<br>使用 <code>&lt;a&gt;</code> 标签来创建一个超链接。</p>
+<p>属性：</p>
+<ul>
+<li><p><code>href</code>：指向链接跳转的目标地址，可以写一个相对路径或一个完整的地址。</p>
+</li>
+<li><p><code>target</code>：规定在何处打开链接文档。</p>
+<p>可选值：</p>
+<ul>
+<li><code>_self</code>，表示在当前窗口中打开 （默认值）。</li>
+<li><code>_blank</code>，表示在一个新的窗口中打开。</li>
+<li><code>name</code>，可以设置一个内联框架的 <code>name</code> 属性值，链接将会在指定的内联框架中打开。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="转角遇到-CSS"><a href="#转角遇到-CSS" class="headerlink" title="转角遇到 CSS"></a>转角遇到 CSS</h2><ul>
+<li><p>层叠样式表（Cascading Style Sheets）</p>
+</li>
+<li><p>CSS 可以用来为网页创建样式表，通过样式表可以对网页进行装饰</p>
+</li>
+<li><p>所谓层叠，可以将整个网页想象成是一层一层的结构，层次高的将会覆盖层次低的</p>
+</li>
+<li><p>而 CSS 就可以分别为网页的各个层次设置样式</p>
+</li>
+</ul>
+<hr>
+<h2 id="CSS-语法"><a href="#CSS-语法" class="headerlink" title="CSS 语法"></a>CSS 语法</h2><p><code>&lt;style&gt;</code> 标签中完全是另一个世界，与 HTML 无关，所以 HTML 语法在 <code>&lt;style&gt;</code> 标签中不起作用。</p>
+<p>CSS 的注释，作用和 HTML 注释类似，只不过它必须编写在 <code>&lt;style&gt;</code> 标签中，或者是 CSS 文件中。</p>
+<p>CSS 组成：<code>选择器 + 声明块</code></p>
+<ul>
+<li><p>选择器：通过选择器可以选中页面中指定的元素（标签），并且将声明块中的样式应用到选择器对应的元素上。</p>
+</li>
+<li><p>声明块：声明块紧跟在选择器之后，使用一对 <code>{</code>、<code>}</code> 包裹起来。</p>
+</li>
+<li><p>声明块又由一组组“名值对”结构组成，这些名值对称为声明。</p>
+</li>
+<li><p>一个声明块中可以有多个声明（名值对），声明与声明之间使用 <code>;</code>（分号）隔开，声明的样式名和样式值之间使用 <code>:</code>（冒号）连接。</p>
+</li>
+</ul>
+<hr>
+<h2 id="块元素和内联元素"><a href="#块元素和内联元素" class="headerlink" title="块元素和内联元素"></a>块元素和内联元素</h2><h3 id="块元素"><a href="#块元素" class="headerlink" title="块元素"></a>块元素</h3><ul>
+<li><p><code>&lt;div&gt;</code> 就是一个块元素<br>所谓的块元素就是会独占一行的元素，无论它的内容多与少，不管它的尺寸大与小，它都会独占一行。</p>
+</li>
+<li><p>常见的块元素：<code>&lt;div&gt;</code>、<code>&lt;p&gt;</code>、<code>&lt;h1&gt;</code>、<code>&lt;h2&gt;</code>、<code>&lt;h3&gt;</code> ……</p>
+</li>
+</ul>
+<blockquote>
+<p>PS：<code>&lt;div&gt;</code> 标签没有任何语义，就是一个纯粹的块元素，相当纯粹，且不会为它包裹的子元素设置任何默认样式，<code>&lt;div&gt;</code> 元素主要用来进行页面布局。</p>
+</blockquote>
+<h3 id="内联元素"><a href="#内联元素" class="headerlink" title="内联元素"></a>内联元素</h3><ul>
+<li><p><code>&lt;span&gt;</code> 就是一个内联元素（行内元素）<br>所谓的内联元素就是只占用自身大小的元素，不会独占一行。</p>
+</li>
+<li><p>常见的内联元素：<code>&lt;span&gt;</code>、<code>&lt;a&gt;</code>、<code>&lt;img&gt;</code>、<code>&lt;iframe&gt;</code> ……</p>
+</li>
+</ul>
+<blockquote>
+<p>PS：<code>&lt;span&gt;</code> 标签没有任何语义，就是一个纯粹的内联元素，相当纯粹，且不会为它包裹的子元素设置任何默认样式，<code>&lt;span&gt;</code> 标签专门用来选中文字，以便为文字设置样式。</p>
+</blockquote>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ul>
+<li>块元素只用来页面布局。</li>
+<li>内联元素主要用来选中文本设置样式。</li>
+<li>一般情况下只使用块元素去包含内联元素，而不会使用内联元素去包含块元素。</li>
+<li><code>&lt;a&gt;</code> 元素可以包含任意元素，除了它本身。</li>
+<li><code>&lt;p&gt;</code> 元素不可以包含任何块元素。</li>
+</ul>
+<blockquote>
+<p>提示：在 HTML5 中，块元素和内联元素几乎被去掉了，而使用了极其复杂的内容模型来描述，作为初学者的我们使用以上概念即可。</p>
+</blockquote>
+<hr>
+<h2 id="三种添加样式的方法"><a href="#三种添加样式的方法" class="headerlink" title="三种添加样式的方法"></a>三种添加样式的方法</h2><h3 id="内联样式表"><a href="#内联样式表" class="headerlink" title="内联样式表"></a>内联样式表</h3><p>可以将 CSS 样式编写到元素（标签）的 <code>style</code> 属性当中。<br>例：<code>&lt;p style=&quot;color: green; font-size: 38px;&quot;&gt;16物联网工程2班&lt;/p&gt;</code></p>
+<p>将样式直接编写到 <code>style</code> 属性中，这种样式我们成为内联样式，内联样式只对当前的元素（标签）中的内容起作用，内联样式不方便复用。</p>
+<blockquote>
+<p>PS：网页编写推崇结构、表现和行为三者分离，而内联样式属于结构与表现耦合，不方便后期的维护，所以不推荐使用。<br>  注意：元素（标签）的 <code>style</code> 属性和元素（标签）其他属性是同等地位。</p>
+</blockquote>
+<h3 id="内部样式表"><a href="#内部样式表" class="headerlink" title="内部样式表"></a>内部样式表</h3><p>也可以将 CSS 样式编写到 <code>&lt;head&gt;</code> 中的 <code>&lt;style&gt;</code> 标签里。</p>
+<p>例：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">    <span class="selector-tag">p</span> &#123;</span><br><span class="line">        <span class="attribute">color</span>: green;</span><br><span class="line">        <span class="attribute">font-size</span>: <span class="number">38px</span>;</span><br><span class="line">        <span class="attribute">font-family</span>: <span class="string">"微软雅黑"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p>将样式编写到 <code>&lt;style&gt;</code> 标签中，然后通过 CSS 选择器选中指定元素，则可以同时为这些被选中的元素一起设置样式，便可以使样式进一步的复用。</p>
+<blockquote>
+<p>PS：将样式表编写到 <code>&lt;style&gt;</code> 标签中，可以使结构和表现两者分离，因此是推荐使用的方式</p>
+</blockquote>
+<h3 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h3><p>还可以将 CSS 样式编写到外部的 CSS 文件中。</p>
+<p>例：<code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/reset.css&quot; /&gt;</code></p>
+<p>然后通过 <code>&lt;link&gt;</code> 标签来将外部的 CSS 文件引入到当前页面中，这样外部文件中的 CSS 样式表将会应用到当前页面中。</p>
+<p>将 CSS 样式统一编写到外部的样式表中，使结构和表现两者完全分离，可以使样式表在不同的页面中使用，最大限度的使样式进行复用。</p>
+<blockquote>
+<p>PS：用此种方法将样式统一写在样式表中，然后通过 <code>&lt;link&gt;</code> 标签引入，可以利用浏览器的缓存加快用户访问的速度，提高了用户体验。<br>  因此在开发过程中，<strong>强烈推荐</strong>使用的就是外部的 CSS 文件。</p>
+</blockquote>
+<p>第一节到此结束，下一节将介绍 CSS 选择器的知识。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/CSS/" rel="tag"># CSS</a>
+              <a href="/tags/HTML/" rel="tag"># HTML</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/front-end-basics/02.html" rel="prev" title="一文搞懂 CSS 选择器">
+      <i class="fa fa-chevron-left"></i> 一文搞懂 CSS 选择器
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/front-end-basics/03.html" rel="next" title="继续远航与 HTML 和 CSS">
+      继续远航与 HTML 和 CSS <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前端开发流程"><span class="nav-number">1.</span> <span class="nav-text">前端开发流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#W3C"><span class="nav-number">2.</span> <span class="nav-text">W3C</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WHATWG"><span class="nav-number">3.</span> <span class="nav-text">WHATWG</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-简介"><span class="nav-number">4.</span> <span class="nav-text">HTML 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-规范（XHTML-规范）"><span class="nav-number">5.</span> <span class="nav-text">HTML 规范（XHTML 规范）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML基础"><span class="nav-number">6.</span> <span class="nav-text">HTML基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-meta-gt-标签"><span class="nav-number">6.1.</span> <span class="nav-text">&lt;meta/&gt;标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标题标签"><span class="nav-number">6.2.</span> <span class="nav-text">标题标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-p-gt-标签"><span class="nav-number">6.3.</span> <span class="nav-text">&lt;p&gt; 标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实体"><span class="nav-number">6.4.</span> <span class="nav-text">实体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相对路径"><span class="nav-number">6.5.</span> <span class="nav-text">相对路径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片的格式"><span class="nav-number">6.6.</span> <span class="nav-text">图片的格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-meta-gt-标签扩展"><span class="nav-number">6.7.</span> <span class="nav-text">&lt;meta&gt; 标签扩展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-img-gt-图片标签"><span class="nav-number">6.8.</span> <span class="nav-text">&lt;img&gt; 图片标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#超链接"><span class="nav-number">6.9.</span> <span class="nav-text">超链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转角遇到-CSS"><span class="nav-number">7.</span> <span class="nav-text">转角遇到 CSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS-语法"><span class="nav-number">8.</span> <span class="nav-text">CSS 语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#块元素和内联元素"><span class="nav-number">9.</span> <span class="nav-text">块元素和内联元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#块元素"><span class="nav-number">9.1.</span> <span class="nav-text">块元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内联元素"><span class="nav-number">9.2.</span> <span class="nav-text">内联元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意"><span class="nav-number">9.3.</span> <span class="nav-text">注意</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三种添加样式的方法"><span class="nav-number">10.</span> <span class="nav-text">三种添加样式的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内联样式表"><span class="nav-number">10.1.</span> <span class="nav-text">内联样式表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内部样式表"><span class="nav-number">10.2.</span> <span class="nav-text">内部样式表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外部样式表"><span class="nav-number">10.3.</span> <span class="nav-text">外部样式表</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">玖燃</p>
+  <div class="site-description" itemprop="description">专注于分享知识、资源</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">69</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/nine-fire" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;nine-fire" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/mailto:xiaowei_air@163.com" title="E-Mail → mailto:xiaowei_air@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">玖燃</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
