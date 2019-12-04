@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>数组</title>
-    <url>/java-basics/02.html</url>
+    <url>/java-basics/02-%E6%95%B0%E7%BB%84.html</url>
     <content><![CDATA[<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
 <li><p>数组是多个<strong>相同类型</strong>数据的组合，实现对这些数据的统一管理</p>
 </li>
@@ -73,7 +73,7 @@
 <h2 id="遍历二维数组"><a href="#遍历二维数组" class="headerlink" title="遍历二维数组"></a>遍历二维数组</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; arr[i].length; j++) &#123;</span><br><span class="line">        <span class="comment">// 打印数组的所有元素</span></span><br><span class="line">        System.out.println(arr[i][j]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h2 id="二维数组的内存结构"><a href="#二维数组的内存结构" class="headerlink" title="二维数组的内存结构"></a>二维数组的内存结构</h2><p><img src="../../images/javabasics/array-4.png" alt="图-1"><br><img src="../../images/javabasics/array-5.png" alt="图-2"></p>
+<h2 id="二维数组的内存结构"><a href="#二维数组的内存结构" class="headerlink" title="二维数组的内存结构"></a>二维数组的内存结构</h2><p><img src="/images/javabasics/array-4.png" alt="图-1"><br><img src="../../images/javabasics/array-5.png" alt="图-2"></p>
 <hr>
 <h2 id="数组的常见异常"><a href="#数组的常见异常" class="headerlink" title="数组的常见异常"></a>数组的常见异常</h2><ul>
 <li>数组下标越界的异常：<code>java.lang.ArrayIndexOutOfBoundsException</code></li>
@@ -119,8 +119,8 @@
   </entry>
   <entry>
     <title>Java 请你吃晚餐</title>
-    <url>/java-basics/01.html</url>
-    <content><![CDATA[<h2 id="JDK与JRE"><a href="#JDK与JRE" class="headerlink" title="JDK与JRE"></a>JDK与JRE</h2><p>JDK（Java Development Kit Java 开发工具包）</p><ul>
+    <url>/java-basics/01-Java%E8%AF%B7%E4%BD%A0%E5%90%83%E6%99%9A%E9%A4%90.html</url>
+    <content><![CDATA[<h2 id="JDK-与-JRE"><a href="#JDK-与-JRE" class="headerlink" title="JDK 与 JRE"></a>JDK 与 JRE</h2><p>JDK（Java Development Kit Java 开发工具包）</p><ul>
 <li>JDK 是提供给 Java 开发人员使用的，其中包含了 Java 的开发工具，也包括了 JRE。所以安装了 JDK，就不用再单独安装 JRE 了。</li>
 <li>其中的开发工具：<ul>
 <li>编译工具（javac.exe）</li>
@@ -159,10 +159,10 @@
 </li>
 <li><p>多行注释不允许嵌套</p>
 </li>
-<li><p>文档注释<br>文档注释会被 javadoc.exe 解析。</p>
+<li><p>文档注释<br>文档注释会被  javadoc.exe 解析。</p>
 </li>
 </ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *<span class="doctag">@author</span>  指定 Java 程序的作者</span></span><br><span class="line"><span class="comment"> *<span class="doctag">@version</span> 指定源文件的版本</span></span><br><span class="line"><span class="comment"> *<span class="doctag">@param</span>   方法的参数说明信息</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span>  指定 Java 程序的作者</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@version</span> 指定源文件的版本</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span>   方法的参数说明信息</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
 
 <hr>
 <h2 id="关键字与保留字"><a href="#关键字与保留字" class="headerlink" title="关键字与保留字"></a>关键字与保留字</h2><h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><ul>
@@ -212,20 +212,24 @@
 </blockquote>
 <hr>
 <h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ul>
-<li>变量的概念<ul>
+<li><p>变量的概念</p>
+<ul>
 <li>内存中的一个存储区域</li>
 <li>该区域有自己的名称（变量名）和类型（数据类型）</li>
 <li>变量必须先声明后使用</li>
 <li>该区域的数据可以在同一类型范围内不断变化</li>
 </ul>
 </li>
-<li>注意<ul>
+<li><p>注意</p>
+<ul>
 <li>变量的作用域<br>一对 <code>{}</code> 之间有效</li>
 <li>初始化值</li>
 </ul>
 </li>
-<li>定义变量的格式<br><code>数据类型 变量名 = 初始化值;</code> <code>boolean flag = true;</code></li>
-<li>变量通过使用变量名来访问这块区域</li>
+<li><p>定义变量的格式<br><code>数据类型 变量名 = 初始化值;</code> <code>boolean flag = true;</code></p>
+</li>
+<li><p>变量通过使用变量名来访问这块区域</p>
+</li>
 </ul>
 <h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><ul>
 <li>在方法体外，类体内声明的变量称为<strong>成员变量</strong></li>
@@ -250,7 +254,7 @@
 <p>注意：当 <code>char</code>、<code>byte</code>、<code>short</code> 之间做运算时，默认的结果为 <code>int</code> 类型。</p>
 </blockquote>
 <ul>
-<li>强制类型转换<br>强制类型转换符<code>( )</code>，括号中填写需要强制转换的类型。</li>
+<li>强制类型转换<br>强制类型转换符 <code>()</code>，括号中填写需要强制转换的类型。</li>
 </ul>
 ]]></content>
       <categories>
@@ -263,7 +267,7 @@
   </entry>
   <entry>
     <title>浅谈 IT 专业</title>
-    <url>/chat/it.html</url>
+    <url>/chat/%E6%B5%85%E8%B0%88IT%E4%B8%93%E4%B8%9A.html</url>
     <content><![CDATA[<p>本文献给想从事本专业而又迷茫的朋友，希望对你有一丝帮助。</p><p>以下均为个人见解，如有不恰当之处请自行忽略。</p><p>IT 行业垂直分类可以分为硬件类、软件类、互联网类、增值服务类等 4 大类。我们就业时也必定会进入此类企业之一。IT 专业可以分为硬件和软件，物联网工程与软件工程不同，它将硬件和软件联系得更加紧密。大多数人也许都在思考，自己应该专研哪门课程，应该学习什么编程语言，什么样的技术适合自己，怎么学习将来才能找到满意的工作。但是我想告诉你的是，哪怕你专研最喜欢的课程，学习最流行的编程语言，也不一定可以找到满意的工作。现实是很残酷的，三百六十行，行行都水深，你必须先从宏观上去了解这个行业，才能给自己良好的定位，才能给自己正确的方向。</p><a id="more"></a>
 
 
@@ -2036,7 +2040,7 @@
   </entry>
   <entry>
     <title>与 JavaScript 初次邂逅</title>
-    <url>/javascript-basics/01.html</url>
+    <url>/javascript-basics/01-%E4%B8%8EJavaScript%E5%88%9D%E6%AC%A1%E9%82%82%E9%80%85.html</url>
     <content><![CDATA[<h2 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h2><ul>
 <li><p>JavaScript 诞生于 1995 年，它的出现主要是用于处理网页中的前端验证。</p>
 </li>
@@ -2164,7 +2168,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="JS的特点"><a href="#JS的特点" class="headerlink" title="JS的特点"></a>JS的特点</h2><ul>
+<h2 id="JavaScript-的特点"><a href="#JavaScript-的特点" class="headerlink" title="JavaScript 的特点"></a>JavaScript 的特点</h2><ul>
 <li><p>解释型语言</p>
 </li>
 <li><p>类似于 C 和 Java 的语法结构</p>
@@ -2185,7 +2189,7 @@
   </entry>
   <entry>
     <title>图片的垂直水平居中</title>
-    <url>/css/08.html</url>
+    <url>/css/08-%E5%9B%BE%E7%89%87%E7%9A%84%E5%9E%82%E7%9B%B4%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD.html</url>
     <content><![CDATA[<h2 id="vertical-align的使用"><a href="#vertical-align的使用" class="headerlink" title="vertical-align的使用"></a>vertical-align的使用</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span>docment<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line">		* &#123;</span><br><span class="line">			margin: 0;</span><br><span class="line">			padding: 0;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line"><span class="css">		<span class="selector-class">.wrap</span> &#123;</span></span><br><span class="line">			width: 500px;</span><br><span class="line">			height: 500px;</span><br><span class="line">			margin: 50px auto;</span><br><span class="line">			border: 1px solid black;</span><br><span class="line">			text-align: center;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line"><span class="css">		<span class="selector-class">.wrap</span><span class="selector-pseudo">:after</span> &#123;</span></span><br><span class="line">			content: "";</span><br><span class="line">			display: inline-block;</span><br><span class="line">			height: 100%;</span><br><span class="line">			vertical-align: middle;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line"><span class="css">		<span class="selector-class">.wrap</span> <span class="selector-class">.img</span> &#123;</span></span><br><span class="line">			display: inline-block;</span><br><span class="line">			width: 150px;</span><br><span class="line">			height: 150px;</span><br><span class="line"><span class="css">			<span class="selector-tag">background</span>: <span class="selector-id">#bfa</span>;</span></span><br><span class="line">			vertical-align: middle;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrap"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"img"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><a id="more"></a>
 
 <p>查看效果&gt;&gt;<a href="/mypages/css2.1/2008.html" target="_blank">传送门</a></p>
@@ -2200,7 +2204,7 @@
   </entry>
   <entry>
     <title>垂直水平居中</title>
-    <url>/css/07.html</url>
+    <url>/css/07-%E5%9E%82%E7%9B%B4%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD.html</url>
     <content><![CDATA[<h2 id="已知元素高度和宽度的情况"><a href="#已知元素高度和宽度的情况" class="headerlink" title="已知元素高度和宽度的情况"></a>已知元素高度和宽度的情况</h2><p>方法一：</p><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span>已知高宽居中<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line">			* &#123;</span><br><span class="line">				margin: 0;</span><br><span class="line">				padding: 0;</span><br><span class="line">			&#125;</span><br><span class="line"><span class="css">			<span class="selector-class">.wrap</span> &#123;</span></span><br><span class="line">				position: relative;</span><br><span class="line">				width: 800px;</span><br><span class="line">				height: 600px;</span><br><span class="line">				margin: auto;</span><br><span class="line"><span class="css">				<span class="selector-tag">background</span>: <span class="selector-id">#bfa</span>;</span></span><br><span class="line">			&#125;</span><br><span class="line"><span class="css">			<span class="selector-class">.wrap</span> <span class="selector-class">.inner</span> &#123;</span></span><br><span class="line">				position: absolute;</span><br><span class="line">				top: 50%;</span><br><span class="line">				left: 50%;</span><br><span class="line">				margin-top: -100px;</span><br><span class="line">				margin-left: -100px;</span><br><span class="line">				width: 200px;</span><br><span class="line">				height: 200px;</span><br><span class="line">				background: orange;</span><br><span class="line">			&#125;</span><br><span class="line">		<span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrap"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inner"</span>&gt;</span>inner<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><a id="more"></a>
 
 
@@ -2223,7 +2227,7 @@
   </entry>
   <entry>
     <title>清楚浮动</title>
-    <url>/css/06.html</url>
+    <url>/css/06-%E6%B8%85%E6%A5%9A%E6%B5%AE%E5%8A%A8.html</url>
     <content><![CDATA[<h2 id="六种清楚浮动的方法"><a href="#六种清楚浮动的方法" class="headerlink" title="六种清楚浮动的方法"></a>六种清楚浮动的方法</h2><ul>
 <li>给父元素添加高度（扩展性不好）<br>  例：</li>
 </ul><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- CSS --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line"><span class="css">	<span class="selector-class">.wrap</span> &#123;</span></span><br><span class="line"><span class="css">		<span class="selector-tag">background</span>: <span class="selector-id">#bfa</span>;</span></span><br><span class="line"><span class="css">		<span class="comment">/* 指定高度为子元素的高度 */</span></span></span><br><span class="line">		height: 100px;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"><span class="css">	<span class="selector-class">.wrap</span> <span class="selector-class">.inner</span> &#123;</span></span><br><span class="line">		float: left;</span><br><span class="line">		width: 100px;</span><br><span class="line">		height: 100px;</span><br><span class="line">		background: orange;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">style</span>/&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="comment">&lt;!-- HTML --&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="xml">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrap"</span>&gt;</span></span></span><br><span class="line"><span class="xml">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"inner"</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>/&gt;</span></span></span><br><span class="line"><span class="xml">	<span class="tag">&lt;<span class="name">div</span>/&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">body</span>/&gt;</span></span></span><br></pre></td></tr></table></figure><a id="more"></a>
@@ -2268,7 +2272,7 @@
   </entry>
   <entry>
     <title>Block Formatting Context（BFC）</title>
-    <url>/css/05.html</url>
+    <url>/css/05-BFC.html</url>
     <content><![CDATA[<h2 id="Box的概念"><a href="#Box的概念" class="headerlink" title="Box的概念"></a>Box的概念</h2><p>Box是CSS布局的对象和基本单位，直观来说，即一个页面是由很多个Box组成的。<br>元素的类型和<code>display</code>属性，决定了这个Box的类型，不同类型的Box，会参与不同的Formatting Context（一个决定如何渲染文档的容器），因此Box内的元素会以不同的方式渲染。        </p><ul>
 <li>block-level box：<br><code>display</code>属性为<code>block</code>、<code>list-item</code>、<code>table</code>的元素，会生成block-level box，并参与Block Formatting Context。</li>
 <li>inline-level box：<br><code>display</code>属性为<code>inline</code>、<code>inline-block</code>、<code>inline-table</code>的元素，会生成inline-level box，并参与Inline Formatting Context。</li>
@@ -2309,7 +2313,7 @@
   </entry>
   <entry>
     <title>粘连布局</title>
-    <url>/css/04.html</url>
+    <url>/css/04-%E7%B2%98%E8%BF%9E%E5%B8%83%E5%B1%80.html</url>
     <content><![CDATA[<h2 id="CSS-stickyFooter（粘连布局）"><a href="#CSS-stickyFooter（粘连布局）" class="headerlink" title="CSS stickyFooter（粘连布局）"></a>CSS stickyFooter（粘连布局）</h2><p>有一块内容<code>&lt;main&gt;</code>，当<code>&lt;main&gt;</code>的高度足够长的时候，<code>&lt;footer&gt;</code>会紧紧跟在<code>&lt;main&gt;</code>后面。<br>当<code>&lt;main&gt;</code>元素比较短的时候（比如小于屏幕高的度），<code>&lt;footer&gt;</code>会“粘连”在屏幕底部。</p><a id="more"></a>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span>粘连布局<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line">		* &#123;</span><br><span class="line">			margin: 0;</span><br><span class="line">			padding: 0;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		html,</span><br><span class="line">		body &#123;</span><br><span class="line">			height: 100%;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line"><span class="css">		<span class="selector-class">.warp</span> &#123;</span></span><br><span class="line">			min-height: 100%;</span><br><span class="line"><span class="css">			<span class="selector-tag">background</span>: <span class="selector-id">#bfa</span>;</span></span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line"><span class="css">		<span class="selector-class">.warp</span> <span class="selector-class">.main</span> &#123;</span></span><br><span class="line">			padding-bottom: 50px;</span><br><span class="line">			text-align: center;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line"><span class="css">		<span class="selector-class">.footer</span> &#123;</span></span><br><span class="line">			margin-top: -50px;</span><br><span class="line">			height: 50px;</span><br><span class="line">			background: gray;</span><br><span class="line">			line-height: 50px;</span><br><span class="line">			text-align: center;</span><br><span class="line">		&#125;</span><br><span class="line">	<span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"warp"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"main"</span>&gt;</span></span><br><span class="line">				main <span class="tag">&lt;<span class="name">br</span> /&gt;</span> main <span class="tag">&lt;<span class="name">br</span> /&gt;</span> main <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">				main <span class="tag">&lt;<span class="name">br</span> /&gt;</span> main <span class="tag">&lt;<span class="name">br</span> /&gt;</span> main <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">				main <span class="tag">&lt;<span class="name">br</span> /&gt;</span> main <span class="tag">&lt;<span class="name">br</span> /&gt;</span> main <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">				main <span class="tag">&lt;<span class="name">br</span> /&gt;</span> main <span class="tag">&lt;<span class="name">br</span> /&gt;</span> main <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">				main <span class="tag">&lt;<span class="name">br</span> /&gt;</span> main <span class="tag">&lt;<span class="name">br</span> /&gt;</span> main <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"footer"</span>&gt;</span></span><br><span class="line">			footer</span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -2325,7 +2329,7 @@
   </entry>
   <entry>
     <title>absolute模拟fixed</title>
-    <url>/css/03.html</url>
+    <url>/css/03-absolute%E6%A8%A1%E6%8B%9Ffixed.html</url>
     <content><![CDATA[<ul>
 <li><code>absolute</code>绝对定位，参照于包含块进行定位。</li>
 <li><code>fixed</code>固定定位，参照于视口进行定位。</li>
@@ -2364,7 +2368,7 @@
   </entry>
   <entry>
     <title>三列布局</title>
-    <url>/css/02.html</url>
+    <url>/css/02-%E4%B8%89%E5%88%97%E5%B8%83%E5%B1%80.html</url>
     <content><![CDATA[<h2 id="圣杯布局"><a href="#圣杯布局" class="headerlink" title="圣杯布局"></a>圣杯布局</h2><p>圣杯布局的要求：</p><ul>
 <li>三列布局</li>
 <li>两侧固定，中间自适应</li>
@@ -2418,7 +2422,7 @@
   </entry>
   <entry>
     <title>浮动、包含块、盒模型相关</title>
-    <url>/css/01.html</url>
+    <url>/css/01-%E6%B5%AE%E5%8A%A8%E5%8C%85%E5%90%AB%E5%9D%97%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%9B%B8%E5%85%B3.html</url>
     <content><![CDATA[<h2 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h2><p>浮动仅提升元素的半个层级。</p><h2 id="浮动元素的包含块"><a href="#浮动元素的包含块" class="headerlink" title="浮动元素的包含块"></a>浮动元素的包含块</h2><p>其定义为最近的块级祖先元素。        </p><h2 id="定位元素的包含块"><a href="#定位元素的包含块" class="headerlink" title="定位元素的包含块"></a>定位元素的包含块</h2><p>其定义如下：</p><ul>
 <li><p>在HTML中，根元素就是<code>html</code>元素，不过有些浏览器会使用<code>body</code>作为根元素。<br>根元素的包含块称为初始包含块，由用户代理建立。<br>在大多数浏览器中，初始包含块是一个视窗大小的矩形，但初始包含块并不是视窗。      </p>
 </li>
@@ -2484,8 +2488,8 @@
         <category>HTML+CSS基础</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
         <tag>HTML</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -2513,8 +2517,8 @@
         <category>HTML+CSS基础</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
         <tag>HTML</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -2535,8 +2539,8 @@
         <category>HTML+CSS基础</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
         <tag>HTML</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -2568,8 +2572,8 @@
         <category>HTML+CSS基础</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
         <tag>HTML</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -2691,8 +2695,8 @@
         <category>HTML+CSS基础</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
         <tag>HTML</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -2714,8 +2718,8 @@
         <category>HTML+CSS基础</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
         <tag>HTML</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -2748,8 +2752,8 @@
         <category>HTML+CSS基础</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
         <tag>HTML</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -2779,8 +2783,8 @@
         <category>HTML+CSS基础</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
         <tag>HTML</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
@@ -3477,8 +3481,38 @@ zoom: 1;</code>表示不放大元素，但是通过该设置可以开启<strong>
       </tags>
   </entry>
   <entry>
+    <title>WELCOME</title>
+    <url>/chat/welcome.html</url>
+    <content><![CDATA[<p>一首歌，一个故事送给你，相信你会喜欢。</p><blockquote>
+<p>高三那年，我暗恋我的男同桌。<br>自开学起他天天都吃糖，用糖纸来织星星。<br>我问他：“你折这么多小星星干嘛？”<br>他说：“送给我喜欢的人啊！”<br>毕业的时候他送了我一个超大的布熊，多年后，我两岁的儿子在玩那个布熊的时候不小心划了个口子，许多星星掉了出来。<br>这时我老公走过来说：“我那时手艺还不错吧！还好我们没错过。”</p>
+</blockquote><a id="more"></a>
+
+<audio controls>
+      <source src="http://www.ytmp3.cn/down/50474.mp3" type="audio/mpeg">
+</audio>
+
+
+<p>欢迎来到我的博客，我是 Ninefire，玖燃，这是一个用 <a href="https://hexo.io/" title="快速、简洁且高效的博客框架" target>Hexo</a> 框架搭建的个人博客网站。</p>
+<p>这里有许多笔记、资源、音乐、故事，希望你喜欢，希望可以帮到你。</p>
+<p>下面是传送门：</p>
+<p><strong><a href="../HTML&CSS.basics/04.html">HTML+CSS基础</a></strong></p>
+<p><strong><a href="../CSS2.1/01.html">CSS2.1入门</a></strong></p>
+<p><strong><a href="../JavaScript.basics/01.html">JavaScript基础</a></strong></p>
+<p><strong><a href="../Java.basics/02.html">Java基础</a></strong></p>
+]]></content>
+      <categories>
+        <category>随记</category>
+      </categories>
+      <tags>
+        <tag>HTML</tag>
+        <tag>CSS</tag>
+        <tag>Github</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>盒子模型</title>
-    <url>/front-end-basics/04.html</url>
+    <url>/front-end-basics/04-%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B.html</url>
     <content><![CDATA[<h2 id="盒子模型基本概念"><a href="#盒子模型基本概念" class="headerlink" title="盒子模型基本概念"></a>盒子模型基本概念</h2><ul>
 <li>CSS 处理网页时，它认为<strong>每个元素</strong>都包含在一个不可见的盒子里。</li>
 </ul><p>如果把<strong>所有的元素</strong>都想象成盒子，那么我们对网页的布局就相当于在摆放盒子。<br>我们只需要将相应的盒子摆放到网页中相应的位置即可完成网页的布局。</p><ul>
@@ -3544,34 +3578,44 @@ zoom: 1;</code>表示不放大元素，但是通过该设置可以开启<strong>
 </ul>
 <hr>
 <h2 id="盒子模型-内边距"><a href="#盒子模型-内边距" class="headerlink" title="盒子模型-内边距"></a>盒子模型-内边距</h2><ul>
-<li>内边距（padding），指的是盒子的内容区与盒子边框之间的距离</li>
-<li>共有四个方向的内边距，可以通过 <code>padding-top</code>、<code>padding-right</code>、<code>padding-bottom</code>、<code>padding-left</code> 来分别设置四个方向的内边距。</li>
-<li>盒子的可见大小由内容区、内边距和边框的大小共同决定。</li>
-<li>盒子可见框的宽度 = <code>border-left-width</code> + <code>padding-left</code> + <code>width</code> + <code>padding-right</code> + <code>border-right-width</code></li>
-<li>盒子可见框的高度 = <code>border-top-width</code> + <code>padding-top</code> + <code>height</code> + <code>padding-bottom</code> + <code>border-bottom-width</code></li>
+<li><p>内边距（padding），指的是盒子的内容区与盒子边框之间的距离</p>
+</li>
+<li><p>共有四个方向的内边距，可以通过 <code>padding-top</code>、<code>padding-right</code>、<code>padding-bottom</code>、<code>padding-left</code> 来分别设置四个方向的内边距。</p>
+</li>
+<li><p>盒子的可见大小由内容区、内边距和边框的大小共同决定。</p>
+</li>
+<li><p>盒子可见框的宽度 = <code>border-left-width</code> + <code>padding-left</code> + <code>width</code> + <code>padding-right</code> + <code>border-right-width</code></p>
+</li>
+<li><p>盒子可见框的高度 = <code>border-top-width</code> + <code>padding-top</code> + <code>height</code> + <code>padding-bottom</code> + <code>border-bottom-width</code></p>
+</li>
 </ul>
 <blockquote>
 <p>内边距会<strong>影响</strong>盒子的<strong>可见框</strong>大小。<br>  元素的背景会延伸到内边距。</p>
 </blockquote>
 <ul>
-<li>使用<code>padding</code>可以同时设置四个方向的内边距。<br>规则和<code>border</code>简写形式相同。</li>
+<li>使用 <code>padding</code> 可以同时设置四个方向的内边距。<br>规则和 <code>border</code> 简写形式相同。</li>
 </ul>
 <p>例：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*设置四个方向的内边距均为5px*/</span></span><br><span class="line"><span class="selector-tag">padding</span>: 5<span class="selector-tag">px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*设置上、下内边距为5px，左、右内边距为10px*/</span></span><br><span class="line"><span class="selector-tag">padding</span>: 5<span class="selector-tag">px</span> 10<span class="selector-tag">px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*设置上内边距为5px，左右内边距为10px，下内边距为15px*/</span></span><br><span class="line"><span class="selector-tag">padding</span>: 5<span class="selector-tag">px</span> 10<span class="selector-tag">px</span> 15<span class="selector-tag">px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*设置上、右、下、左内边距分别为5px、10px、15px、20px*/</span></span><br><span class="line"><span class="selector-tag">padding</span>: 5<span class="selector-tag">px</span> 10<span class="selector-tag">px</span> 15<span class="selector-tag">px</span> 20<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 设置四个方向的内边距均为 5px */</span></span><br><span class="line"><span class="selector-tag">padding</span>: 5<span class="selector-tag">px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 设置上、下内边距为 5px，左、右内边距为 10px */</span></span><br><span class="line"><span class="selector-tag">padding</span>: 5<span class="selector-tag">px</span> 10<span class="selector-tag">px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 设置上内边距为 5px，左右内边距为 10px，下内边距为 15px */</span></span><br><span class="line"><span class="selector-tag">padding</span>: 5<span class="selector-tag">px</span> 10<span class="selector-tag">px</span> 15<span class="selector-tag">px</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 设置上、右、下、左内边距分别为 5px、10px、15px、20px */</span></span><br><span class="line"><span class="selector-tag">padding</span>: 5<span class="selector-tag">px</span> 10<span class="selector-tag">px</span> 15<span class="selector-tag">px</span> 20<span class="selector-tag">px</span>;</span><br></pre></td></tr></table></figure>
 
 <hr>
 <h2 id="盒子模型-外边距"><a href="#盒子模型-外边距" class="headerlink" title="盒子模型-外边距"></a>盒子模型-外边距</h2><ul>
-<li>外边距（margin），指的是当前盒子与其他盒子之间的距离。</li>
-<li>共有四个方向的外边距，可以通过 <code>margin-top</code>、<code>margin-right</code>、<code>margin-bottom</code>、<code>margin-left</code> 来分别设置四个方向的外边距。</li>
-<li>由于页面中的元素都是靠左和靠上摆放的，因此需要注意，当设置左、上外边距时，会导致盒子自身的位置发生改变，而设置右、下外边距会改变其他盒子的位置。            <br></li>
-<li>若外边距设置的是负值，则元素会反方向移动。</li>
-</ul>
-<p>例：<code>margin-left: -150px;</code> 元素会向左位移 150 像素。</p>
-<ul>
-<li>外边距还可以设置为 <code>auto</code>，<code>auto</code> 一般只设置给水平方向的 <code>margin</code>。</li>
-<li>若只指定 <code>margin-left</code> 或 <code>margin-right</code> 的值为 <code>auto</code>，则会将外边距设置为最大值。</li>
-<li>若同时指定 <code>margin-left</code> 和 <code>margin-right</code> 的值为 <code>auto</code>，则会将两侧的外边距设置为相同值，就可以使元素自动在父元素中居中，因此我们经常将左右外边距设置为 <code>auto</code>，以使子元素在父元素中水平居中。</li>
-<li>若指定垂直方向的外边距为 <code>auto</code>，则外边距默认为 <code>0</code>。</li>
+<li><p>外边距（margin），指的是当前盒子与其他盒子之间的距离。</p>
+</li>
+<li><p>共有四个方向的外边距，可以通过 <code>margin-top</code>、<code>margin-right</code>、<code>margin-bottom</code>、<code>margin-left</code> 来分别设置四个方向的外边距。</p>
+</li>
+<li><p>由于页面中的元素都是靠左和靠上摆放的，因此需要注意，当设置左、上外边距时，会导致盒子自身的位置发生改变，而设置右、下外边距会改变其他盒子的位置。</p>
+</li>
+<li><p>若外边距设置的是负值，则元素会反方向移动。<br>例：<code>margin-left: -150px;</code> 元素会向左位移 150 像素。</p>
+</li>
+<li><p>外边距还可以设置为 <code>auto</code>，<code>auto</code> 一般只设置给水平方向的 <code>margin</code>。</p>
+</li>
+<li><p>若只指定 <code>margin-left</code> 或 <code>margin-right</code> 的值为 <code>auto</code>，则会将外边距设置为最大值。</p>
+</li>
+<li><p>若同时指定 <code>margin-left</code> 和 <code>margin-right</code> 的值为 <code>auto</code>，则会将两侧的外边距设置为相同值，就可以使元素自动在父元素中居中，因此我们经常将左右外边距设置为 <code>auto</code>，以使子元素在父元素中水平居中。</p>
+</li>
+<li><p>若指定垂直方向的外边距为 <code>auto</code>，则外边距默认为 <code>0</code>。</p>
+</li>
 </ul>
 <blockquote>
 <p>外边距不会影响可见框的大小，但会影响盒子的位置。</p>
@@ -3584,14 +3628,14 @@ zoom: 1;</code>表示不放大元素，但是通过该设置可以开启<strong>
 
 <hr>
 <h2 id="垂直外边距的重叠"><a href="#垂直外边距的重叠" class="headerlink" title="垂直外边距的重叠"></a>垂直外边距的重叠</h2><p>如有以下代码片段：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--结构--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 结构 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box1"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box2"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**样式**/</span></span><br><span class="line"><span class="selector-tag">box1</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: red;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*为红色的盒子设置一个下外边距*/</span></span><br><span class="line">	<span class="attribute">margin-bottom</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">box2</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 样式 */</span></span><br><span class="line"><span class="selector-class">.box1</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: red;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* 为红色的盒子设置一个下外边距 */</span></span><br><span class="line">	<span class="attribute">margin-bottom</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box2</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>其效果如图-1所示</p>
 <p><img src="/images/htmlcssbasics/1036/1.png" alt="图-1"></p>
 <p>若将样式设置为</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">box1</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: red;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*为红色的盒子设置一个下外边距*/</span></span><br><span class="line">	<span class="attribute">margin-bottom</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">box2</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: green;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*为绿色的盒子设置一个上外边距*/</span></span><br><span class="line">	<span class="attribute">margin-bottom</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box1</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: red;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* 为红色的盒子设置一个下外边距 */</span></span><br><span class="line">	<span class="attribute">margin-bottom</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box2</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: green;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* 为绿色的盒子设置一个上外边距 */</span></span><br><span class="line">	<span class="attribute">margin-bottom</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>其效果如图-2所示，与图-1完全相同</p>
 <p><img src="/images/htmlcssbasics/1036/1.png" alt="图-2"></p>
@@ -3604,7 +3648,8 @@ zoom: 1;</code>表示不放大元素，但是通过该设置可以开启<strong>
 <p>在网页中，<strong>相邻</strong>的<strong>垂直</strong>方向的外边距会发生外边距的重叠，所谓的外边距重叠是指兄弟元素之间的相邻外边距会取最大值而不是取和。</p>
 <p>又有以下代码片段：</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 结构 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box3"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box4"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**样式**/</span></span><br><span class="line"><span class="selector-class">.box3</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: yellow;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box4</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: yellowgreen;</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * 为子元素设置一个上外边距，即子元素的位置下移</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="attribute">margin-top</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 样式 */</span></span><br><span class="line"><span class="selector-class">.box3</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: yellow;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box4</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: yellowgreen;</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">	 * 为子元素设置一个上外边距，即子元素的位置下移</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="attribute">margin-top</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>其效果如图-4所示</p>
 <p><img src="/images/htmlcssbasics/1036/4.png" alt="图-4"></p>
@@ -3623,569 +3668,8 @@ zoom: 1;</code>表示不放大元素，但是通过该设置可以开启<strong>
       </tags>
   </entry>
   <entry>
-    <title>继续远航与 HTML 和 CSS</title>
-    <url>/front-end-basics/03.html</url>
-    <content><![CDATA[<h2 id="文本标签及样式"><a href="#文本标签及样式" class="headerlink" title="文本标签及样式"></a>文本标签及样式</h2><h3 id="lt-em-gt-和-lt-strong-gt"><a href="#lt-em-gt-和-lt-strong-gt" class="headerlink" title="&lt;em&gt; 和 &lt;strong&gt;"></a><code>&lt;em&gt;</code> 和 <code>&lt;strong&gt;</code></h3><ul>
-<li><code>&lt;em&gt;</code> 标签用于表示一段内容中的着重点。主要表示语气上的强调。<br><code>&lt;strong&gt;</code> 标签用于表示一个内容的重要性。比 <code>&lt;em&gt;</code> 更加强烈。<br>这两个标签可以单独使用，也可以一起使用。</li>
-</ul><p>例：</p><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">strong</span>&gt;</span>警告：任何情况下不要接近僵尸。<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br><span class="line">    他们只是<span class="tag">&lt;<span class="name">em</span>&gt;</span>看起来<span class="tag">&lt;/<span class="name">em</span>&gt;</span>很友好，实际上他们是为了吃你的脑子！</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure><a id="more"></a>
-
-
-
-<ul>
-<li>通常 <code>&lt;em&gt;</code> 显示为<em>斜体</em>，而 <code>&lt;strong&gt;</code> 显示为<strong>粗体</strong>。</li>
-</ul>
-<h3 id="lt-i-gt-和-lt-b-gt"><a href="#lt-i-gt-和-lt-b-gt" class="headerlink" title="&lt;i&gt; 和 &lt;b&gt;"></a><code>&lt;i&gt;</code> 和 <code>&lt;b&gt;</code></h3><ul>
-<li><code>&lt;i&gt;</code> 标签中的内容会以<em>斜体</em>显示</li>
-<li><code>&lt;b&gt;</code> 标签中的内容会以<strong>粗体</strong>显示</li>
-</ul>
-<p>但是 <code>&lt;i&gt;</code> 标签和 <code>&lt;b&gt;</code> 标签没有任何语义，在 HTML5 核心规范中，对于不需要强调的内容而是单纯的斜体或者粗体，则使用 <code>&lt;i&gt;</code> 标签和 <code>&lt;b&gt;</code> 标签。</p>
-<h3 id="lt-small-gt"><a href="#lt-small-gt" class="headerlink" title="&lt;small&gt;"></a><code>&lt;small&gt;</code></h3><ul>
-<li><code>&lt;small&gt;</code> 标签中的内容会比他的父元素中的文字小一些<br>在HTML5中使用 <code>&lt;small&gt;</code> 标签来表示一些细则类的内容。<br>比如：合同中的小字、网页中的版权声明都可以放在 <code>&lt;small&gt;</code> 标签中。</li>
-</ul>
-<blockquote>
-<p>当然也有 <code>&lt;big&gt;</code> 标签，但是它没有任何语义，已经被 HTML5 淘汰，我们不使用。</p>
-</blockquote>
-<h3 id="lt-cite-gt"><a href="#lt-cite-gt" class="headerlink" title="&lt;cite&gt;"></a><code>&lt;cite&gt;</code></h3><ul>
-<li>使用 <code>&lt;cite&gt;</code> 标签可以指明对某内容的引用或参考。<br>页面中所有加书名号的内容都可以写在 <code>&lt;cite&gt;</code> 标签中。<br>比如，戏剧、文章或图书的标题，歌曲、电影、照片或雕塑的名称等。</li>
-</ul>
-<p>例：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">cite</span>&gt;</span>《七龙珠》<span class="tag">&lt;/<span class="name">cite</span>&gt;</span>讲的是召唤神龙的故事。</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="lt-q-gt-和-lt-blockquote-gt"><a href="#lt-q-gt-和-lt-blockquote-gt" class="headerlink" title="&lt;q&gt; 和 &lt;blockquote&gt;"></a><code>&lt;q&gt;</code> 和 <code>&lt;blockquote&gt;</code></h3><ul>
-<li><code>&lt;q&gt;</code> 表示一个短引用（行内应用）。<br>浏览器会默认加上双引号。</li>
-</ul>
-<p>例：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    子曰：<span class="tag">&lt;<span class="name">q</span>&gt;</span>学而时习之不亦说乎！<span class="tag">&lt;/<span class="name">q</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><code>&lt;blockquote&gt;</code> 表示一个长引用（块级引用）。<br>注意：<code>&lt;blockquote&gt;</code> 是一个块级元素，所以不能放在 <code>&lt;p&gt;</code> 标签中。</li>
-</ul>
-<h3 id="lt-sup-gt-和-lt-sub-gt"><a href="#lt-sup-gt-和-lt-sub-gt" class="headerlink" title="&lt;sup&gt; 和 &lt;sub&gt;"></a><code>&lt;sup&gt;</code> 和 <code>&lt;sub&gt;</code></h3><ul>
-<li><p>使用 <code>&lt;sup&gt;</code> 标签来设置一个上标。<br>例：<code>X&lt;sup&gt;2&lt;/sup&gt; /*表示 X 的平方*/</code></p>
-</li>
-<li><p>使用 <code>&lt;sub&gt;</code> 标签来设置一个下标。<br>例：<code>H&lt;sub&gt;2&lt;/sub&gt;O /*表示化学中水的符号*/</code></p>
-</li>
-</ul>
-<h3 id="lt-ins-gt-和-lt-del-gt"><a href="#lt-ins-gt-和-lt-del-gt" class="headerlink" title="&lt;ins&gt; 和 &lt;del&gt;"></a><code>&lt;ins&gt;</code> 和 <code>&lt;del&gt;</code></h3><ul>
-<li><code>&lt;ins&gt;</code> 表示插入的内容，显示时通常会加上下划线。<br>就像填空题的感觉。</li>
-<li><code>&lt;del&gt;</code> 表示删除的内容，显示时通常会加上删除线。</li>
-</ul>
-<p>例：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    原价<span class="tag">&lt;<span class="name">del</span>&gt;</span>49 元<span class="tag">&lt;/<span class="name">del</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line">    现价统统 9.9 元<span class="tag">&lt;<span class="name">br</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="lt-code-gt-和-lt-pre-gt"><a href="#lt-code-gt-和-lt-pre-gt" class="headerlink" title="&lt;code&gt; 和 &lt;pre&gt;"></a><code>&lt;code&gt;</code> 和 <code>&lt;pre&gt;</code></h3><ul>
-<li>如果你的内容包含代码示例或文件名，就可以使用 <code>&lt;code&gt;</code> 元素，但是 <code>&lt;code&gt;</code> 是语义化标签，不会保留格式。</li>
-<li><code>&lt;pre&gt;</code> 元素表示的是预格式化文本，不会忽略多个空格，可以使用 <code>&lt;pre&gt;</code> 包住 <code>&lt;code&gt;</code> 来表示一段代码。</li>
-</ul>
-<p>例：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">pre</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">code</span>&gt;</span></span><br><span class="line">        funciton fun()&#123;</span><br><span class="line">            alert("hello!");</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">code</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>列表就相当于去超市购物时的购物清单<br>在 HTML 中也可以创建列表，在网页中共有三种列表：</p>
-<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><ul>
-<li>使用 <code>&lt;ul&gt;&lt;/ul&gt;</code> 标签来创建一个无序列表</li>
-<li>使用 <code>&lt;li&gt;&lt;/li&gt;</code> 标签在 <code>&lt;ul&gt;</code> 中创建一个个列表项，一个 <code>&lt;li&gt;&lt;/li&gt;</code> 就是一个列表项</li>
-<li>通过 <code>type</code> 属性可以修改无序列表的项目符号<br>可选值：<ul>
-<li><code>disc</code> 实心圆点（默认值）</li>
-<li><code>square</code> 实心方块</li>
-<li><code>circle</code> 空心圆圈</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>PS：默认的项目符号我们一般不使用！因为在不同浏览器的效果千差万别，我们在开发过程中希望用户看到的效果不因为外在环境而存在差异。如果需要设置项目符号，则可以采用为 <code>&lt;li&gt;</code> 设置背景图片的方式来设置，这样可以确保不同浏览器中样式的统一。<code>&lt;ul&gt;</code>、<code>&lt;li&gt;</code> 都是块元素。</p>
-</blockquote>
-<h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><ul>
-<li>使用 <code>&lt;ol&gt;&lt;/ol&gt;</code> 标签来创建一个有序列表</li>
-<li>使用 <code>&lt;li&gt;&lt;/li&gt;</code> 标签在 <code>&lt;ol&gt;</code> 中创建一个个列表项，一个 <code>&lt;li&gt;&lt;/li&gt;</code> 就是一个列表项</li>
-<li>通过 <code>type</code> 属性可以修改有序列表的项目符号<br>可选值：<ul>
-<li><code>1</code> 使用阿拉伯数字作为序号（默认值）</li>
-<li><code>a</code> 或 <code>A</code> 采用小写字母或大写字母作为序号</li>
-<li><code>i</code> 或 <code>I</code> 采用小写或大写的罗马数字作为序号</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p><code>&lt;ol&gt;</code> 也是块元素。<br>  去除项目符号的 CSS 写法：<code>list-style: none;</code></p>
-</blockquote>
-<h3 id="定义列表"><a href="#定义列表" class="headerlink" title="定义列表"></a>定义列表</h3><p>定义列表用来对一些词汇或者内容进行定义</p>
-<p>使用 <code>&lt;dl&gt;&lt;/dl&gt;</code> 来创建一个定义列表。</p>
-<p><code>dl</code> 中有两个子标签：</p>
-<ul>
-<li><code>dt</code>：被定义的内容</li>
-<li><code>dd</code>：对被定义内容的描述</li>
-</ul>
-<p>例：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dt</span>&gt;</span>武松<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dd</span>&gt;</span>景阳冈打虎英雄，战斗力99<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dd</span>&gt;</span>后打死西门庆，投奔梁山<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dt</span>&gt;</span>武大<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dd</span>&gt;</span>知名餐饮企业家，战斗力1<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>同样的，<code>&lt;dl&gt;</code> 和 <code>&lt;ul&gt;</code>、<code>&lt;ol&gt;</code> 之间可以互相嵌套</p>
-</blockquote>
-<h3 id="列表嵌套"><a href="#列表嵌套" class="headerlink" title="列表嵌套"></a>列表嵌套</h3><p>列表之间都是可以互相嵌套的，可以在无序列表中放置有序列表，也可以在有序列表中放置无序列表。</p>
-<p>例：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>菜谱<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">		糖醋排骨</span><br><span class="line">		<span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">li</span>&gt;</span>糖<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">li</span>&gt;</span>醋<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">li</span>&gt;</span>排骨<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">		椒盐玉米</span><br><span class="line">		<span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">li</span>&gt;</span>椒<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">li</span>&gt;</span>盐<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">li</span>&gt;</span>玉米<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">		青椒肉丝</span><br><span class="line">		<span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">li</span>&gt;</span>青椒<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">li</span>&gt;</span>肉丝<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="长度单位"><a href="#长度单位" class="headerlink" title="长度单位"></a>长度单位</h2><h3 id="像素：px"><a href="#像素：px" class="headerlink" title="像素：px"></a>像素：<code>px</code></h3><ul>
-<li>像素是我们在网页中最常用的一个单位。<br>一个像素就是我们屏幕中的一个小点，我们的屏幕实际上是由一个个足够小的像素点构成的，一般不能用肉眼直接看见。</li>
-<li>不同显示器中一个像素的物理尺寸也不尽相同。<br>一般地，像素的物理尺寸越小，显示效果越好，反之显示效果相对差。</li>
-</ul>
-<blockquote>
-<p>问题：手机屏幕像素的物理尺寸大约是电脑屏幕像素的 25%，我们在开发过程中要特别注意。但手机浏览器一般会自动将你设置的像素值乘以 4 再进行渲染。</p>
-</blockquote>
-<h3 id="百分比：50-30-n"><a href="#百分比：50-30-n" class="headerlink" title="百分比：50% 30% n%"></a>百分比：<code>50%</code> <code>30%</code> <code>n%</code></h3><ul>
-<li>将单位设置为百分比的形式<br>浏览器将会根据其父元素的样式来计算该值。</li>
-<li>使用百分比的好处<br>当父元素的属性值发生变化时，子元素也会按照比例自动改变。</li>
-<li>在创建一个自适应的页面时，经常使用百分比作为单位。</li>
-</ul>
-<h3 id="em"><a href="#em" class="headerlink" title="em"></a><code>em</code></h3><ul>
-<li><code>em</code> 和百分比有异曲同工之妙。<br>它是相对于当前元素的字体大小来计算的。</li>
-<li><code>1em</code> = <code>1*font-size</code><br>例如：<code>font-size: 16px;</code> ，那么 <code>1em</code> = 16px，<code>2em</code> = 32px</li>
-<li>使用 <code>em</code> 时，当字体大小改变时，<code>em</code> 也会随之改变</li>
-<li>当设置字体相关样式时，经常会使用 <code>em</code></li>
-</ul>
-<hr>
-<h2 id="颜色的表示"><a href="#颜色的表示" class="headerlink" title="颜色的表示"></a>颜色的表示</h2><ul>
-<li><p>在 CSS 中可以直接使用颜色的英文单词来表示不同的颜色。<br>例如：红色（red）、绿色（green）、蓝色（blue）、粉色（pink）、橙色（orange）、天蓝（skyblue）等</p>
-</li>
-<li><p>也可以使用 RGB 值来表示不同的颜色。<br>所谓 RGB 值指的是通过 red、green、blue 三原色按照不同浓度进行混合，来表示出千千万万的颜色。<br>语法：<code>rgb(红色的浓度, 绿色的浓度, 蓝色的浓度);</code><br>颜色的浓度是一个 0 ~ 255 的十进制数值，255 表示最浓，0 表示没有。<br>颜色的浓度也可以是一个百分数，0% ~ 100%</p>
-</li>
-</ul>
-<blockquote>
-<p>使用百分数最终也会转换为 0 ~ 255 之间的数值。0% 表示 0, 100% 表示 255。</p>
-</blockquote>
-<ul>
-<li>还可以使用十六进制的 RGB 值来表示不同的颜色。<br>其原理和十进制数值表示法一样，只不过使用十六进制数值来代替，使用三组两位的十六进制数来表示一个颜色，每组表示一个原色的浓度。<ul>
-<li>第一组表示红色的浓度；</li>
-<li>第二组表示绿色的浓度；</li>
-<li>第三组表示蓝色的浓度。</li>
-</ul>
-</li>
-</ul>
-<p>语法：<code>#红色绿色蓝色</code></p>
-<p>十六进制：0、1、2、3、4、5、6、7、8、9、A、B、C、D、E、F<br>每组范围：00 ~ FF<br>00 表示没有，相当于 RGB 中的 0<br>FF 表示没有，相当于 RGB 中的 255<br>红色（#FF0000）、绿色（#00FF00）、蓝色（#0000FF）</p>
-<blockquote>
-<p>如 <code>#FF0000</code> 这种两两重复的颜色值可以简写为 <code>#F00</code> ，那么 <code>#ABC</code> 表示 <code>#AABBCC</code></p>
-</blockquote>
-<hr>
-<h2 id="字体的样式"><a href="#字体的样式" class="headerlink" title="字体的样式"></a>字体的样式</h2><ul>
-<li>使用<code>color</code>来设置文字的颜色<br>例：<code>color: red; /* 设置文字颜色为红色 */</code></li>
-<li>使用<code>font-size</code>来设置文字的大小<br>例：<code>font-size: 22px; /* 设置文字大小为 22 像素 */</code></li>
-</ul>
-<blockquote>
-<p><code>font-size</code> 设置的并不是文字本身的大小，在页面中，每个文字实际上都是处在一个看不见的“框”中，<code>font-size</code> 实际上设置的是“框”的高度，并不是文字的大小。一般情况下文字都要比这个“框”小一些，有时也会比“框”大，由于字体的不同，显示效果也不尽相同。</p>
-</blockquote>
-<ul>
-<li>使用 <code>font-family</code> 来设置文字的字体</li>
-</ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">font-family</span>: "微软雅黑"; <span class="comment">/* 设置文字的字体为微软雅黑 */</span></span><br><span class="line"><span class="selector-tag">font-family</span>: <span class="selector-tag">arial</span>, 玖燃体, 微软雅黑; <span class="comment">/* 设置多个字体时用逗号隔开 */</span></span><br></pre></td></tr></table></figure>
-
-<p>当采用某种字体时，若浏览器支持则使用该字体，若不支持则使用默认字体。<br>当采用多个字体时，浏览器会优先使用写在前面的字体，若前面的字体无法使用则尝试下一个。</p>
-<blockquote>
-<p>浏览器使用的字体都是用户计算机中已安装的字体，若计算机中有则使用，没有则不使用。<br>  注意：在开发过程中，如果一种字体太冷门、太奇怪、普及率太低，则尽量不使用该字体，很大可能用户的计算机中没有安装该字体，那么就不能达到开发者预期的效果。我们在开发过程中要穷尽目光去发现和考虑用户可能遇到的所有问题，这有这样才能成为一名优秀的开发者。</p>
-</blockquote>
-<hr>
-<h2 id="字体的分类"><a href="#字体的分类" class="headerlink" title="字体的分类"></a>字体的分类</h2><h3 id="serif（衬线字体）"><a href="#serif（衬线字体）" class="headerlink" title="serif（衬线字体）"></a>serif（衬线字体）</h3><p>衬线字体，在字的笔画开始、结束的地方有额外的装饰，而且笔画的粗细会有所不同。<br>例如宋体就属于衬线字体。<br>它强调了每个字母笔画的开始和结束（强调于一个单词），因此易读性比较高，在整文阅读的情况下，适合使用 serif 字体进行排版，易于换行阅读的识别性，避免发生行间的阅读错误。</p>
-<h3 id="sans-serif（非衬线字体）"><a href="#sans-serif（非衬线字体）" class="headerlink" title="sans-serif（非衬线字体）"></a>sans-serif（非衬线字体）</h3><p>非衬线字体，没有这些额外的装饰，而且笔画的粗细差不多。<br>例如黑体就属于非衬线字体。<br>它强调每一个字母，因此 sans-serif 比较醒目。</p>
-<h3 id="monospace（等宽字体）"><a href="#monospace（等宽字体）" class="headerlink" title="monospace（等宽字体）"></a>monospace（等宽字体）</h3><p>编写程序时一般使用等宽字体，方便对齐，增强易读性。</p>
-<h3 id="cursive（草书字体）"><a href="#cursive（草书字体）" class="headerlink" title="cursive（草书字体）"></a>cursive（草书字体）</h3><p>不建议使用。</p>
-<h3 id="fantasy（虚幻字体）"><a href="#fantasy（虚幻字体）" class="headerlink" title="fantasy（虚幻字体）"></a>fantasy（虚幻字体）</h3><p>不建议使用。</p>
-<blockquote>
-<p>以上这些分类都是一些大的分类，并没有涉及具体的类型，如果将字体指定为这些格式，浏览器会自动选择指定类型的字体。<br>  一般会将字体的大分类指定为<code>font-family</code>中的最后一个字体，作为兜底，以免浏览器使用默认字体。<br>  例：<code>font-family: &#39;arial&#39;, &#39;微软雅黑&#39;, &#39;华文彩云&#39;, &#39;serif&#39;;</code></p>
-</blockquote>
-<hr>
-<h2 id="字体的其他样式"><a href="#字体的其他样式" class="headerlink" title="字体的其他样式"></a>字体的其他样式</h2><h3 id="font-style-属性"><a href="#font-style-属性" class="headerlink" title="font-style 属性"></a><code>font-style</code> 属性</h3><p>使用 <code>font-style</code> 来设置文字是否倾斜。</p>
-<p>可选值：</p>
-<ul>
-<li><code>normal</code>，文字正常显示（默认值）</li>
-<li><code>italic</code>，文字会以斜体显示</li>
-<li><code>oblique</code>，文字会以倾斜的效果显示</li>
-</ul>
-<blockquote>
-<p><code>italic</code> 是使用系统中已安装的斜体字体来显示斜体，而 <code>oblique</code> 是强制扭曲字体来显示斜体。<br>  大多数浏览器都不会对斜体和倾斜作区分，设置 <code>italic</code> 或 <code>oblique</code> 的显示效果往往是相同的，因此开发中一般只会使用 <code>italic</code>。</p>
-</blockquote>
-<h3 id="font-weight-属性"><a href="#font-weight-属性" class="headerlink" title="font-weight 属性"></a><code>font-weight</code> 属性</h3><p>使用 <code>font-weight</code> 来设置文字的粗细。</p>
-<p>可选值：</p>
-<ul>
-<li><code>normal</code>，文字正常显示（默认值）。</li>
-<li><code>bold</code>，文字加粗显示。</li>
-<li><code>bolder</code>，文字更粗显示。</li>
-<li><code>lighter</code>，文字更细显示。</li>
-<li><code>100 ~ 900</code> 之间的 9 个值。</li>
-</ul>
-<blockquote>
-<p>一般只使用前两个值，其他值几乎都不支持。</p>
-</blockquote>
-<h3 id="font-variant-属性"><a href="#font-variant-属性" class="headerlink" title="font-variant 属性"></a><code>font-variant</code> 属性</h3><p>使用 <code>font-variant</code> 来设置小型大写字母的字体显示文本。（几乎无用的样式）</p>
-<p>可选值：</p>
-<ul>
-<li><code>normal</code>，文字正常显示（默认值）。</li>
-<li><code>small-caps</code>，文字显示小型大写字母的字体。</li>
-</ul>
-<blockquote>
-<p>绕口令：将所有的字母都以大写形式显示，但是小写字母的大写要比大写字母的大小小一些。</p>
-</blockquote>
-<h3 id="font-属性"><a href="#font-属性" class="headerlink" title="font 属性"></a><code>font</code> 属性</h3><p>使用<code>font</code>来统一设置字体相关的所有属性。</p>
-<p>设有以下样式：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">font-size</span>: 50<span class="selector-tag">px</span>;</span><br><span class="line"><span class="selector-tag">font-family</span>: 华文彩云;</span><br><span class="line"><span class="selector-tag">font-style</span>: <span class="selector-tag">italic</span>;</span><br><span class="line"><span class="selector-tag">font-weight</span>: <span class="selector-tag">bold</span>;</span><br><span class="line"><span class="selector-tag">font-variant</span>: <span class="selector-tag">small-caps</span>;</span><br></pre></td></tr></table></figure>
-
-<p>这样编写样式没有任何问题，但是效率很低，而且会使浏览器负担增大。<br>我们可以用以下简写形式：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">font</span>: <span class="selector-tag">italic</span> <span class="selector-tag">small-caps</span> <span class="selector-tag">bold</span> 60<span class="selector-tag">px</span> "微软雅黑";</span><br></pre></td></tr></table></figure>
-
-<p>将字体的样式统一写在 <code>font</code> 中，不同值之间使用空格隔开。<br>同时还需满足以下规则：<br>使用 <code>font</code> 设置字体样式时，斜体、加粗、大小字母，没有顺序要求，甚至可不写，不写则使用默认值。但是文字大小、字体必须指定，而且字体必须写在最后，大小必须写在倒数第二的位置。</p>
-<blockquote>
-<p>使用简写形式还可以一定程度提高浏览器的性能。</p>
-</blockquote>
-<hr>
-<h2 id="行间距"><a href="#行间距" class="headerlink" title="行间距"></a>行间距</h2><p>在 CSS 中并没有提供一个直接设置行间距的方式，我们只能通过设置行高来间接地设置行间距，行高越大则行间距越大。</p>
-<ul>
-<li>使用 <code>line-height</code> 来设置行高<br>行高类似于我们日常生活中使用的练习本，练习本是由若干条水平的直线绘制而成，那么线与线之间的距离就是行高。<br>网页中的文字实际上也是写在一条条看不见的水平线之间的，而文字默认会在行高中垂直居中显示。</li>
-</ul>
-<p>我们有以下计算公式：<code>行间距 = 行高 - 字体大小</code></p>
-<p><code>line-height</code> 可以接收的值：</p>
-<ul>
-<li><p>指定一个大小单位（如 <code>20px</code>）</p>
-</li>
-<li><p>指定一个百分数（如 <code>150%</code>），则会相对于字体去计算行高</p>
-</li>
-<li><p>指定一个数值（如 <code>1.5</code>），则会设置行高为字体大小的相应倍数</p>
-</li>
-<li><p>在<code>font</code>中指定行高<br>在<code>字体大小</code>后可以添加<code>/行高</code>，来指定行高，该值是可选的，如果不指定则会使用<strong>默认值</strong>。<br>例：<code>font: 16px/25px &quot;微软雅黑&quot;;</code></p>
-</li>
-</ul>
-<blockquote>
-<p>小技巧：对于单行文本，可以将行高设置为父元素的高度，这样可以使单行文本在父元素中垂直居中。</p>
-</blockquote>
-<hr>
-<h2 id="其他文本样式"><a href="#其他文本样式" class="headerlink" title="其他文本样式"></a>其他文本样式</h2><h3 id="text-transform-属性"><a href="#text-transform-属性" class="headerlink" title="text-transform 属性"></a><code>text-transform</code> 属性</h3><p><code>text-transform</code> 样式用于设置英文字母的大小写。</p>
-<p>可选值：</p>
-<ul>
-<li><code>none</code>：有小写和大写字母的标准文本（默认值）</li>
-<li><code>uppercase</code>：只有大写字母</li>
-<li><code>lowercase</code>：只有小写字母</li>
-<li><code>capitalize</code>：单词首字母大写</li>
-</ul>
-<h3 id="text-decoration-属性"><a href="#text-decoration-属性" class="headerlink" title="text-decoration 属性"></a><code>text-decoration</code> 属性</h3><p><code>text-decoration</code> 样式用于给文本添加各种装饰。</p>
-<p>可选值：</p>
-<ul>
-<li><code>none</code>：不添加任何装饰（默认值）</li>
-<li><code>underline</code>：添加下划线</li>
-<li><code>overline</code>：添加上划线</li>
-<li><code>line-through</code>：添加删除线</li>
-</ul>
-<h3 id="letter-spacing-属性"><a href="#letter-spacing-属性" class="headerlink" title="letter-spacing 属性"></a><code>letter-spacing</code> 属性</h3><p><code>letter-spacing</code> 用来设置字符之间的间距。<br>对英文和中文都有效。</p>
-<h3 id="word-spacing-属性"><a href="#word-spacing-属性" class="headerlink" title="word-spacing 属性"></a><code>word-spacing</code> 属性</h3><p><code>word-spacing</code> 用来设置单词之间的间距。</p>
-<p>仅对英文有效，但对中文有影响。</p>
-<blockquote>
-<p>这两个属性都可以直接指定一个长度或百分数作为值。正数代表的是增加举距离，而负数代表减少距离。</p>
-</blockquote>
-<h3 id="text-align-属性"><a href="#text-align-属性" class="headerlink" title="text-align 属性"></a><code>text-align</code> 属性</h3><p><code>text-align</code> 用来设置文本的对齐方式</p>
-<p>可选值：</p>
-<ul>
-<li><code>left</code>：左对齐（默认值）</li>
-<li><code>right</code>：右对齐</li>
-<li><code>center</code>：居中对齐</li>
-<li><code>justify</code>：两端对齐</li>
-</ul>
-<blockquote>
-<p>两端对齐是通过调整文本之间的空格大小，来达到一个两端对齐的目的。</p>
-</blockquote>
-<h3 id="text-indent-属性"><a href="#text-indent-属性" class="headerlink" title="text-indent 属性"></a><code>text-indent</code> 属性</h3><p><code>text-indent</code> 用来设置首行缩进。</p>
-<p>该样式需要制定一个长度，并且只对第一行生效。</p>
-<p>若指定一个正值，会自动向右侧缩进指定的长度。</p>
-<p>若指定一个负值，会自动向左侧移动指定的长度。</p>
-<p>通过这种方式可以将一些不想显示的文字隐藏起来。</p>
-<blockquote>
-<p>通常使用 <code>em</code> 作为单位。</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-        <category>HTML + CSS 基础</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-        <tag>HTML</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>与 Web 前端的初次邂逅</title>
-    <url>/front-end-basics/01.html</url>
-    <content><![CDATA[<h2 id="前端开发流程"><a href="#前端开发流程" class="headerlink" title="前端开发流程"></a>前端开发流程</h2><p>前端开发一般包括三个步骤：</p><ol>
-<li><p>网页设计师根据需求设计网页</p>
-</li>
-<li><p>前端工程师将设计做成静态网页</p>
-</li>
-<li><p>后台工程师将静态网页修改为动态网页</p>
-</li>
-</ol><p>这里的静态网页不是指网页的动画效果，而是指数据的动态变化。</p><p><img src="/images/htmlcssbasics/1001/1.jpg" alt="开发流程"></p><p>现在的技术日新月异，不同公司的开发流程也有所不同，但基本遵循以上流程。</p><p>软件的架构 &gt;&gt;<a href="http://naotu.baidu.com/file/27b23af4e471e82354c472f5d540d804?token=07b260a35f429b70" target="_blank" rel="noopener">请戳我</a>&lt;&lt;</p><a id="more"></a>
-
-
-
-
-
-<hr>
-<h2 id="W3C"><a href="#W3C" class="headerlink" title="W3C"></a>W3C</h2><ul>
-<li><p>万维网联盟（World Wid Web Consortium）</p>
-</li>
-<li><p>W3C 专门为了定义网页相关的标准而成立</p>
-</li>
-<li><p>W3C 定义了网页中的 HTML、CSS、DOM、HTTP 和 XML 等标准</p>
-</li>
-</ul>
-<hr>
-<h2 id="WHATWG"><a href="#WHATWG" class="headerlink" title="WHATWG"></a>WHATWG</h2><p>网页超文本应用技术工作小组（Web Hypertext Application Technology Working Group）</p>
-<p>是一个以推动网络 HTML5 标准为目的而成立的组织。在 2004 年，由 Opera、Mozilla 基金会和苹果这些浏览器厂商组成。</p>
-<p>历史：<br>WHATWG 成立的原因是 W3C 意图放弃 HTML，而力图发展 XML（可扩展标记记语言下的一个子集）技术。WHATWG 邮件列表公布于 2004-6-4 , 在 Opera–Mozilla 宣布加入后的 2  天便否决了由万维网联盟（W3C）成员在 W3C 工作室的 Web 标准。</p>
-<p>2007-7-10 , Mozilla Foundation, Apple, Opera Software 建议 W3C 跟随 WHATWG 的 HTML5，将新的  HTML（标准通用标记语言下的一个应用）命名为“HTML5”。2007-4-7, 新的 HTML 工作组采纳了他们的建议。</p>
-<hr>
-<h2 id="HTML-简介"><a href="#HTML-简介" class="headerlink" title="HTML 简介"></a>HTML 简介</h2><ul>
-<li><p>HTML（Hypertext Markup Language）<br>超文本标记语言</p>
-</li>
-<li><p>它负责网页的三个要素中的结构。</p>
-</li>
-<li><p>HTML 使用标签的形式来表示网页中的不同组成部分。</p>
-</li>
-<li><p>所谓超文本指的是超链接，使用超链接可以让我们从一个页面跳转到另一个页面。</p>
-</li>
-</ul>
-<blockquote>
-<p>网页的三个要素 &gt;&gt;<a href="http://naotu.baidu.com/file/de8e109854842b3a13b67c848f1fa964?token=1eea1aceca963cc8" target="_blank" rel="noopener">请戳我</a>&lt;&lt;</p>
-</blockquote>
-<hr>
-<h2 id="HTML-规范（XHTML-规范）"><a href="#HTML-规范（XHTML-规范）" class="headerlink" title="HTML 规范（XHTML 规范）"></a>HTML 规范（XHTML 规范）</h2><ul>
-<li><p>HTML 中不区分大小写，但我们一般都使用小写。</p>
-</li>
-<li><p>HTML 中的注释不能嵌套。</p>
-</li>
-<li><p>HTML 标签必须结构完整，要么成对出现，要么是自结束标签。<br>浏览器会尽最大努力正确的解析页面，你所有的不符合语法规范的内容，浏览器都会为你自动修正，但某些特殊情况时会修正错误。</p>
-</li>
-<li><p>自结束标签后需要加<code>/</code>，如<code>&lt;br/&gt;</code>、<code>&lt;img/&gt;</code>（XHTML 规范）。<br>在 HTML5 中可以不加<code>/</code>，如<code>&lt;br&gt;</code>、<code>&lt;img&gt;</code>，两种写法都正确。</p>
-</li>
-<li><p>HTML 标签可以嵌套，但不能交叉嵌套。</p>
-</li>
-<li><p>HTML 标签中的属性必须有值，且值必须加引号（单引号和双引号均可）。</p>
-</li>
-</ul>
-<hr>
-<h2 id="HTML基础"><a href="#HTML基础" class="headerlink" title="HTML基础"></a>HTML基础</h2><h3 id="lt-meta-gt-标签"><a href="#lt-meta-gt-标签" class="headerlink" title="&lt;meta/&gt;标签"></a><code>&lt;meta/&gt;</code>标签</h3><ul>
-<li><code>&lt;meta/&gt;</code> 标签用来设置网页的一些元数据，比如网页的字符集、关键字、简介等<br><code>&lt;meta/&gt;</code> 是一个自结束标签。</li>
-</ul>
-<h3 id="标题标签"><a href="#标题标签" class="headerlink" title="标题标签"></a>标题标签</h3><ul>
-<li><p>在 HTML 中共有 6 级标题标签 <code>&lt;h1&gt;</code>、<code>&lt;h2&gt;</code>、<code>&lt;h3&gt;</code>、<code>&lt;h4&gt;</code>、<code>&lt;h5&gt;</code>、<code>&lt;h6&gt;</code></p>
-</li>
-<li><p>在显示效果上 <code>&lt;h1&gt;</code> 最大，<code>&lt;h6&gt;</code>最小，但是文字的大小我们并不关心，因为文字大小属于样式</p>
-</li>
-<li><p>使用 HTML 标签时，关心的是标签的语义，我们使用的标签都是语义化标签</p>
-</li>
-<li><p>6 级标题中，<code>&lt;h1&gt;</code>最重要，表示一个网页的主要内容，<code>&lt;h2&gt; ~ &lt;h6&gt;</code> 重要性依次递减</p>
-</li>
-</ul>
-<ul>
-<li><p>对于搜索引擎来说，<code>&lt;h1&gt;</code> 的重要性仅次于 <code>&lt;title&gt;</code>，搜索引擎检索完 <code>&lt;title&gt;</code> 之后，会立即查看 <code>&lt;h1&gt;</code> 中的内容<br><code>&lt;h1&gt;</code>标签非常重要，它会影响到页面在搜索引擎中的排名，页面只能写一个 <code>&lt;h1&gt;</code> 标签。</p>
-</li>
-<li><p>一般页面中标题标签只使用 <code>&lt;h1&gt;</code>、<code>&lt;h2&gt;</code>、<code>&lt;h3&gt;</code>，其他标签基本不使用</p>
-</li>
-</ul>
-<h3 id="lt-p-gt-标签"><a href="#lt-p-gt-标签" class="headerlink" title="&lt;p&gt; 标签"></a><code>&lt;p&gt;</code> 标签</h3><ul>
-<li><p>段落标签，段落标签用于表示内容中的一个自然段<br>使用 <code>&lt;p&gt;</code> 标签来表示一个段落。</p>
-</li>
-<li><p><code>&lt;p&gt;</code> 标签中的文字，默认会独占一行，并且段与段之间会有一个间距，但样式我们并不关心</p>
-</li>
-<li><p>在 HTML 中，字符之间写再多的空格，浏览器也会当成一个空格解析，换行也只会当成一个空格解析</p>
-</li>
-<li><p>在页面中可以使用 <code>&lt;br&gt;</code> 标签来表示一个换行，<code>&lt;br&gt;</code> 标签是一个自结束标签</p>
-</li>
-<li><p><code>&lt;hr&gt;</code> 标签也是一个自结束标签，可以在页面中生成一条水平线</p>
-</li>
-</ul>
-<h3 id="实体"><a href="#实体" class="headerlink" title="实体"></a>实体</h3><ul>
-<li>在 HTML 中，一些如 <code>&lt;</code>、<code>&gt;</code> 等特殊字符是不能直接使用的，需要使用一些特殊的符号来表示这些特殊字符，这些特殊符号被称为实体（转义字符），浏览器解析到实体时，会自动将实体转换为其对应的字符。</li>
-</ul>
-<p>实体的语法：<code>&amp;实体的名称;</code></p>
-<table>
-<thead>
-<tr>
-<th>语法</th>
-<th>实体含义</th>
-<th>实体</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>&amp;lt;</code></td>
-<td><code>&lt;</code></td>
-<td>&lt;</td>
-</tr>
-<tr>
-<td><code>&amp;gt;</code></td>
-<td><code>&gt;</code></td>
-<td>&gt;</td>
-</tr>
-<tr>
-<td><code>&amp;nbsp;</code></td>
-<td>空格</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
-<td><code>&amp;copy;</code></td>
-<td>版权符号</td>
-<td>&copy;</td>
-</tr>
-</tbody></table>
-<h3 id="相对路径"><a href="#相对路径" class="headerlink" title="相对路径"></a>相对路径</h3><ul>
-<li><p><code>src</code> 属性配置的是图片的路径，目前我们所要使用的路径全部是相对路径<br>相对路径：相对路径指相对于当前资源所在目录的位置</p>
-</li>
-<li><p>可以使用 <code>../</code> 来返回一级目录，返回几级目录就使用几个 <code>../</code></p>
-</li>
-</ul>
-<h3 id="图片的格式"><a href="#图片的格式" class="headerlink" title="图片的格式"></a>图片的格式</h3><ul>
-<li>JPEG（JPG）<br>JPEG 图片支持的颜色比较多，图片可以压缩，但是不支持透明。<br>一般使用 JPEG 保存照片等颜色丰富的图片。</li>
-</ul>
-<ul>
-<li>GIF<br>GIF 支持的颜色少，支持简单的透明（图片透明边界为水平和垂直），且支持动态图。<br>图片颜色单一或者是动态图时可以使用 GIF。</li>
-</ul>
-<ul>
-<li>PNG<br>PNG 支持的颜色多，并且支持复杂的透明。<br>可以用来显示颜色复杂的透明的图片。</li>
-</ul>
-<ul>
-<li>图片的使用原则<ol>
-<li>效果不一致，使用效果好的。</li>
-<li>效果一致，使用占容小的。</li>
-</ol>
-</li>
-</ul>
-<h3 id="lt-meta-gt-标签扩展"><a href="#lt-meta-gt-标签扩展" class="headerlink" title="&lt;meta&gt; 标签扩展"></a><code>&lt;meta&gt;</code> 标签扩展</h3><ul>
-<li><p>使用 <code>&lt;meta&gt;</code> 标签设置网页的字符集</p>
-<p><code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code></p>
-</li>
-<li><p>使用 <code>&lt;meta&gt;</code> 标签设置网页的关键字</p>
-<p><code>&lt;meta name=&quot;keywords&quot; content=&quot;HTML5, css, JavaScript&quot;&gt;</code></p>
-</li>
-<li><p>使用 <code>&lt;meta&gt;</code> 标签指定网页的描述</p>
-<p><code>&lt;meta name=&quot;description&quot; content=&quot;发布物联网工程2班的相关信息&quot;&gt;</code></p>
-</li>
-<li><p>使用 <code>&lt;meta&gt;</code> 标签设置请求的重定向</p>
-<p><code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;5;url=http://www.baidu.com&quot;&gt;</code><br><code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;时间;url=目标路径&quot;&gt;</code></p>
-</li>
-</ul>
-<blockquote>
-<p>搜索引擎在检索页面时，会同时检索页面中的关键词和描述，但是这两个值不会影响页面在搜索引擎中的排名。</p>
-</blockquote>
-<h3 id="lt-img-gt-图片标签"><a href="#lt-img-gt-图片标签" class="headerlink" title="&lt;img&gt; 图片标签"></a><code>&lt;img&gt;</code> 图片标签</h3><p>使用 <code>&lt;img&gt;</code> 标签来向网页中引入一个<strong>外部</strong>图片<br><code>&lt;img&gt;</code> 标签也是一个自结束标签。</p>
-<p>属性：</p>
-<ul>
-<li><code>src</code>：设置一个外部图片的路径。</li>
-<li><code>alt</code>：可以用来设置图片的描述，在图片不能显示时，会显示该描述。</li>
-<li><code>width</code>：可以用来修改图片的宽度，一般使用 <code>px</code> 作为单位。</li>
-<li><code>height</code>：可以用来修改图片的高度，一般使用 <code>px</code> 作为单位。</li>
-</ul>
-<p>例：<code>&lt;img src=&quot;images/1.jpg&quot; alt=&quot;这是一个大美女&quot; width=&quot;200px&quot;/&gt;</code></p>
-<blockquote>
-<p>搜索引擎可以通过 <code>alt</code> 属性来识别不同的图片，如果不写 <code>alt</code> 属性，则搜索引擎不会对 <code>img</code> 中的图片进行收录。<br>  宽度和高度两个属性若只设置一个，另一个也会同时等比例自动调整。<br>  如果两个值同时指定则按照你指定的值来设置。<br>  一般开发中除了自适应的页面，不建议同时设置 <code>width</code> 和 <code>height</code></p>
-</blockquote>
-<h3 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h3><p>使用超链接可以让我们从一个页面跳转到另一个页面。<br>使用 <code>&lt;a&gt;</code> 标签来创建一个超链接。</p>
-<p>属性：</p>
-<ul>
-<li><p><code>href</code>：指向链接跳转的目标地址，可以写一个相对路径或一个完整的地址。</p>
-</li>
-<li><p><code>target</code>：规定在何处打开链接文档。</p>
-<p>可选值：</p>
-<ul>
-<li><code>_self</code>，表示在当前窗口中打开 （默认值）。</li>
-<li><code>_blank</code>，表示在一个新的窗口中打开。</li>
-<li><code>name</code>，可以设置一个内联框架的 <code>name</code> 属性值，链接将会在指定的内联框架中打开。</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="转角遇到-CSS"><a href="#转角遇到-CSS" class="headerlink" title="转角遇到 CSS"></a>转角遇到 CSS</h2><ul>
-<li><p>层叠样式表（Cascading Style Sheets）</p>
-</li>
-<li><p>CSS 可以用来为网页创建样式表，通过样式表可以对网页进行装饰</p>
-</li>
-<li><p>所谓层叠，可以将整个网页想象成是一层一层的结构，层次高的将会覆盖层次低的</p>
-</li>
-<li><p>而 CSS 就可以分别为网页的各个层次设置样式</p>
-</li>
-</ul>
-<hr>
-<h2 id="CSS-语法"><a href="#CSS-语法" class="headerlink" title="CSS 语法"></a>CSS 语法</h2><p><code>&lt;style&gt;</code> 标签中完全是另一个世界，与 HTML 无关，所以 HTML 语法在 <code>&lt;style&gt;</code> 标签中不起作用。</p>
-<p>CSS 的注释，作用和 HTML 注释类似，只不过它必须编写在 <code>&lt;style&gt;</code> 标签中，或者是 CSS 文件中。</p>
-<p>CSS 组成：<code>选择器 + 声明块</code></p>
-<ul>
-<li><p>选择器：通过选择器可以选中页面中指定的元素（标签），并且将声明块中的样式应用到选择器对应的元素上。</p>
-</li>
-<li><p>声明块：声明块紧跟在选择器之后，使用一对 <code>{</code>、<code>}</code> 包裹起来。</p>
-</li>
-<li><p>声明块又由一组组“名值对”结构组成，这些名值对称为声明。</p>
-</li>
-<li><p>一个声明块中可以有多个声明（名值对），声明与声明之间使用 <code>;</code>（分号）隔开，声明的样式名和样式值之间使用 <code>:</code>（冒号）连接。</p>
-</li>
-</ul>
-<hr>
-<h2 id="块元素和内联元素"><a href="#块元素和内联元素" class="headerlink" title="块元素和内联元素"></a>块元素和内联元素</h2><h3 id="块元素"><a href="#块元素" class="headerlink" title="块元素"></a>块元素</h3><ul>
-<li><p><code>&lt;div&gt;</code> 就是一个块元素<br>所谓的块元素就是会独占一行的元素，无论它的内容多与少，不管它的尺寸大与小，它都会独占一行。</p>
-</li>
-<li><p>常见的块元素：<code>&lt;div&gt;</code>、<code>&lt;p&gt;</code>、<code>&lt;h1&gt;</code>、<code>&lt;h2&gt;</code>、<code>&lt;h3&gt;</code> ……</p>
-</li>
-</ul>
-<blockquote>
-<p>PS：<code>&lt;div&gt;</code> 标签没有任何语义，就是一个纯粹的块元素，相当纯粹，且不会为它包裹的子元素设置任何默认样式，<code>&lt;div&gt;</code> 元素主要用来进行页面布局。</p>
-</blockquote>
-<h3 id="内联元素"><a href="#内联元素" class="headerlink" title="内联元素"></a>内联元素</h3><ul>
-<li><p><code>&lt;span&gt;</code> 就是一个内联元素（行内元素）<br>所谓的内联元素就是只占用自身大小的元素，不会独占一行。</p>
-</li>
-<li><p>常见的内联元素：<code>&lt;span&gt;</code>、<code>&lt;a&gt;</code>、<code>&lt;img&gt;</code>、<code>&lt;iframe&gt;</code> ……</p>
-</li>
-</ul>
-<blockquote>
-<p>PS：<code>&lt;span&gt;</code> 标签没有任何语义，就是一个纯粹的内联元素，相当纯粹，且不会为它包裹的子元素设置任何默认样式，<code>&lt;span&gt;</code> 标签专门用来选中文字，以便为文字设置样式。</p>
-</blockquote>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ul>
-<li>块元素只用来页面布局。</li>
-<li>内联元素主要用来选中文本设置样式。</li>
-<li>一般情况下只使用块元素去包含内联元素，而不会使用内联元素去包含块元素。</li>
-<li><code>&lt;a&gt;</code> 元素可以包含任意元素，除了它本身。</li>
-<li><code>&lt;p&gt;</code> 元素不可以包含任何块元素。</li>
-</ul>
-<blockquote>
-<p>提示：在 HTML5 中，块元素和内联元素几乎被去掉了，而使用了极其复杂的内容模型来描述，作为初学者的我们使用以上概念即可。</p>
-</blockquote>
-<hr>
-<h2 id="三种添加样式的方法"><a href="#三种添加样式的方法" class="headerlink" title="三种添加样式的方法"></a>三种添加样式的方法</h2><h3 id="内联样式表"><a href="#内联样式表" class="headerlink" title="内联样式表"></a>内联样式表</h3><p>可以将 CSS 样式编写到元素（标签）的 <code>style</code> 属性当中。<br>例：<code>&lt;p style=&quot;color: green; font-size: 38px;&quot;&gt;16物联网工程2班&lt;/p&gt;</code></p>
-<p>将样式直接编写到 <code>style</code> 属性中，这种样式我们成为内联样式，内联样式只对当前的元素（标签）中的内容起作用，内联样式不方便复用。</p>
-<blockquote>
-<p>PS：网页编写推崇结构、表现和行为三者分离，而内联样式属于结构与表现耦合，不方便后期的维护，所以不推荐使用。<br>  注意：元素（标签）的 <code>style</code> 属性和元素（标签）其他属性是同等地位。</p>
-</blockquote>
-<h3 id="内部样式表"><a href="#内部样式表" class="headerlink" title="内部样式表"></a>内部样式表</h3><p>也可以将 CSS 样式编写到 <code>&lt;head&gt;</code> 中的 <code>&lt;style&gt;</code> 标签里。</p>
-<p>例：</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">    <span class="selector-tag">p</span> &#123;</span><br><span class="line">        <span class="attribute">color</span>: green;</span><br><span class="line">        <span class="attribute">font-size</span>: <span class="number">38px</span>;</span><br><span class="line">        <span class="attribute">font-family</span>: <span class="string">"微软雅黑"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
-
-<p>将样式编写到 <code>&lt;style&gt;</code> 标签中，然后通过 CSS 选择器选中指定元素，则可以同时为这些被选中的元素一起设置样式，便可以使样式进一步的复用。</p>
-<blockquote>
-<p>PS：将样式表编写到 <code>&lt;style&gt;</code> 标签中，可以使结构和表现两者分离，因此是推荐使用的方式</p>
-</blockquote>
-<h3 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h3><p>还可以将 CSS 样式编写到外部的 CSS 文件中。</p>
-<p>例：<code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/reset.css&quot; /&gt;</code></p>
-<p>然后通过 <code>&lt;link&gt;</code> 标签来将外部的 CSS 文件引入到当前页面中，这样外部文件中的 CSS 样式表将会应用到当前页面中。</p>
-<p>将 CSS 样式统一编写到外部的样式表中，使结构和表现两者完全分离，可以使样式表在不同的页面中使用，最大限度的使样式进行复用。</p>
-<blockquote>
-<p>PS：用此种方法将样式统一写在样式表中，然后通过 <code>&lt;link&gt;</code> 标签引入，可以利用浏览器的缓存加快用户访问的速度，提高了用户体验。<br>  因此在开发过程中，<strong>强烈推荐</strong>使用的就是外部的 CSS 文件。</p>
-</blockquote>
-<p>第一节到此结束，下一节将介绍 CSS 选择器的知识。</p>
-]]></content>
-      <categories>
-        <category>学习笔记</category>
-        <category>HTML + CSS 基础</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-        <tag>HTML</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>一文搞懂 CSS 选择器</title>
-    <url>/front-end-basics/02.html</url>
+    <url>/front-end-basics/02-%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82CSS%E9%80%89%E6%8B%A9%E5%99%A8.html</url>
     <content><![CDATA[<h2 id="常用选择器"><a href="#常用选择器" class="headerlink" title="常用选择器"></a>常用选择器</h2><h3 id="元素选择器"><a href="#元素选择器" class="headerlink" title="元素选择器"></a>元素选择器</h3><ul>
 <li>作用：通过元素选择器可以选中页面中所有指定元素</li>
 <li>语法：<code>标签名{ }</code></li>
@@ -4238,7 +3722,7 @@ zoom: 1;</code>表示不放大元素，但是通过该设置可以开启<strong>
 <li>语法：<code>祖先元素 后代元素{ }</code></li>
 <li>举例：</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">span</span> &#123; <span class="attribute">color</span>: greenyellow; &#125; <span class="comment">/* 选中 div 下的 span 元素 */</span></span><br><span class="line"><span class="selector-id">#d1</span> <span class="selector-tag">p</span> <span class="selector-tag">span</span> &#123; <span class="attribute">color</span>: green; &#125; <span class="comment">/* 选中 id 为 d1 的元素中的 p 元素中的 span 元素 */</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 选中 div 下的 span 元素 */</span></span><br><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">span</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: greenyellow;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 选中 id 为 d1 的元素中的 p 元素中的 span 元素 */</span></span><br><span class="line"><span class="selector-id">#d1</span> <span class="selector-tag">p</span> <span class="selector-tag">span</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="子元素选择器"><a href="#子元素选择器" class="headerlink" title="子元素选择器"></a>子元素选择器</h3><p>只要儿子，不要孙子</p>
 <ul>
@@ -4250,28 +3734,36 @@ zoom: 1;</code>表示不放大元素，但是通过该设置可以开启<strong>
 <p>PS：IE6 以下（包括 IE6）版本浏览器不支持子元素选择器</p>
 </blockquote>
 <hr>
-<h2 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h2><h3 id="超链接相关的伪类"><a href="#超链接相关的伪类" class="headerlink" title="超链接相关的伪类"></a>超链接相关的伪类</h3><p>有四个伪类可以让你根据访问者与该链接的交互方式，将链接设置成4种不同的状态。</p>
+<h2 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h2><h3 id="超链接相关的伪类"><a href="#超链接相关的伪类" class="headerlink" title="超链接相关的伪类"></a>超链接相关的伪类</h3><p>有四个伪类可以让你根据访问者与该链接的交互方式，将链接设置成 4 种不同的状态。</p>
 <ul>
-<li>正常链接 <code>:link</code></li>
-<li>访问过的链接 <code>:visited</code><br>浏览器通过历史记录来判断链接是否被访问过，由于涉及到用户的隐私问题，所以使用 <code>:visited</code> 伪类只能设置字体的颜色</li>
-<li>鼠标滑过的链接 <code>:hover</code><br>不仅仅是 <code>&lt;a&gt;</code> 元素，其他元素也可以使用，但 IE6 除外</li>
-</ul>
-<ul>
-<li>正在点击的链接 <code>:active</code><br>不仅仅是 <code>&lt;a&gt;</code> 元素，其他元素也可以使用，但 IE6 除外</li>
+<li><p>正常链接 <code>:link</code></p>
+</li>
+<li><p>访问过的链接 <code>:visited</code><br>浏览器通过历史记录来判断链接是否被访问过，由于涉及到用户的隐私问题，所以使用 <code>:visited</code> 伪类只能设置字体的颜色</p>
+</li>
+<li><p>鼠标滑过的链接 <code>:hover</code><br>不仅仅是 <code>&lt;a&gt;</code> 元素，其他元素也可以使用，但 IE6 除外</p>
+</li>
+<li><p>正在点击的链接 <code>:active</code><br>不仅仅是 <code>&lt;a&gt;</code> 元素，其他元素也可以使用，但 IE6 除外</p>
+</li>
 </ul>
 <h3 id="另外两个常用伪类"><a href="#另外两个常用伪类" class="headerlink" title="另外两个常用伪类"></a>另外两个常用伪类</h3><ul>
-<li>获取焦点 <code>:focus</code><br>比如文本框获取焦点以后的样式，也就是文本框正在输入时的状态。IE6 不支持。</li>
-<li>选中的元素 <code>::selection</code><br>要注意不同浏览器的兼容问题，例如火狐浏览器中要写为 <code>::-moz-selection</code></li>
+<li><p>获取焦点 <code>:focus</code><br>比如文本框获取焦点以后的样式，也就是文本框正在输入时的状态。IE6 不支持。</p>
+</li>
+<li><p>选中的元素 <code>::selection</code><br>要注意不同浏览器的兼容问题，例如火狐浏览器中要写为 <code>::-moz-selection</code></p>
+</li>
 </ul>
 <blockquote>
 <p>伪类专门用来表示元素的一种特殊的状态。<br>  比如：访问过的超链接、普通的超链接、获取焦点的文本框。<br>  当我们需要为处在这些特殊状态的元素设置样式时，就可以使用伪类。</p>
 </blockquote>
 <hr>
 <h2 id="伪元素选择器"><a href="#伪元素选择器" class="headerlink" title="伪元素选择器"></a>伪元素选择器</h2><ul>
-<li>首字母 <code>:first-letter</code></li>
-<li>首行 <code>:first-line</code></li>
-<li>指定元素前 <code>:before</code><br>表示元素最前边的部分，一般都需要结合 <code>content:&quot;something&quot;</code> 样式一起使用，通过 <code>content:&quot;something&quot;</code> 可以向 before 的位置添加 something 内容。</li>
-<li>指定元素后 <code>:after</code><br>表示元素最后边的部分，一般都需要结合 <code>content:&quot;something&quot;</code> 样式一起使用，通过 <code>content:&quot;something&quot;</code> 可以向 after 的位置添加 something 内容。</li>
+<li><p>首字母 <code>:first-letter</code></p>
+</li>
+<li><p>首行 <code>:first-line</code></p>
+</li>
+<li><p>指定元素前 <code>:before</code><br>表示元素最前边的部分，一般都需要结合 <code>content:&quot;something&quot;</code> 样式一起使用，通过 <code>content:&quot;something&quot;</code> 可以向 before 的位置添加 something 内容。</p>
+</li>
+<li><p>指定元素后 <code>:after</code><br>表示元素最后边的部分，一般都需要结合 <code>content:&quot;something&quot;</code> 样式一起使用，通过 <code>content:&quot;something&quot;</code> 可以向 after 的位置添加 something 内容。</p>
+</li>
 </ul>
 <blockquote>
 <p>PS：以上选择器在 IE6 版本的浏览器中均不支持</p>
@@ -4331,8 +3823,10 @@ zoom: 1;</code>表示不放大元素，但是通过该设置可以开启<strong>
 </blockquote>
 <hr>
 <h2 id="兄弟元素选择器"><a href="#兄弟元素选择器" class="headerlink" title="兄弟元素选择器"></a>兄弟元素选择器</h2><ul>
-<li>后一个兄弟元素选择器<br>作用：可以选中一个元素后紧挨着的指定的兄弟元素<br>语法：<code>前一个 + 后一个 { }</code></li>
-<li>后边所有兄弟元素选择器<br>作用：可以选中一个元素后所有的兄弟元素<br>语法：<code>前一个~后边所有{ }</code></li>
+<li><p>后一个兄弟元素选择器<br>作用：可以选中一个元素后紧挨着的指定的兄弟元素<br>语法：<code>前一个 + 后一个 { }</code></p>
+</li>
+<li><p>后边所有兄弟元素选择器<br>作用：可以选中一个元素后所有的兄弟元素<br>语法：<code>前一个~后边所有{ }</code></p>
+</li>
 </ul>
 <hr>
 <h2 id="否定伪类"><a href="#否定伪类" class="headerlink" title="否定伪类"></a>否定伪类</h2><ul>
@@ -4439,38 +3933,277 @@ zoom: 1;</code>表示不放大元素，但是通过该设置可以开启<strong>
         <category>HTML + CSS 基础</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
         <tag>HTML</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
   <entry>
-    <title>WELCOME</title>
-    <url>/chat/welcome.html</url>
-    <content><![CDATA[<p>一首歌，一个故事送给你，相信你会喜欢。</p><blockquote>
-<p>高三那年，我暗恋我的男同桌。<br>自开学起他天天都吃糖，用糖纸来织星星。<br>我问他：“你折这么多小星星干嘛？”<br>他说：“送给我喜欢的人啊！”<br>毕业的时候他送了我一个超大的布熊，多年后，我两岁的儿子在玩那个布熊的时候不小心划了个口子，许多星星掉了出来。<br>这时我老公走过来说：“我那时手艺还不错吧！还好我们没错过。”</p>
-</blockquote><a id="more"></a>
+    <title>与 Web 前端的初次邂逅</title>
+    <url>/front-end-basics/01-%E4%B8%8EWeb%E5%89%8D%E7%AB%AF%E7%9A%84%E5%88%9D%E6%AC%A1%E9%82%82%E9%80%85.html</url>
+    <content><![CDATA[<h2 id="前端开发流程"><a href="#前端开发流程" class="headerlink" title="前端开发流程"></a>前端开发流程</h2><p>前端开发一般包括三个步骤：</p><ol>
+<li><p>网页设计师根据需求设计网页</p>
+</li>
+<li><p>前端工程师将设计做成静态网页</p>
+</li>
+<li><p>后台工程师将静态网页修改为动态网页</p>
+</li>
+</ol><p>这里的静态网页不是指网页的动画效果，而是指数据的动态变化。</p><p><img src="/images/htmlcssbasics/1001/1.jpg" alt="开发流程"></p><p>现在的技术日新月异，不同公司的开发流程也有所不同，但基本遵循以上流程。</p><p>软件的架构 &gt;&gt;<a href="http://naotu.baidu.com/file/27b23af4e471e82354c472f5d540d804?token=07b260a35f429b70" target="_blank" rel="noopener">请戳我</a>&lt;&lt;</p><a id="more"></a>
 
-<audio controls>
-      <source src="http://www.ytmp3.cn/down/50474.mp3" type="audio/mpeg">
-</audio>
 
 
-<p>欢迎来到我的博客，我是 Ninefire，玖燃，这是一个用 <a href="https://hexo.io/" title="快速、简洁且高效的博客框架" target>Hexo</a> 框架搭建的个人博客网站。</p>
-<p>这里有许多笔记、资源、音乐、故事，希望你喜欢，希望可以帮到你。</p>
-<p>下面是传送门：</p>
-<p><strong><a href="../HTML&CSS.basics/04.html">HTML+CSS基础</a></strong></p>
-<p><strong><a href="../CSS2.1/01.html">CSS2.1入门</a></strong></p>
-<p><strong><a href="../JavaScript.basics/01.html">JavaScript基础</a></strong></p>
-<p><strong><a href="../Java.basics/02.html">Java基础</a></strong></p>
+
+
+<blockquote>
+<p>以上开发流程是本人在学习时，课程中所讲述的应用架构，现如今早已物是人非，请前往搜索引擎搜索“前后端分离”。</p>
+</blockquote>
+<hr>
+<h2 id="W3C"><a href="#W3C" class="headerlink" title="W3C"></a>W3C</h2><ul>
+<li><p>万维网联盟（World Wid Web Consortium）</p>
+</li>
+<li><p>W3C 专门为了定义网页相关的标准而成立</p>
+</li>
+<li><p>W3C 定义了网页中的 HTML、CSS、DOM、HTTP 和 XML 等标准</p>
+</li>
+</ul>
+<hr>
+<h2 id="WHATWG"><a href="#WHATWG" class="headerlink" title="WHATWG"></a>WHATWG</h2><p>网页超文本应用技术工作小组（Web Hypertext Application Technology Working Group）</p>
+<p>是一个以推动网络 HTML5 标准为目的而成立的组织。在 2004 年，由 Opera、Mozilla 基金会和苹果这些浏览器厂商组成。</p>
+<p>历史：<br>WHATWG 成立的原因是 W3C 意图放弃 HTML，而力图发展 XML（可扩展标记记语言下的一个子集）技术。WHATWG 邮件列表公布于 2004-6-4 , 在 Opera–Mozilla 宣布加入后的 2  天便否决了由万维网联盟（W3C）成员在 W3C 工作室的 Web 标准。</p>
+<p>2007-7-10 , Mozilla Foundation, Apple, Opera Software 建议 W3C 跟随 WHATWG 的 HTML5，将新的  HTML（标准通用标记语言下的一个应用）命名为“HTML5”。2007-4-7, 新的 HTML 工作组采纳了他们的建议。</p>
+<hr>
+<h2 id="HTML-简介"><a href="#HTML-简介" class="headerlink" title="HTML 简介"></a>HTML 简介</h2><ul>
+<li><p>HTML（Hypertext Markup Language）<br>超文本标记语言</p>
+</li>
+<li><p>它负责网页的三个要素中的结构。</p>
+</li>
+<li><p>HTML 使用标签的形式来表示网页中的不同组成部分。</p>
+</li>
+<li><p>所谓超文本指的是超链接，使用超链接可以让我们从一个页面跳转到另一个页面。</p>
+</li>
+</ul>
+<blockquote>
+<p>网页的三个要素 &gt;&gt;<a href="http://naotu.baidu.com/file/de8e109854842b3a13b67c848f1fa964?token=1eea1aceca963cc8" target="_blank" rel="noopener">请戳我</a>&lt;&lt;</p>
+</blockquote>
+<hr>
+<h2 id="HTML-规范（XHTML-规范）"><a href="#HTML-规范（XHTML-规范）" class="headerlink" title="HTML 规范（XHTML 规范）"></a>HTML 规范（XHTML 规范）</h2><ul>
+<li><p>HTML 中不区分大小写，但我们一般都使用小写。</p>
+</li>
+<li><p>HTML 中的注释不能嵌套。</p>
+</li>
+<li><p>HTML 标签必须结构完整，要么成对出现，要么是自结束标签。<br>浏览器会尽最大努力正确的解析页面，你所有的不符合语法规范的内容，浏览器都会为你自动修正，但某些特殊情况时会修正错误。</p>
+</li>
+<li><p>自结束标签后需要加 <code>/</code>，如 <code>&lt;br/&gt;</code>、<code>&lt;img/&gt;</code>（XHTML 规范）。<br>在 HTML5 中可以不加 <code>/</code>，如 <code>&lt;br&gt;</code>、<code>&lt;img&gt;</code>，两种写法都正确。</p>
+</li>
+<li><p>HTML 标签可以嵌套，但不能交叉嵌套。</p>
+</li>
+<li><p>HTML 标签中的属性必须有值，且值必须加引号（单引号和双引号均可）。</p>
+</li>
+</ul>
+<hr>
+<h2 id="HTML-基础"><a href="#HTML-基础" class="headerlink" title="HTML 基础"></a>HTML 基础</h2><h3 id="lt-meta-gt-标签"><a href="#lt-meta-gt-标签" class="headerlink" title="&lt;meta/&gt; 标签"></a><code>&lt;meta/&gt;</code> 标签</h3><ul>
+<li><code>&lt;meta/&gt;</code> 标签用来设置网页的一些元数据，比如网页的字符集、关键字、简介等<br><code>&lt;meta/&gt;</code> 是一个自结束标签。</li>
+</ul>
+<h3 id="标题标签"><a href="#标题标签" class="headerlink" title="标题标签"></a>标题标签</h3><ul>
+<li><p>在 HTML 中共有 6 级标题标签 <code>&lt;h1&gt;</code>、<code>&lt;h2&gt;</code>、<code>&lt;h3&gt;</code>、<code>&lt;h4&gt;</code>、<code>&lt;h5&gt;</code>、<code>&lt;h6&gt;</code></p>
+</li>
+<li><p>在显示效果上 <code>&lt;h1&gt;</code> 最大，<code>&lt;h6&gt;</code>最小，但是文字的大小我们并不关心，因为文字大小属于样式</p>
+</li>
+<li><p>使用 HTML 标签时，关心的是标签的语义，我们使用的标签都是语义化标签</p>
+</li>
+<li><p>6 级标题中，<code>&lt;h1&gt;</code>最重要，表示一个网页的主要内容，<code>&lt;h2&gt; ~ &lt;h6&gt;</code> 重要性依次递减</p>
+</li>
+</ul>
+<ul>
+<li><p>对于搜索引擎来说，<code>&lt;h1&gt;</code> 的重要性仅次于 <code>&lt;title&gt;</code>，搜索引擎检索完 <code>&lt;title&gt;</code> 之后，会立即查看 <code>&lt;h1&gt;</code> 中的内容<br><code>&lt;h1&gt;</code>标签非常重要，它会影响到页面在搜索引擎中的排名，页面只能写一个 <code>&lt;h1&gt;</code> 标签。</p>
+</li>
+<li><p>一般页面中标题标签只使用 <code>&lt;h1&gt;</code>、<code>&lt;h2&gt;</code>、<code>&lt;h3&gt;</code>，其他标签基本不使用</p>
+</li>
+</ul>
+<h3 id="lt-p-gt-标签"><a href="#lt-p-gt-标签" class="headerlink" title="&lt;p&gt; 标签"></a><code>&lt;p&gt;</code> 标签</h3><ul>
+<li><p>段落标签，段落标签用于表示内容中的一个自然段<br>使用 <code>&lt;p&gt;</code> 标签来表示一个段落。</p>
+</li>
+<li><p><code>&lt;p&gt;</code> 标签中的文字，默认会独占一行，并且段与段之间会有一个间距，但样式我们并不关心</p>
+</li>
+<li><p>在 HTML 中，字符之间写再多的空格，浏览器也会当成一个空格解析，换行也只会当成一个空格解析</p>
+</li>
+<li><p>在页面中可以使用 <code>&lt;br&gt;</code> 标签来表示一个换行，<code>&lt;br&gt;</code> 标签是一个自结束标签</p>
+</li>
+<li><p><code>&lt;hr&gt;</code> 标签也是一个自结束标签，可以在页面中生成一条水平线</p>
+</li>
+</ul>
+<h3 id="实体"><a href="#实体" class="headerlink" title="实体"></a>实体</h3><ul>
+<li>在 HTML 中，一些如 <code>&lt;</code>、<code>&gt;</code> 等特殊字符是不能直接使用的，需要使用一些特殊的符号来表示这些特殊字符，这些特殊符号被称为实体（转义字符），浏览器解析到实体时，会自动将实体转换为其对应的字符。</li>
+</ul>
+<p>实体的语法：<code>&amp;实体的名称;</code></p>
+<table>
+<thead>
+<tr>
+<th>语法</th>
+<th>实体含义</th>
+<th>实体</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&amp;lt;</code></td>
+<td><code>&lt;</code></td>
+<td>&lt;</td>
+</tr>
+<tr>
+<td><code>&amp;gt;</code></td>
+<td><code>&gt;</code></td>
+<td>&gt;</td>
+</tr>
+<tr>
+<td><code>&amp;nbsp;</code></td>
+<td>空格</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><code>&amp;copy;</code></td>
+<td>版权符号</td>
+<td>&copy;</td>
+</tr>
+</tbody></table>
+<h3 id="相对路径"><a href="#相对路径" class="headerlink" title="相对路径"></a>相对路径</h3><ul>
+<li><p><code>src</code> 属性配置的是图片的路径，目前我们所要使用的路径全部是相对路径<br>相对路径：相对路径指相对于当前资源所在目录的位置</p>
+</li>
+<li><p>可以使用 <code>../</code> 来返回一级目录，返回几级目录就使用几个 <code>../</code></p>
+</li>
+</ul>
+<h3 id="图片的格式"><a href="#图片的格式" class="headerlink" title="图片的格式"></a>图片的格式</h3><ul>
+<li>JPEG（JPG）<br>JPEG 图片支持的颜色比较多，图片可以压缩，但是不支持透明。<br>一般使用 JPEG 保存照片等颜色丰富的图片。</li>
+</ul>
+<ul>
+<li>GIF<br>GIF 支持的颜色少，支持简单的透明（图片透明边界为水平和垂直），且支持动态图。<br>图片颜色单一或者是动态图时可以使用 GIF。</li>
+</ul>
+<ul>
+<li>PNG<br>PNG 支持的颜色多，并且支持复杂的透明。<br>可以用来显示颜色复杂的透明的图片。</li>
+</ul>
+<ul>
+<li>图片的使用原则<ol>
+<li>效果不一致，使用效果好的。</li>
+<li>效果一致，使用占容小的。</li>
+</ol>
+</li>
+</ul>
+<h3 id="lt-meta-gt-标签扩展"><a href="#lt-meta-gt-标签扩展" class="headerlink" title="&lt;meta&gt; 标签扩展"></a><code>&lt;meta&gt;</code> 标签扩展</h3><ul>
+<li><p>使用 <code>&lt;meta&gt;</code> 标签设置网页的字符集<br><code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code></p>
+</li>
+<li><p>使用 <code>&lt;meta&gt;</code> 标签设置网页的关键字<br><code>&lt;meta name=&quot;keywords&quot; content=&quot;HTML5, css, JavaScript&quot;&gt;</code></p>
+</li>
+<li><p>使用 <code>&lt;meta&gt;</code> 标签指定网页的描述<br><code>&lt;meta name=&quot;description&quot; content=&quot;发布物联网工程2班的相关信息&quot;&gt;</code></p>
+</li>
+<li><p>使用 <code>&lt;meta&gt;</code> 标签设置请求的重定向<br><code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;5;url=http://www.baidu.com&quot;&gt;</code><br><code>&lt;meta http-equiv=&quot;refresh&quot; content=&quot;时间;url=目标路径&quot;&gt;</code></p>
+</li>
+</ul>
+<blockquote>
+<p>搜索引擎在检索页面时，会同时检索页面中的关键词和描述，但是这两个值不会影响页面在搜索引擎中的排名。</p>
+</blockquote>
+<h3 id="lt-img-gt-图片标签"><a href="#lt-img-gt-图片标签" class="headerlink" title="&lt;img/&gt; 图片标签"></a><code>&lt;img/&gt;</code> 图片标签</h3><p>使用 <code>&lt;img/&gt;</code> 标签来向网页中引入一个<strong>外部</strong>图片<br><code>&lt;img/&gt;</code> 标签也是一个自结束标签。</p>
+<p>属性：</p>
+<ul>
+<li><code>src</code>：设置一个外部图片的路径。</li>
+<li><code>alt</code>：可以用来设置图片的描述，在图片不能显示时，会显示该描述。</li>
+<li><code>width</code>：可以用来修改图片的宽度，一般使用 <code>px</code> 作为单位。</li>
+<li><code>height</code>：可以用来修改图片的高度，一般使用 <code>px</code> 作为单位。</li>
+</ul>
+<p>例：<code>&lt;img src=&quot;images/1.jpg&quot; alt=&quot;这是一个大美女&quot; width=&quot;200px&quot; /&gt;</code></p>
+<blockquote>
+<p>搜索引擎可以通过 <code>alt</code> 属性来识别不同的图片，如果不写 <code>alt</code> 属性，则搜索引擎不会对 <code>&lt;img/&gt;</code> 中的图片进行收录。<br>  宽度和高度两个属性若只设置一个，另一个也会同时等比例自动调整。<br>  如果两个值同时指定则按照你指定的值来设置。<br>  一般开发中除了自适应的页面，不建议同时设置 <code>width</code> 和 <code>height</code></p>
+</blockquote>
+<h3 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h3><p>使用超链接可以让我们从一个页面跳转到另一个页面。<br>使用 <code>&lt;a&gt;</code> 标签来创建一个超链接。</p>
+<p>属性：</p>
+<ul>
+<li><p><code>href</code>：指向链接跳转的目标地址，可以写一个相对路径或一个完整的地址。</p>
+</li>
+<li><p><code>target</code>：规定在何处打开链接文档。<br>可选值：</p>
+<ul>
+<li><code>_self</code>，表示在当前窗口中打开 （默认值）。</li>
+<li><code>_blank</code>，表示在一个新的窗口中打开。</li>
+<li><code>name</code>，可以设置一个内联框架的 <code>name</code> 属性值，链接将会在指定的内联框架中打开。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="转角遇到-CSS"><a href="#转角遇到-CSS" class="headerlink" title="转角遇到 CSS"></a>转角遇到 CSS</h2><ul>
+<li>层叠样式表（Cascading Style Sheets）</li>
+<li>CSS 可以用来为网页创建样式表，通过样式表可以对网页进行装饰</li>
+<li>所谓层叠，可以将整个网页想象成是一层一层的结构，层次高的将会覆盖层次低的</li>
+<li>而 CSS 就可以分别为网页的各个层次设置样式</li>
+</ul>
+<hr>
+<h2 id="CSS-语法"><a href="#CSS-语法" class="headerlink" title="CSS 语法"></a>CSS 语法</h2><p><code>&lt;style&gt;</code> 标签中完全是另一个世界，与 HTML 无关，所以 HTML 语法在 <code>&lt;style&gt;</code> 标签中不起作用。</p>
+<p>CSS 的注释，作用和 HTML 注释类似，只不过它必须编写在 <code>&lt;style&gt;</code> 标签中，或者是 CSS 文件中。</p>
+<p>CSS 组成：<code>选择器 + 声明块</code></p>
+<ul>
+<li><p>选择器：通过选择器可以选中页面中指定的元素（标签），并且将声明块中的样式应用到选择器对应的元素上。</p>
+</li>
+<li><p>声明块：声明块紧跟在选择器之后，使用一对 <code>{</code>、<code>}</code> 包裹起来。</p>
+</li>
+<li><p>声明块又由一组组“名值对”结构组成，这些名值对称为声明。</p>
+</li>
+<li><p>一个声明块中可以有多个声明（名值对），声明与声明之间使用 <code>;</code>（分号）隔开，声明的样式名和样式值之间使用 <code>:</code>（冒号）连接。</p>
+</li>
+</ul>
+<hr>
+<h2 id="块元素和内联元素"><a href="#块元素和内联元素" class="headerlink" title="块元素和内联元素"></a>块元素和内联元素</h2><h3 id="块元素"><a href="#块元素" class="headerlink" title="块元素"></a>块元素</h3><ul>
+<li><p><code>&lt;div&gt;</code> 就是一个块元素<br>所谓的块元素就是会独占一行的元素，无论它的内容多与少，不管它的尺寸大与小，它都会独占一行。</p>
+</li>
+<li><p>常见的块元素：<code>&lt;div&gt;</code>、<code>&lt;p&gt;</code>、<code>&lt;h1&gt;</code>、<code>&lt;h2&gt;</code>、<code>&lt;h3&gt;</code> ……</p>
+</li>
+</ul>
+<blockquote>
+<p>PS：<code>&lt;div&gt;</code> 标签没有任何语义，就是一个纯粹的块元素，相当纯粹，且不会为它包裹的子元素设置任何默认样式，<code>&lt;div&gt;</code> 元素主要用来进行页面布局。</p>
+</blockquote>
+<h3 id="内联元素"><a href="#内联元素" class="headerlink" title="内联元素"></a>内联元素</h3><ul>
+<li><p><code>&lt;span&gt;</code> 就是一个内联元素（行内元素）<br>所谓的内联元素就是只占用自身大小的元素，不会独占一行。</p>
+</li>
+<li><p>常见的内联元素：<code>&lt;span&gt;</code>、<code>&lt;a&gt;</code>、<code>&lt;img&gt;</code>、<code>&lt;iframe&gt;</code> ……</p>
+</li>
+</ul>
+<blockquote>
+<p>PS：<code>&lt;span&gt;</code> 标签没有任何语义，就是一个纯粹的内联元素，相当纯粹，且不会为它包裹的子元素设置任何默认样式，<code>&lt;span&gt;</code> 标签专门用来选中文字，以便为文字设置样式。</p>
+</blockquote>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ul>
+<li>块元素只用来页面布局。</li>
+<li>内联元素主要用来选中文本设置样式。</li>
+<li>一般情况下只使用块元素去包含内联元素，而不会使用内联元素去包含块元素。</li>
+<li><code>&lt;a&gt;</code> 元素可以包含任意元素，除了它本身。</li>
+<li><code>&lt;p&gt;</code> 元素不可以包含任何块元素。</li>
+</ul>
+<blockquote>
+<p>提示：在 HTML5 中，块元素和内联元素几乎被去掉了，而使用了极其复杂的内容模型来描述，作为初学者的我们使用以上概念即可。</p>
+</blockquote>
+<hr>
+<h2 id="三种添加样式的方法"><a href="#三种添加样式的方法" class="headerlink" title="三种添加样式的方法"></a>三种添加样式的方法</h2><h3 id="内联样式表"><a href="#内联样式表" class="headerlink" title="内联样式表"></a>内联样式表</h3><p>可以将 CSS 样式编写到元素（标签）的 <code>style</code> 属性当中。<br>例：<code>&lt;p style=&quot;color: green; font-size: 38px;&quot;&gt;16物联网工程2班&lt;/p&gt;</code></p>
+<p>将样式直接编写到 <code>style</code> 属性中，这种样式我们成为内联样式，内联样式只对当前的元素（标签）中的内容起作用，内联样式不方便复用。</p>
+<blockquote>
+<p>PS：网页编写推崇结构、表现和行为三者分离，而内联样式属于结构与表现耦合，不方便后期的维护，所以不推荐使用。<br>  注意：元素（标签）的 <code>style</code> 属性和元素（标签）其他属性是同等地位。</p>
+</blockquote>
+<h3 id="内部样式表"><a href="#内部样式表" class="headerlink" title="内部样式表"></a>内部样式表</h3><p>也可以将 CSS 样式编写到 <code>&lt;head&gt;</code> 中的 <code>&lt;style&gt;</code> 标签里。</p>
+<p>例：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">    <span class="selector-tag">p</span> &#123;</span><br><span class="line">        <span class="attribute">color</span>: green;</span><br><span class="line">        <span class="attribute">font-size</span>: <span class="number">38px</span>;</span><br><span class="line">        <span class="attribute">font-family</span>: <span class="string">"微软雅黑"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p>将样式编写到 <code>&lt;style&gt;</code> 标签中，然后通过 CSS 选择器选中指定元素，则可以同时为这些被选中的元素一起设置样式，便可以使样式进一步的复用。</p>
+<blockquote>
+<p>PS：将样式表编写到 <code>&lt;style&gt;</code> 标签中，可以使结构和表现两者分离，因此是推荐使用的方式</p>
+</blockquote>
+<h3 id="外部样式表"><a href="#外部样式表" class="headerlink" title="外部样式表"></a>外部样式表</h3><p>还可以将 CSS 样式编写到外部的 CSS 文件中。</p>
+<p>例：<code>&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/reset.css&quot; /&gt;</code></p>
+<p>然后通过 <code>&lt;link&gt;</code> 标签来将外部的 CSS 文件引入到当前页面中，这样外部文件中的 CSS 样式表将会应用到当前页面中。</p>
+<p>将 CSS 样式统一编写到外部的样式表中，使结构和表现两者完全分离，可以使样式表在不同的页面中使用，最大限度的使样式进行复用。</p>
+<blockquote>
+<p>PS：用此种方法将样式统一写在样式表中，然后通过 <code>&lt;link&gt;</code> 标签引入，可以利用浏览器的缓存加快用户访问的速度，提高了用户体验。<br>  因此在开发过程中，<strong>强烈推荐</strong>使用的就是外部的 CSS 文件。</p>
+</blockquote>
+<p>第一节到此结束，下一节将介绍 CSS 选择器的知识。</p>
 ]]></content>
       <categories>
-        <category>随记</category>
+        <category>学习笔记</category>
+        <category>HTML + CSS 基础</category>
       </categories>
       <tags>
-        <tag>CSS</tag>
         <tag>HTML</tag>
-        <tag>Github</tag>
-        <tag>Hexo</tag>
+        <tag>CSS</tag>
       </tags>
   </entry>
 </search>

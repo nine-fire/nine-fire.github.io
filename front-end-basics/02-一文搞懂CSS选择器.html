@@ -47,17 +47,17 @@
 </script>
 
   <meta name="description" content="常用选择器元素选择器 作用：通过元素选择器可以选中页面中所有指定元素 语法：标签名{ } 举例：p{color: red;} &#x2F;*选中页面中所有p元素并设置字体颜色为红色*&#x2F; id 选择器 作用：通过元素的 id 属性值选中唯一的一个元素 语法：#id属性值{ } 举例：#header {font-size: 38px;}">
-<meta name="keywords" content="CSS,HTML">
+<meta name="keywords" content="HTML,CSS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一文搞懂 CSS 选择器">
-<meta property="og:url" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;front-end-basics&#x2F;02.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;ninefire.gitee.io&#x2F;front-end-basics&#x2F;02-%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82CSS%E9%80%89%E6%8B%A9%E5%99%A8.html">
 <meta property="og:site_name" content="玖燃">
 <meta property="og:description" content="常用选择器元素选择器 作用：通过元素选择器可以选中页面中所有指定元素 语法：标签名{ } 举例：p{color: red;} &#x2F;*选中页面中所有p元素并设置字体颜色为红色*&#x2F; id 选择器 作用：通过元素的 id 属性值选中唯一的一个元素 语法：#id属性值{ } 举例：#header {font-size: 38px;}">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-04T06:35:24.729Z">
+<meta property="og:updated_time" content="2019-12-04T11:43:02.098Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://ninefire.gitee.io/front-end-basics/02.html">
+<link rel="canonical" href="http://ninefire.gitee.io/front-end-basics/02-%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82CSS%E9%80%89%E6%8B%A9%E5%99%A8.html">
 
 
 <script id="page-configurations">
@@ -203,7 +203,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://ninefire.gitee.io/front-end-basics/02.html">
+    <link itemprop="mainEntityOfPage" href="http://ninefire.gitee.io/front-end-basics/02-%E4%B8%80%E6%96%87%E6%90%9E%E6%87%82CSS%E9%80%89%E6%8B%A9%E5%99%A8.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -226,14 +226,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2018-06-06 00:10:04" itemprop="dateCreated datePublished" datetime="2018-06-06T00:10:04+08:00">2018-06-06</time>
+              <time title="创建时间：2017-06-06 00:00:02" itemprop="dateCreated datePublished" datetime="2017-06-06T00:00:02+08:00">2017-06-06</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-04 14:35:24" itemprop="dateModified" datetime="2019-12-04T14:35:24+08:00">2019-12-04</time>
+                <time title="修改时间：2019-12-04 19:43:02" itemprop="dateModified" datetime="2019-12-04T19:43:02+08:00">2019-12-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -316,7 +316,7 @@
 <li>语法：<code>祖先元素 后代元素{ }</code></li>
 <li>举例：</li>
 </ul>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">span</span> &#123; <span class="attribute">color</span>: greenyellow; &#125; <span class="comment">/* 选中 div 下的 span 元素 */</span></span><br><span class="line"><span class="selector-id">#d1</span> <span class="selector-tag">p</span> <span class="selector-tag">span</span> &#123; <span class="attribute">color</span>: green; &#125; <span class="comment">/* 选中 id 为 d1 的元素中的 p 元素中的 span 元素 */</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 选中 div 下的 span 元素 */</span></span><br><span class="line"><span class="selector-tag">div</span> <span class="selector-tag">span</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: greenyellow;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 选中 id 为 d1 的元素中的 p 元素中的 span 元素 */</span></span><br><span class="line"><span class="selector-id">#d1</span> <span class="selector-tag">p</span> <span class="selector-tag">span</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="子元素选择器"><a href="#子元素选择器" class="headerlink" title="子元素选择器"></a>子元素选择器</h3><p>只要儿子，不要孙子</p>
 <ul>
@@ -328,28 +328,36 @@
 <p>PS：IE6 以下（包括 IE6）版本浏览器不支持子元素选择器</p>
 </blockquote>
 <hr>
-<h2 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h2><h3 id="超链接相关的伪类"><a href="#超链接相关的伪类" class="headerlink" title="超链接相关的伪类"></a>超链接相关的伪类</h3><p>有四个伪类可以让你根据访问者与该链接的交互方式，将链接设置成4种不同的状态。</p>
+<h2 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h2><h3 id="超链接相关的伪类"><a href="#超链接相关的伪类" class="headerlink" title="超链接相关的伪类"></a>超链接相关的伪类</h3><p>有四个伪类可以让你根据访问者与该链接的交互方式，将链接设置成 4 种不同的状态。</p>
 <ul>
-<li>正常链接 <code>:link</code></li>
-<li>访问过的链接 <code>:visited</code><br>浏览器通过历史记录来判断链接是否被访问过，由于涉及到用户的隐私问题，所以使用 <code>:visited</code> 伪类只能设置字体的颜色</li>
-<li>鼠标滑过的链接 <code>:hover</code><br>不仅仅是 <code>&lt;a&gt;</code> 元素，其他元素也可以使用，但 IE6 除外</li>
-</ul>
-<ul>
-<li>正在点击的链接 <code>:active</code><br>不仅仅是 <code>&lt;a&gt;</code> 元素，其他元素也可以使用，但 IE6 除外</li>
+<li><p>正常链接 <code>:link</code></p>
+</li>
+<li><p>访问过的链接 <code>:visited</code><br>浏览器通过历史记录来判断链接是否被访问过，由于涉及到用户的隐私问题，所以使用 <code>:visited</code> 伪类只能设置字体的颜色</p>
+</li>
+<li><p>鼠标滑过的链接 <code>:hover</code><br>不仅仅是 <code>&lt;a&gt;</code> 元素，其他元素也可以使用，但 IE6 除外</p>
+</li>
+<li><p>正在点击的链接 <code>:active</code><br>不仅仅是 <code>&lt;a&gt;</code> 元素，其他元素也可以使用，但 IE6 除外</p>
+</li>
 </ul>
 <h3 id="另外两个常用伪类"><a href="#另外两个常用伪类" class="headerlink" title="另外两个常用伪类"></a>另外两个常用伪类</h3><ul>
-<li>获取焦点 <code>:focus</code><br>比如文本框获取焦点以后的样式，也就是文本框正在输入时的状态。IE6 不支持。</li>
-<li>选中的元素 <code>::selection</code><br>要注意不同浏览器的兼容问题，例如火狐浏览器中要写为 <code>::-moz-selection</code></li>
+<li><p>获取焦点 <code>:focus</code><br>比如文本框获取焦点以后的样式，也就是文本框正在输入时的状态。IE6 不支持。</p>
+</li>
+<li><p>选中的元素 <code>::selection</code><br>要注意不同浏览器的兼容问题，例如火狐浏览器中要写为 <code>::-moz-selection</code></p>
+</li>
 </ul>
 <blockquote>
 <p>伪类专门用来表示元素的一种特殊的状态。<br>  比如：访问过的超链接、普通的超链接、获取焦点的文本框。<br>  当我们需要为处在这些特殊状态的元素设置样式时，就可以使用伪类。</p>
 </blockquote>
 <hr>
 <h2 id="伪元素选择器"><a href="#伪元素选择器" class="headerlink" title="伪元素选择器"></a>伪元素选择器</h2><ul>
-<li>首字母 <code>:first-letter</code></li>
-<li>首行 <code>:first-line</code></li>
-<li>指定元素前 <code>:before</code><br>表示元素最前边的部分，一般都需要结合 <code>content:&quot;something&quot;</code> 样式一起使用，通过 <code>content:&quot;something&quot;</code> 可以向 before 的位置添加 something 内容。</li>
-<li>指定元素后 <code>:after</code><br>表示元素最后边的部分，一般都需要结合 <code>content:&quot;something&quot;</code> 样式一起使用，通过 <code>content:&quot;something&quot;</code> 可以向 after 的位置添加 something 内容。</li>
+<li><p>首字母 <code>:first-letter</code></p>
+</li>
+<li><p>首行 <code>:first-line</code></p>
+</li>
+<li><p>指定元素前 <code>:before</code><br>表示元素最前边的部分，一般都需要结合 <code>content:&quot;something&quot;</code> 样式一起使用，通过 <code>content:&quot;something&quot;</code> 可以向 before 的位置添加 something 内容。</p>
+</li>
+<li><p>指定元素后 <code>:after</code><br>表示元素最后边的部分，一般都需要结合 <code>content:&quot;something&quot;</code> 样式一起使用，通过 <code>content:&quot;something&quot;</code> 可以向 after 的位置添加 something 内容。</p>
+</li>
 </ul>
 <blockquote>
 <p>PS：以上选择器在 IE6 版本的浏览器中均不支持</p>
@@ -409,8 +417,10 @@
 </blockquote>
 <hr>
 <h2 id="兄弟元素选择器"><a href="#兄弟元素选择器" class="headerlink" title="兄弟元素选择器"></a>兄弟元素选择器</h2><ul>
-<li>后一个兄弟元素选择器<br>作用：可以选中一个元素后紧挨着的指定的兄弟元素<br>语法：<code>前一个 + 后一个 { }</code></li>
-<li>后边所有兄弟元素选择器<br>作用：可以选中一个元素后所有的兄弟元素<br>语法：<code>前一个~后边所有{ }</code></li>
+<li><p>后一个兄弟元素选择器<br>作用：可以选中一个元素后紧挨着的指定的兄弟元素<br>语法：<code>前一个 + 后一个 { }</code></p>
+</li>
+<li><p>后边所有兄弟元素选择器<br>作用：可以选中一个元素后所有的兄弟元素<br>语法：<code>前一个~后边所有{ }</code></p>
+</li>
 </ul>
 <hr>
 <h2 id="否定伪类"><a href="#否定伪类" class="headerlink" title="否定伪类"></a>否定伪类</h2><ul>
@@ -520,8 +530,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/CSS/" rel="tag"># CSS</a>
               <a href="/tags/HTML/" rel="tag"># HTML</a>
+              <a href="/tags/CSS/" rel="tag"># CSS</a>
           </div>
 
         
@@ -530,12 +540,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/chat/welcome.html" rel="prev" title="WELCOME">
-      <i class="fa fa-chevron-left"></i> WELCOME
+    <a href="/front-end-basics/01-%E4%B8%8EWeb%E5%89%8D%E7%AB%AF%E7%9A%84%E5%88%9D%E6%AC%A1%E9%82%82%E9%80%85.html" rel="prev" title="与 Web 前端的初次邂逅">
+      <i class="fa fa-chevron-left"></i> 与 Web 前端的初次邂逅
     </a></div>
       <div class="post-nav-item">
-    <a href="/front-end-basics/01.html" rel="next" title="与 Web 前端的初次邂逅">
-      与 Web 前端的初次邂逅 <i class="fa fa-chevron-right"></i>
+    <a href="/front-end-basics/04-%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B.html" rel="next" title="盒子模型">
+      盒子模型 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -588,7 +598,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">69</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
