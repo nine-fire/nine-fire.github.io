@@ -1,144 +1,129 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>肖玮-简历</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>肖玮-简历</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-    <body>
-        <!-- 内容区域 210mm x 297mm -->
-        <div id="content-view">
-            <!-- 头部信息 -->
-            <div id="header" class="clear">
-                <div id="infomation">
-                    <p class="info">
-                        <span id="name">肖玮</span>
-                        <span id="gender">男</span>
-                        <span id="age" data-birthday="1998-1-19"></span>
-                        <span id="address">武汉</span>
-                        <span id="school"></span>
-                    </p>
-                    <p class="info">
-                        <span id="tel">132 3563 3935</span>
-                        <span id="email">xw.i@foxmail.com</span>
-                    </p>
-                    <p class="info">籍贯：湖北省宜昌市</p>
-                    <p class="info">求职意向：Java 工程师、计算机相关研发</p>
-                </div>
-
-                <table id="skill-proficiency">
-                    <!-- 技能熟练度（0 - 1 之间） -->
-                    <tr>
-                        <td data-skill-proficiency="0.8">Java</td>
-                        <td data-skill-proficiency="0.7">JavaScript</td>
-                    </tr>
-                    <tr>
-                        <td data-skill-proficiency="0.8">Spring</td>
-                        <td data-skill-proficiency="0.4">Python</td>
-                    </tr>
-                    <tr>
-                        <td data-skill-proficiency="0.7">MySQL</td>
-                        <td data-skill-proficiency="0.6">Android</td>
-                    </tr>
-                    <tr>
-                        <td data-skill-proficiency="0.6">Oracle</td>
-                        <td data-skill-proficiency="0.3">C/C++</td>
-                    </tr>
-                </table>
-            </div>
-
-            <!-- 个人技能 -->
-            <div class="skills">
-                <h2 class="title"><span>个人技能</span></h2>
-                <p>熟悉常用的数据结构、算法及设计模式，拥有扎实的计算机基础</p>
-                <p>熟练使用 Java 常用开源框架 SSM、项目管理构建工具 Maven、版本控制工具 Git</p>
-                <p>熟悉 Linux 基本操作、有 Linux 环境下开发和部署经验，了解 Shell 脚本</p>
-                <p>熟悉使用 jQuery、Ajax、Bootstrap 等前端技术，了解 React、Vue 等 MVVM 前端框架</p>
-                <p>了解 Spring Boot、Hadoop、Spark、负载均衡等热门技术</p>
-            </div>
-
-            <!-- 项目经验 -->
-            <div class="projects">
-                <h2 class="title"><span>项目经验</span></h2>
-                <div class="project">
-                    <p class="project-title">
-                        <span class="pro-tit-time">2019.07 - 2019.09</span>
-                        <span class="pro-tit-name">Amy 课程表 App</span>
-                        <span class="pro-tit-work">架构 / 设计 / 开发</span>
-                    </p>
-                    <p class="project-introduction">
-                        <span class="font-bold">功能</span>：爬取学校官网数据、显示周课表、显示当日课程、查询成绩<br />
-                        <span class="font-bold">技术栈</span>：Android、OKHttp、Jsoup、ActiveAndroid、Google Material<br />
-                        <span class="font-bold">详情</span>：因校服务器开启防火墙，市面上同类 App
-                        无法使用，故产生此项目。以抓包工具分析浏览器请求校服务器全过程，从而编写登录、查看课表和查询成绩等功能接口。使用
-                        Jsoup 解析 HTML 文档需要思维缜密，如穿针引线般细心探索。UI
-                        设计同时做到既美观又易用，尽量做到了能够让用户凭直觉和经验使用软件，尺寸和样式遵循了
-                        Google Material 设计规范。
-                    </p>
-                </div>
-                <div class="project">
-                    <p class="project-title">
-                        <span class="pro-tit-time">2019.05 - 2019.07</span>
-                        <span class="pro-tit-name">在线考试系统</span>
-                        <span class="pro-tit-work">架构 / 设计 / 开发</span>
-                    </p>
-                    <p class="project-introduction">
-                        <span class="font-bold">功能</span>：师生登录、创建班级、加入班级、创建试卷、学生答题、自动阅卷、通知消息等<br />
-                        <span class="font-bold">技术栈</span>：JSP/Servlet、C3P0、DBUtils、MySQL、MVC 开发模式、jQuery、Bootstrap<br />
-                        <span class="font-bold">详情</span>：使用经典的 J2EE MVC 开发模式，实现对 7 张数据表的 CRUD。使用 Ajax
-                        异步通信增强用户体验，采用基于 Bootstrap
-                        的响应式布局页面达到降低开发成本和实现 PC 端与移动端良好体验的目的。
-                    </p>
-                </div>
-            </div>
-
-            <!-- 教育经历 -->
-            <div class="edu">
-                <h2 class="title"><span>教育经历</span></h2>
-                <p>
-                    <span class="edu-time">2016.09 - 至今</span>
-                    <span class="edu-level">本科</span>
-                    <span class="edu-school">武汉商学院</span>
-                    <span class="edu-major">物联网工程</span>
-                    <span class="edu-score">专业排名 5%~10%</span>
+<body>
+    <!-- 内容区域 210mm x 297mm -->
+    <div id="content-view">
+        <!-- 头部信息 -->
+        <div id="header" class="clear">
+            <div id="infomation">
+                <p class="info">
+                    <span id="name">{{name}}</span>
+                    <span id="gender">{{gender}}</span>
+                    <span id="age">{{age}}</span>
+                    <span id="address">{{address}}</span>
+                    <span id="school">{{school}}</span>
                 </p>
-                <p>Java 程序设计、数据库技术、数据结构与算法、操作系统、计算机组成原理、UML 与软件文档等</p>
+                <p class="info">
+                    <span id="tel">{{phoneNumber}}</span>
+                    <span id="email">{{email}}</span>
+                </p>
+                <p class="info">籍贯：{{nativePlace}}</p>
+                <p class="info">求职意向：{{objective}}</p>
             </div>
 
-            <!-- 证书奖项 -->
-            <div class="achievement">
-                <h2 class="title"><span>证书奖项</span></h2>
-                <p>
-                    <span class="achievement-time">2019.05</span>
-                    <span class="achievement-name">软件设计师职业资格证书（人力资源部、社会保障部、工业和信息化部）</span>
+            <table id="skill-proficiency">
+                <tr v-for="index in 4">
+                    <td>{{skillProficiency[(index - 1) * 2].name}}</td>
+                    <td><span class="proficiency-line-span"
+                            v-bind:style="{'width':skillProficiency[(index - 1) * 2].proficiency * 100 + 'px'}"></span>
+                    </td>
+                    <td>{{skillProficiency[(index - 1) * 2 + 1].name}}</td>
+                    <td><span class="proficiency-line-span"
+                            v-bind:style="{'width':skillProficiency[(index - 1) * 2 + 1].proficiency * 100 + 'px'}"></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 个人技能 -->
+        <div class="skills">
+            <h2 class="title"><span>个人技能</span></h2>
+            <p v-for="(skill, index) in skills">{{index + 1}}、{{skill}}</p>
+        </div>
+
+        <!-- 项目经验 -->
+        <div class="projects">
+            <h2 class="title"><span>项目经验</span></h2>
+            <div class="project">
+                <p class="project-title">
+                    <span class="pro-tit-time">2019.07 - 2019.09</span>
+                    <span class="pro-tit-name">Amy 课程表 App</span>
+                    <span class="pro-tit-work">架构 / 设计 / 开发</span>
                 </p>
-                <p>
-                    <span class="achievement-time">2018.06</span>
-                    <span class="achievement-name">计算机设计大赛省三等奖（中国大学生计算机设计大赛中南地区赛组委会）</span>
-                </p>
-                <p>
-                    <span class="achievement-time">2016.09</span>
-                    <span class="achievement-name">蓝桥杯大赛省三等奖（工信部人才交流中心、蓝桥杯大赛组织委员会等）</span>
+                <p class="project-introduction">
+                    <span class="font-bold">功能</span>：爬取学校官网数据、显示周课表、显示当日课程、查询成绩<br />
+                    <span class="font-bold">技术栈</span>：Android、OKHttp、Jsoup、ActiveAndroid、Google Material<br />
+                    <span class="font-bold">详情</span>：因校服务器开启防火墙，市面上同类 App
+                    无法使用，故产生此项目。以抓包工具分析浏览器请求校服务器全过程，从而编写登录、查看课表和查询成绩等功能接口。使用
+                    Jsoup 解析 HTML 文档需要思维缜密，如穿针引线般细心探索。UI
+                    设计同时做到既美观又易用，尽量做到了能够让用户凭直觉和经验使用软件，尺寸和样式遵循了
+                    Google Material 设计规范。
                 </p>
             </div>
-
-            <!-- 个人简介 -->
-            <div class="introduction">
-                <h2 class="title"><span>个人简介</span></h2>
-                <p>擅于自学，课余时自学了 Web 前端、Photoshop、After Effects、Premiere 等多门课程</p>
-                <p>踏实可靠，不丢三落四，大学四年从未遗失过钥匙或卡片等</p>
-                <p>认真负责，他人交予的任务，总是按时、按量的完成</p>
-                <p>精益求精，代码上追求清晰结构和优雅风格，UI 设计上不允许存在 1 个像素的偏差</p>
-                <p>待人和睦，大学期间从未与任何人发生争执或口角，受老师和同学爱戴</p>
-                <p>拥抱新颖，对新技术、新话题，新事物有好奇心，乐于探索新大陆</p>
+            <div class="project">
+                <p class="project-title">
+                    <span class="pro-tit-time">2019.05 - 2019.07</span>
+                    <span class="pro-tit-name">在线考试系统</span>
+                    <span class="pro-tit-work">架构 / 设计 / 开发</span>
+                </p>
+                <p class="project-introduction">
+                    <span class="font-bold">功能</span>：师生登录、创建班级、加入班级、创建试卷、学生答题、自动阅卷、通知消息等<br />
+                    <span class="font-bold">技术栈</span>：JSP/Servlet、C3P0、DBUtils、MySQL、MVC 开发模式、jQuery、Bootstrap<br />
+                    <span class="font-bold">详情</span>：使用经典的 J2EE MVC 开发模式，实现对 7 张数据表的 CRUD。使用 Ajax
+                    异步通信改善用户体验，采用基于 Bootstrap
+                    的响应式布局页面达到降低开发成本和实现 PC 端与移动端良好体验的目的。
+                </p>
             </div>
         </div>
 
-        <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.slim.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="script.js" type="text/javascript" charset="utf-8"></script>
-    </body>
+        <!-- 教育经历 -->
+        <div class="edu">
+            <h2 class="title"><span>教育经历</span></h2>
+            <p>
+                <span class="edu-time">2016.09 - 至今</span>
+                <span class="edu-level">本科</span>
+                <span class="edu-school">武汉商学院</span>
+                <span class="edu-major">物联网工程</span>
+                <span class="edu-score">专业排名 5%~10%</span>
+            </p>
+            <p>Java 程序设计、数据库技术、数据结构与算法、操作系统、计算机组成原理、UML 与软件文档等</p>
+        </div>
+
+        <!-- 证书奖项 -->
+        <div class="achievement">
+            <h2 class="title"><span>证书奖项</span></h2>
+            <p>
+                <span class="achievement-time">2019.05</span>
+                <span class="achievement-name">软件设计师职业资格证书（人力资源部、社会保障部、工业和信息化部）</span>
+            </p>
+            <p>
+                <span class="achievement-time">2018.06</span>
+                <span class="achievement-name">计算机设计大赛省三等奖（中国大学生计算机设计大赛中南地区赛组委会）</span>
+            </p>
+            <p>
+                <span class="achievement-time">2016.09</span>
+                <span class="achievement-name">蓝桥杯大赛省三等奖（工信部人才交流中心、蓝桥杯大赛组织委员会等）</span>
+            </p>
+        </div>
+
+        <!-- 个人简介 -->
+        <div class="introduction">
+            <h2 class="title"><span>个人简介</span></h2>
+            <p v-for="(intr, index) in introduction">{{index + 1}}、{{intr}}</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="script.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
 </html>

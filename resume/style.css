@@ -207,6 +207,10 @@ body {
     font-family: "微软雅黑, helvetica, sans-serif";
 }
 
+.project-title .pro-tit-work {
+    font-weight: normal;
+}
+
 .project+.project .project-title {
     padding-top: 5px;
 }
