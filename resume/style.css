@@ -68,8 +68,9 @@ mark,
 audio,
 video {
     border: 0;
-    font: inherit;
+    box-sizing: border-box;
     font-size: 100%;
+    font: inherit;
     margin: 0;
     padding: 0;
     vertical-align: baseline;
@@ -93,14 +94,6 @@ li {
     list-style: none;
 }
 
-html,
-body {
-    background: #F1F1F1;
-    font-family: "Times New Roman", "宋体", "serif";
-    font-size: 16px;
-    color: #000000;
-}
-
 .clear {
     clear: both;
 }
@@ -113,8 +106,8 @@ body {
 }
 
 .font-bold {
-    font-weight: bold;
     font-family: "微软雅黑, helvetica, sans-serif";
+    font-weight: bold;
 }
 
 .no-padding {
@@ -125,15 +118,24 @@ body {
     margin: 0;
 }
 
+html,
+body {
+    background: #F1F1F1;
+    color: #000000;
+    font-family: "Times New Roman", "宋体", "serif";
+    font-size: 16px;
+}
+
 /* 通用样式结束 */
 
 /* 内容区域 */
 #content-view {
-    width: 180mm;
-    height: 267mm;
+    background-color: #FFF;
+    box-shadow: 0 0 5px #555;
+    height: 297mm;
     margin: 0 auto;
     padding: 15mm;
-    background-color: #FFF;
+    width: 210mm;
 }
 
 /* 头部信息 */
@@ -150,8 +152,8 @@ body {
 
 /* 技能星图 */
 #skill-proficiency {
-    line-height: 1.4em;
     float: right;
+    line-height: 1.4em;
     text-align: right;
 }
 
@@ -165,18 +167,18 @@ body {
 }
 
 #skill-proficiency .proficiency-line-span {
-    display: inline-block;
-    height: 6px;
-    border-radius: 3px;
     background-color: #222;
-    vertical-align: middle;
+    border-radius: 3px;
+    display: inline-block;
     font-size: 0;
+    height: 6px;
+    vertical-align: middle;
 }
 
 #name {
+    font-family: "微软雅黑, helvetica, sans-serif";
     font-size: 20px;
     font-weight: bold;
-    font-family: "微软雅黑, helvetica, sans-serif";
 }
 
 #infomation .info,
@@ -190,21 +192,21 @@ body {
 
 /* 标题 */
 .title {
-    margin: 10px 0 5px 0;
     border-bottom: 1.5px solid #000000;
     color: #FFFFFF;
-    font-size: 20px;
     font-family: "微软雅黑, helvetica, sans-serif";
+    font-size: 20px;
+    margin: 10px 0 5px 0;
 }
 
 .title>span {
-    padding: 0 5px;
     background-color: #000000;
+    padding: 0 5px;
 }
 
 .project-title {
-    font-weight: bold;
     font-family: "微软雅黑, helvetica, sans-serif";
+    font-weight: bold;
 }
 
 .project-title .pro-tit-work {
